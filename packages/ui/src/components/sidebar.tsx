@@ -28,7 +28,14 @@ export interface SidebarProviderProps extends React.HTMLAttributes<HTMLDivElemen
   defaultCollapsed?: boolean
 }
 
-function SidebarProvider({ defaultOpen = true, defaultCollapsed = false, className, style, children, ...props }: SidebarProviderProps) {
+function SidebarProvider({
+  defaultOpen = true,
+  defaultCollapsed = false,
+  className,
+  style,
+  children,
+  ...props
+}: SidebarProviderProps) {
   const [open, setOpen] = React.useState(defaultOpen)
   const [collapsed, setCollapsed] = React.useState(defaultCollapsed)
 
@@ -54,39 +61,59 @@ function SidebarProvider({ defaultOpen = true, defaultCollapsed = false, classNa
 
 export interface SidebarProps extends React.HTMLAttributes<HTMLElement> {}
 
-const Sidebar = React.forwardRef<HTMLElement, SidebarProps>(({ className, children, ...props }, ref) => {
-  const { open, collapsed } = useSidebar()
+const Sidebar = React.forwardRef<HTMLElement, SidebarProps>(
+  ({ className, children, ...props }, ref) => {
+    const { open, collapsed } = useSidebar()
 
-  if (!open) return null
+    if (!open) return null
 
-  return (
-    <aside
-      data-slot="sidebar"
-      data-collapsed={collapsed}
-      ref={ref}
-      className={cn(
-        'flex h-full flex-col border-r border-sidebar-border bg-sidebar text-sidebar-foreground transition-[width] duration-250',
-        collapsed ? 'w-[var(--sidebar-width-icon)]' : 'w-[var(--sidebar-width)]',
-        className,
-      )}
-      {...props}
-    >
-      {children}
-    </aside>
-  )
-})
+    return (
+      <aside
+        data-slot="sidebar"
+        data-collapsed={collapsed}
+        ref={ref}
+        className={cn(
+          'flex h-full flex-col border-r border-sidebar-border bg-sidebar text-sidebar-foreground transition-[width] duration-250',
+          collapsed ? 'w-[var(--sidebar-width-icon)]' : 'w-[var(--sidebar-width)]',
+          className,
+        )}
+        {...props}
+      >
+        {children}
+      </aside>
+    )
+  },
+)
 Sidebar.displayName = 'Sidebar'
 
 function SidebarHeader({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
-  return <div data-slot="sidebar-header" className={cn('flex h-14 items-center border-b border-sidebar-border px-4', className)} {...props} />
+  return (
+    <div
+      data-slot="sidebar-header"
+      className={cn('flex h-14 items-center border-b border-sidebar-border px-4', className)}
+      {...props}
+    />
+  )
 }
 
 function SidebarContent({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
-  return <div data-slot="sidebar-content" className={cn('flex-1 overflow-auto p-2', className)} {...props} />
+  return (
+    <div
+      data-slot="sidebar-content"
+      className={cn('flex-1 overflow-auto p-2', className)}
+      {...props}
+    />
+  )
 }
 
 function SidebarFooter({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
-  return <div data-slot="sidebar-footer" className={cn('border-t border-sidebar-border p-2', className)} {...props} />
+  return (
+    <div
+      data-slot="sidebar-footer"
+      className={cn('border-t border-sidebar-border p-2', className)}
+      {...props}
+    />
+  )
 }
 
 function SidebarNav({ className, ...props }: React.HTMLAttributes<HTMLElement>) {
@@ -107,7 +134,9 @@ function SidebarNavItem({ className, active, icon, children, ...props }: Sidebar
       type="button"
       className={cn(
         'flex w-full items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors min-h-11',
-        active ? 'bg-sidebar-accent text-sidebar-primary' : 'text-sidebar-foreground hover:bg-sidebar-accent',
+        active
+          ? 'bg-sidebar-accent text-sidebar-primary'
+          : 'text-sidebar-foreground hover:bg-sidebar-accent',
         collapsed && 'justify-center px-0',
         className,
       )}
@@ -136,4 +165,14 @@ function SidebarTrigger({ className, ...props }: React.ComponentProps<typeof But
   )
 }
 
-export { SidebarProvider, Sidebar, SidebarHeader, SidebarContent, SidebarFooter, SidebarNav, SidebarNavItem, SidebarTrigger, useSidebar }
+export {
+  SidebarProvider,
+  Sidebar,
+  SidebarHeader,
+  SidebarContent,
+  SidebarFooter,
+  SidebarNav,
+  SidebarNavItem,
+  SidebarTrigger,
+  useSidebar,
+}

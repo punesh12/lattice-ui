@@ -21,7 +21,10 @@ export function PreviewToolbar({
   const [tab, setTab] = useState<'preview' | 'code'>('preview')
 
   return (
-    <div data-slot="preview-toolbar" className="my-6 overflow-hidden rounded-lg border border-border">
+    <div
+      data-slot="preview-toolbar"
+      className="my-6 overflow-hidden rounded-lg border border-border"
+    >
       <div className="flex border-b border-border bg-muted/30">
         {(['preview', 'code'] as const).map((t) => (
           <button
@@ -30,7 +33,9 @@ export function PreviewToolbar({
             onClick={() => setTab(t)}
             className={cn(
               'px-4 py-2.5 text-sm font-medium capitalize transition-colors',
-              tab === t ? 'border-b-2 border-primary text-foreground' : 'text-muted-foreground hover:text-foreground',
+              tab === t
+                ? 'border-b-2 border-primary text-foreground'
+                : 'text-muted-foreground hover:text-foreground',
             )}
           >
             {t}

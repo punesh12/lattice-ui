@@ -9,11 +9,22 @@ export interface EmptyStateProps extends Omit<React.HTMLAttributes<HTMLDivElemen
   action?: React.ReactNode
 }
 
-function EmptyState({ className, style, icon, title, description, action, ...props }: EmptyStateProps) {
+function EmptyState({
+  className,
+  style,
+  icon,
+  title,
+  description,
+  action,
+  ...props
+}: EmptyStateProps) {
   return (
     <div
       data-slot="empty-state"
-      className={cn('flex flex-col items-center justify-center gap-3 rounded-lg border border-dashed border-border p-12 text-center', className)}
+      className={cn(
+        'flex flex-col items-center justify-center gap-3 rounded-lg border border-dashed border-border p-12 text-center',
+        className,
+      )}
       style={{
         ...flexColCenter,
         gap: 12,
@@ -28,7 +39,15 @@ function EmptyState({ className, style, icon, title, description, action, ...pro
       {icon ? <div style={{ color: 'var(--muted-foreground)' }}>{icon}</div> : null}
       <h3 style={{ margin: 0, fontSize: 18, fontWeight: 600 }}>{title}</h3>
       {description ? (
-        <p style={{ margin: 0, maxWidth: '24rem', fontSize: 14, color: 'var(--muted-foreground)', textAlign: 'center' }}>
+        <p
+          style={{
+            margin: 0,
+            maxWidth: '24rem',
+            fontSize: 14,
+            color: 'var(--muted-foreground)',
+            textAlign: 'center',
+          }}
+        >
           {description}
         </p>
       ) : null}

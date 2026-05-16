@@ -17,7 +17,11 @@ const ContextMenuSubTrigger = React.forwardRef<
   <ContextMenuPrimitive.SubTrigger
     data-slot="context-menu-sub-trigger"
     ref={ref}
-    className={cn('flex cursor-default select-none items-center rounded-sm px-2 py-2 text-sm outline-none focus:bg-accent data-[state=open]:bg-accent min-h-11', inset && 'pl-8', className)}
+    className={cn(
+      'flex cursor-default select-none items-center rounded-sm px-2 py-2 text-sm outline-none focus:bg-accent data-[state=open]:bg-accent min-h-11',
+      inset && 'pl-8',
+      className,
+    )}
     {...props}
   >
     {children}
@@ -33,7 +37,10 @@ const ContextMenuSubContent = React.forwardRef<
   <ContextMenuPrimitive.SubContent
     data-slot="context-menu-sub-content"
     ref={ref}
-    className={cn('z-50 min-w-[8rem] overflow-hidden rounded-md border border-border bg-popover p-1 text-popover-foreground shadow-md', className)}
+    className={cn(
+      'z-50 min-w-[8rem] overflow-hidden rounded-md border border-border bg-popover p-1 text-popover-foreground shadow-md',
+      className,
+    )}
     {...props}
   />
 ))
@@ -47,7 +54,10 @@ const ContextMenuContent = React.forwardRef<
     <ContextMenuPrimitive.Content
       data-slot="context-menu-content"
       ref={ref}
-      className={cn('z-50 min-w-[8rem] overflow-hidden rounded-md border border-border bg-popover p-1 text-popover-foreground shadow-md', className)}
+      className={cn(
+        'z-50 min-w-[8rem] overflow-hidden rounded-md border border-border bg-popover p-1 text-popover-foreground shadow-md',
+        className,
+      )}
       {...props}
     />
   </ContextMenuPrimitive.Portal>
@@ -78,7 +88,10 @@ const ContextMenuCheckboxItem = React.forwardRef<
   <ContextMenuPrimitive.CheckboxItem
     data-slot="context-menu-checkbox-item"
     ref={ref}
-    className={cn('relative flex cursor-default select-none items-center rounded-sm py-2 pl-8 pr-2 text-sm outline-none focus:bg-accent min-h-11', className)}
+    className={cn(
+      'relative flex cursor-default select-none items-center rounded-sm py-2 pl-8 pr-2 text-sm outline-none focus:bg-accent min-h-11',
+      className,
+    )}
     checked={checked}
     {...props}
   >
@@ -99,7 +112,10 @@ const ContextMenuRadioItem = React.forwardRef<
   <ContextMenuPrimitive.RadioItem
     data-slot="context-menu-radio-item"
     ref={ref}
-    className={cn('relative flex cursor-default select-none items-center rounded-sm py-2 pl-8 pr-2 text-sm outline-none focus:bg-accent min-h-11', className)}
+    className={cn(
+      'relative flex cursor-default select-none items-center rounded-sm py-2 pl-8 pr-2 text-sm outline-none focus:bg-accent min-h-11',
+      className,
+    )}
     {...props}
   >
     <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
@@ -116,7 +132,12 @@ const ContextMenuLabel = React.forwardRef<
   React.ElementRef<typeof ContextMenuPrimitive.Label>,
   React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Label> & { inset?: boolean }
 >(({ className, inset, ...props }, ref) => (
-  <ContextMenuPrimitive.Label data-slot="context-menu-label" ref={ref} className={cn('px-2 py-1.5 text-sm font-semibold', inset && 'pl-8', className)} {...props} />
+  <ContextMenuPrimitive.Label
+    data-slot="context-menu-label"
+    ref={ref}
+    className={cn('px-2 py-1.5 text-sm font-semibold', inset && 'pl-8', className)}
+    {...props}
+  />
 ))
 ContextMenuLabel.displayName = ContextMenuPrimitive.Label.displayName
 
@@ -124,7 +145,12 @@ const ContextMenuSeparator = React.forwardRef<
   React.ElementRef<typeof ContextMenuPrimitive.Separator>,
   React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Separator>
 >(({ className, ...props }, ref) => (
-  <ContextMenuPrimitive.Separator data-slot="context-menu-separator" ref={ref} className={cn('-mx-1 my-1 h-px bg-border', className)} {...props} />
+  <ContextMenuPrimitive.Separator
+    data-slot="context-menu-separator"
+    ref={ref}
+    className={cn('-mx-1 my-1 h-px bg-border', className)}
+    {...props}
+  />
 ))
 ContextMenuSeparator.displayName = ContextMenuPrimitive.Separator.displayName
 

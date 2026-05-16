@@ -22,7 +22,9 @@ export const overlayContentStyle: React.CSSProperties = {
   zIndex: CONTENT_Z_INDEX,
 }
 
-export type OverlayBackdropProps = React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay> & {
+export type OverlayBackdropProps = React.ComponentPropsWithoutRef<
+  typeof DialogPrimitive.Overlay
+> & {
   'data-slot': string
 }
 

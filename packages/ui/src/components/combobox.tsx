@@ -4,7 +4,14 @@ import * as React from 'react'
 import { Check, ChevronsUpDown } from 'lucide-react'
 import { cn } from '../lib/utils'
 import { Button } from './button'
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from './command'
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from './command'
 import { Popover, PopoverContent, PopoverTrigger } from './popover'
 
 export interface ComboboxOption {
@@ -57,7 +64,11 @@ function Combobox({
         data-slot="combobox-content"
         className="w-[var(--radix-popover-trigger-width)] p-0"
         align="start"
-        style={{ width: 'var(--radix-popover-trigger-width)', minWidth: 'var(--radix-popover-trigger-width)', padding: 0 }}
+        style={{
+          width: 'var(--radix-popover-trigger-width)',
+          minWidth: 'var(--radix-popover-trigger-width)',
+          padding: 0,
+        }}
       >
         <Command>
           <CommandInput placeholder={searchPlaceholder} />
@@ -73,7 +84,12 @@ function Combobox({
                     setOpen(false)
                   }}
                 >
-                  <Check className={cn('mr-2 h-4 w-4', value === option.value ? 'opacity-100' : 'opacity-0')} />
+                  <Check
+                    className={cn(
+                      'mr-2 h-4 w-4',
+                      value === option.value ? 'opacity-100' : 'opacity-0',
+                    )}
+                  />
                   {option.label}
                 </CommandItem>
               ))}

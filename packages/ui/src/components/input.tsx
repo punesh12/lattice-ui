@@ -32,8 +32,9 @@ const inputVariants = cva(
 )
 
 export interface InputProps
-  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'>,
-  VariantProps<typeof inputVariants> { }
+  extends
+    Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'>,
+    VariantProps<typeof inputVariants> {}
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, size, style, ...props }, ref) => {
@@ -54,7 +55,12 @@ Input.displayName = 'Input'
 
 const InputGroup = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
-    <div data-slot="input-group" ref={ref} className={cn('relative w-full', className)} {...props} />
+    <div
+      data-slot="input-group"
+      ref={ref}
+      className={cn('relative w-full', className)}
+      {...props}
+    />
   ),
 )
 InputGroup.displayName = 'InputGroup'

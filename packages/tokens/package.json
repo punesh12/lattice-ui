@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "echo 'tokens: CSS-only package'"
+    "build": "echo 'tokens: CSS-only package'",
+    "lint": "eslint ."
   },
   "exports": {
     "./globals.css": "./src/globals.css",

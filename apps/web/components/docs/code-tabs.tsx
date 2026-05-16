@@ -19,7 +19,9 @@ export function CodeTabs({ commands }: { commands: Record<(typeof managers)[numb
             onClick={() => setActive(m)}
             className={cn(
               'rounded-md px-3 py-1.5 text-xs font-medium capitalize transition-colors',
-              active === m ? 'bg-muted text-foreground' : 'text-muted-foreground hover:text-foreground',
+              active === m
+                ? 'bg-muted text-foreground'
+                : 'text-muted-foreground hover:text-foreground',
             )}
           >
             {m}

@@ -1,13 +1,25 @@
 export { cn } from './lib/utils'
 
 export { Button, buttonVariants, type ButtonProps } from './components/button'
-export { Input, InputGroup, InputPrefix, InputSuffix, inputVariants, type InputProps } from './components/input'
+export {
+  Input,
+  InputGroup,
+  InputPrefix,
+  InputSuffix,
+  inputVariants,
+  type InputProps,
+} from './components/input'
 export { Link, linkVariants, type LinkProps } from './components/link'
 export { Textarea, textareaVariants, type TextareaProps } from './components/textarea'
 export { Label, labelVariants, type LabelProps } from './components/label'
 export { Field, FieldGroup, type FieldProps } from './components/field'
 export { Checkbox, type CheckboxProps } from './components/checkbox'
-export { RadioGroup, RadioGroupItem, type RadioGroupProps, type RadioGroupItemProps } from './components/radio-group'
+export {
+  RadioGroup,
+  RadioGroupItem,
+  type RadioGroupProps,
+  type RadioGroupItemProps,
+} from './components/radio-group'
 export { Switch, type SwitchProps } from './components/switch'
 export {
   Select,
@@ -28,7 +40,15 @@ export { OtpInput, OTP_LENGTH, type OtpInputProps } from './components/otp-input
 // DatePicker uses react-day-picker (client-only) — import from '@lattice-ui/ui/date-picker'
 export { Badge, badgeVariants, type BadgeProps } from './components/badge'
 export { Tag, TagGroup, tagVariants, type TagProps, type TagGroupProps } from './components/tag'
-export { Avatar, AvatarImage, AvatarFallback, AvatarGroup, avatarVariants, type AvatarProps, type AvatarGroupProps } from './components/avatar'
+export {
+  Avatar,
+  AvatarImage,
+  AvatarFallback,
+  AvatarGroup,
+  avatarVariants,
+  type AvatarProps,
+  type AvatarGroupProps,
+} from './components/avatar'
 export {
   Card,
   CardHeader,
@@ -50,13 +70,23 @@ export {
   TableCaption,
 } from './components/table'
 export { Skeleton, type SkeletonProps } from './components/skeleton'
-export { Progress, CircularProgress, type ProgressProps, type CircularProgressProps } from './components/progress'
+export {
+  Progress,
+  CircularProgress,
+  type ProgressProps,
+  type CircularProgressProps,
+} from './components/progress'
 export { Separator, type SeparatorProps } from './components/separator'
 export { Divider, type DividerProps } from './components/divider'
 export { Kbd, type KbdProps } from './components/kbd'
 export { Spinner, spinnerVariants, type SpinnerProps } from './components/spinner'
 export { AspectRatio, type AspectRatioProps } from './components/aspect-ratio'
-export { ScrollArea, ScrollBar, type ScrollAreaProps, type ScrollBarProps } from './components/scroll-area'
+export {
+  ScrollArea,
+  ScrollBar,
+  type ScrollAreaProps,
+  type ScrollBarProps,
+} from './components/scroll-area'
 export { Tabs, TabsList, TabsTrigger, TabsContent } from './components/tabs'
 export {
   Breadcrumb,
@@ -147,9 +177,26 @@ export {
   sheetVariants,
   type SheetContentProps,
 } from './components/sheet'
-export { Popover, PopoverTrigger, PopoverContent, PopoverAnchor, type PopoverContentProps } from './components/popover'
-export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider, type TooltipContentProps } from './components/tooltip'
-export { HoverCard, HoverCardTrigger, HoverCardContent, type HoverCardContentProps } from './components/hover-card'
+export {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverAnchor,
+  type PopoverContentProps,
+} from './components/popover'
+export {
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+  TooltipProvider,
+  type TooltipContentProps,
+} from './components/tooltip'
+export {
+  HoverCard,
+  HoverCardTrigger,
+  HoverCardContent,
+  type HoverCardContentProps,
+} from './components/hover-card'
 export {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -184,9 +231,19 @@ export {
   ContextMenuRadioGroup,
 } from './components/context-menu'
 export { Toaster, toast, type ExternalToast, type ToastT } from './components/toast'
-export { Alert, AlertTitle, AlertDescription, alertVariants, type AlertProps } from './components/alert'
+export {
+  Alert,
+  AlertTitle,
+  AlertDescription,
+  alertVariants,
+  type AlertProps,
+} from './components/alert'
 export { EmptyState, type EmptyStateProps } from './components/empty-state'
-export { SelectableRow, selectableRowVariants, type SelectableRowProps } from './components/selectable-row'
+export {
+  SelectableRow,
+  selectableRowVariants,
+  type SelectableRowProps,
+} from './components/selectable-row'
 export {
   Command,
   CommandDialog,
@@ -201,5 +258,9 @@ export {
 export { FileUpload, fileUploadVariants, type FileUploadProps } from './components/file-upload'
 export { FilterBar, type FilterBarProps } from './components/filter-bar'
 export { SettingsRow, type SettingsRowProps } from './components/settings-row'
-export { NotificationItem, notificationItemVariants, type NotificationItemProps } from './components/notification-item'
+export {
+  NotificationItem,
+  notificationItemVariants,
+  type NotificationItemProps,
+} from './components/notification-item'
 export { LatticeLogo, latticeLogoVariants, type LatticeLogoProps } from './components/lattice-logo'

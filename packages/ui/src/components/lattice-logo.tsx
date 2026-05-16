@@ -37,7 +37,8 @@ const wordmarkFontSize = {
   lg: 16,
 } as const
 
-export interface LatticeLogoProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof latticeLogoVariants> {
+export interface LatticeLogoProps
+  extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof latticeLogoVariants> {
   showWordmark?: boolean
   /** Hide wordmark below `sm` breakpoint (for compact navbars). */
   compact?: boolean
@@ -55,7 +56,12 @@ function LatticeMark() {
       <circle cx="6" cy="18" r="1.5" fill="currentColor" />
       <circle cx="12" cy="18" r="1.5" fill="currentColor" />
       <circle cx="18" cy="18" r="1.5" fill="currentColor" />
-      <path d="M6 6h12M6 12h12M6 18h12M6 6v12M12 6v12M18 6v12" stroke="currentColor" strokeWidth="0.75" opacity="0.6" />
+      <path
+        d="M6 6h12M6 12h12M6 18h12M6 6v12M12 6v12M18 6v12"
+        stroke="currentColor"
+        strokeWidth="0.75"
+        opacity="0.6"
+      />
     </svg>
   )
 }

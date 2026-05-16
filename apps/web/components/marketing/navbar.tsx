@@ -45,7 +45,9 @@ const NavLinkItem = ({ href, label, onNavigate, mobile }: NavLinkItemProps) => {
         onClick={onNavigate}
         className={cn(
           'rounded-md px-3 py-2.5 text-sm font-medium transition-colors',
-          active ? 'bg-accent font-semibold text-foreground' : 'text-muted-foreground hover:bg-accent hover:text-foreground',
+          active
+            ? 'bg-accent font-semibold text-foreground'
+            : 'text-muted-foreground hover:bg-accent hover:text-foreground',
         )}
       >
         {label}
@@ -54,7 +56,12 @@ const NavLinkItem = ({ href, label, onNavigate, mobile }: NavLinkItemProps) => {
   }
 
   return (
-    <Link href={href} data-slot="marketing-nav-link" data-active={active ? 'true' : 'false'} style={navLinkStyle(active)}>
+    <Link
+      href={href}
+      data-slot="marketing-nav-link"
+      data-active={active ? 'true' : 'false'}
+      style={navLinkStyle(active)}
+    >
       {label}
     </Link>
   )
@@ -87,7 +94,10 @@ export const Navbar = () => {
         <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', flexShrink: 0 }}>
           <LatticeLogo size="xs" showWordmark compact />
         </Link>
-        <Badge variant="secondary" className="marketing-header-badge hidden shrink-0 sm:inline-flex">
+        <Badge
+          variant="secondary"
+          className="marketing-header-badge hidden shrink-0 sm:inline-flex"
+        >
           v1.0
         </Badge>
 
@@ -99,11 +109,21 @@ export const Navbar = () => {
 
         <div
           className="marketing-header-actions ml-auto flex shrink-0 items-center gap-2"
-          style={{ display: 'flex', alignItems: 'center', gap: 8, marginLeft: 'auto', flexShrink: 0 }}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 8,
+            marginLeft: 'auto',
+            flexShrink: 0,
+          }}
         >
           <ThemeToggle />
           <Button variant="outline" size="sm" className="marketing-header-desktop-cta" asChild>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://github.com/punesh12/lattice-ui"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               GitHub
             </a>
           </Button>
@@ -123,7 +143,10 @@ export const Navbar = () => {
         className={cn('marketing-mobile-nav border-t border-border bg-background lattice-fade-in')}
         style={{ display: mobileOpen ? 'block' : 'none' }}
       >
-        <nav aria-label="Mobile" style={{ display: 'flex', flexDirection: 'column', gap: 4, padding: '16px' }}>
+        <nav
+          aria-label="Mobile"
+          style={{ display: 'flex', flexDirection: 'column', gap: 4, padding: '16px' }}
+        >
           {siteNavLinks.map((link) => (
             <NavLinkItem
               key={link.href}
@@ -133,10 +156,19 @@ export const Navbar = () => {
               onNavigate={() => setMobileOpen(false)}
             />
           ))}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginTop: 8, paddingTop: 12, borderTop: '1px solid var(--border)' }}>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 8,
+              marginTop: 8,
+              paddingTop: 12,
+              borderTop: '1px solid var(--border)',
+            }}
+          >
             <Button variant="outline" className="w-full" asChild>
               <a
-                href="https://github.com"
+                href="https://github.com/punesh12/lattice-ui"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileOpen(false)}

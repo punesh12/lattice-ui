@@ -19,7 +19,7 @@
 
 ## Full implementation prompt (copy from here)
 
-```
+````
 You are implementing **Lattice UI** — a production-quality React component library and documentation website. This is a personal portfolio project (not PrepSarkar). The visual spec is defined in the Stitch design document; match tokens and layouts exactly.
 
 Read and follow: docs/Google_Stitch_UI_Library_Design_System.md (or the design tokens section below if the file is in context).
@@ -307,7 +307,7 @@ export const docsConfig = {
     // all components alphabetically
   ],
 }
-```
+````
 
 **Command palette (docs):** cmdk dialog, search docs nav items, navigate on select.
 
@@ -345,32 +345,40 @@ IMPLEMENTATION PHASES (execute in order)
 ═══════════════════════════════════════════════════════════════
 
 **Phase 1 — Scaffold**
+
 - Init pnpm monorepo, packages, Next app, TS strict, ESLint, README
 - tokens package + globals.css + tailwind config wired to apps/web
 - cn(), fonts, root layout
 
 **Phase 2 — Core primitives**
+
 - Button, Input, Label, Card, Badge, Avatar, Separator, Skeleton, Spinner
 - Verify in temporary `/playground` page
 
 **Phase 3 — Forms & overlays**
+
 - Remaining form controls, Dialog, Sheet, Popover, Dropdown, Tooltip, Toast, Alert
 
 **Phase 4 — Navigation & data**
+
 - Tabs, Sidebar, Table, Pagination, Breadcrumb, Progress, etc.
 
 **Phase 5 — Composites + brand**
+
 - Command, FileUpload, LatticeLogo, remaining composites
 
 **Phase 6 — Docs site**
+
 - Docs shell, docs.ts config, Introduction through Typography pages
 - Doc components (Preview, CodeBlock, ApiTable)
 - Button + Input full doc pages; components index + stubs for others
 
 **Phase 7 — Landing page**
+
 - All marketing sections, responsive pass
 
 **Phase 8 — Polish**
+
 - Delete playground or keep at /playground behind dev-only
 - README: install, dev commands, project structure, screenshot placeholders
 - Fix all lint/type errors; run build
@@ -405,6 +413,7 @@ ACCEPTANCE CHECKLIST (verify before finishing)
 When blocked by a dependency version, pick stable compatible versions and document in README. Prefer completing a thinner v1 over stopping halfway.
 
 Start with Phase 1 now. Create files on disk — do not only describe what you would do.
+
 ```
 
 ---
@@ -413,17 +422,23 @@ Start with Phase 1 now. Create files on disk — do not only describe what you w
 
 **Continue components:**
 ```
+
 Continue Lattice UI implementation from packages/ui. Add [ComponentName] matching the Stitch spec in docs/Google_Stitch_UI_Library_Design_System.md. Include all variants, sizes, states, forwardRef, cva, and export from index.ts. Run pnpm build and fix errors.
+
 ```
 
 **Add doc page:**
 ```
+
 Add full documentation page at apps/web/app/docs/components/[slug]/page.tsx for [ComponentName] in Lattice UI. Use Preview, CodeBlock, ApiTable, Callout patterns matching the Button doc page. Wire into lib/docs.ts nav.
+
 ```
 
 **Polish landing:**
 ```
+
 Improve Lattice UI landing page (apps/web) mobile responsive layout, hero mosaic animations (subtle CSS only), and section spacing per Stitch spec. Use only @lattice-ui/ui components.
+
 ```
 
 ---
@@ -438,3 +453,4 @@ Improve Lattice UI landing page (apps/web) mobile responsive layout, hero mosaic
 ---
 
 *v1.0 — Cursor implementation prompt for Lattice UI.*
+```

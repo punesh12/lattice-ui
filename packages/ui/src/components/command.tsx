@@ -22,7 +22,10 @@ const Command = React.forwardRef<
   <CommandRootPrimitive
     data-slot="command"
     ref={ref}
-    className={cn('flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground', className)}
+    className={cn(
+      'flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground',
+      className,
+    )}
     {...props}
   />
 ))
@@ -42,7 +45,10 @@ const CommandInput = React.forwardRef<
       paddingRight: 12,
     }}
   >
-    <Search className="mr-2 h-4 w-4 shrink-0 text-muted-foreground" style={{ marginRight: 8, flexShrink: 0 }} />
+    <Search
+      className="mr-2 h-4 w-4 shrink-0 text-muted-foreground"
+      style={{ marginRight: 8, flexShrink: 0 }}
+    />
     <CommandInputPrimitive
       data-slot="command-input"
       ref={ref}
@@ -85,7 +91,12 @@ const CommandEmpty = React.forwardRef<
   React.ElementRef<typeof CommandEmptyPrimitive>,
   React.ComponentPropsWithoutRef<typeof CommandEmptyPrimitive>
 >((props, ref) => (
-  <CommandEmptyPrimitive data-slot="command-empty" ref={ref} className="py-6 text-center text-sm" {...props} />
+  <CommandEmptyPrimitive
+    data-slot="command-empty"
+    ref={ref}
+    className="py-6 text-center text-sm"
+    {...props}
+  />
 ))
 CommandEmpty.displayName = 'CommandEmpty'
 
@@ -149,10 +160,19 @@ export interface CommandDialogProps extends React.ComponentPropsWithoutRef<typeo
   description?: string
 }
 
-function CommandDialog({ children, title = 'Command palette', description, ...props }: CommandDialogProps) {
+function CommandDialog({
+  children,
+  title = 'Command palette',
+  description,
+  ...props
+}: CommandDialogProps) {
   return (
     <Dialog {...props}>
-      <DialogContent data-slot="command-dialog" className="overflow-hidden p-0 shadow-lg" showClose={false}>
+      <DialogContent
+        data-slot="command-dialog"
+        className="overflow-hidden p-0 shadow-lg"
+        showClose={false}
+      >
         <Command className="[&_[cmdk-group-heading]]:text-muted-foreground">
           <span className="sr-only">{title}</span>
           {description ? <span className="sr-only">{description}</span> : null}
@@ -163,4 +183,13 @@ function CommandDialog({ children, title = 'Command palette', description, ...pr
   )
 }
 
-export { Command, CommandDialog, CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem, CommandSeparator }
+export {
+  Command,
+  CommandDialog,
+  CommandInput,
+  CommandList,
+  CommandEmpty,
+  CommandGroup,
+  CommandItem,
+  CommandSeparator,
+}

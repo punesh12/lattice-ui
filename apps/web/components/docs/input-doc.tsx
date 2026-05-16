@@ -8,11 +8,25 @@ import { DocProse } from '@/components/docs/doc-prose'
 import { PreviewToolbar } from '@/components/docs/preview-toolbar'
 
 const inputApi: ApiProp[] = [
-  { prop: 'size', type: '"sm" | "default" | "lg"', default: '"default"', description: 'Height and typography preset.' },
+  {
+    prop: 'size',
+    type: '"sm" | "default" | "lg"',
+    default: '"default"',
+    description: 'Height and typography preset.',
+  },
   { prop: 'type', type: 'string', default: '"text"', description: 'Native input type attribute.' },
   { prop: 'placeholder', type: 'string', description: 'Placeholder text when empty.' },
-  { prop: 'disabled', type: 'boolean', default: 'false', description: 'Prevents editing and applies disabled styles.' },
-  { prop: 'aria-invalid', type: 'boolean', description: 'Applies error border and ring when true.' },
+  {
+    prop: 'disabled',
+    type: 'boolean',
+    default: 'false',
+    description: 'Prevents editing and applies disabled styles.',
+  },
+  {
+    prop: 'aria-invalid',
+    type: 'boolean',
+    description: 'Applies error border and ring when true.',
+  },
 ]
 
 export function InputDoc() {
@@ -80,7 +94,8 @@ export function InputDoc() {
       </PreviewToolbar>
 
       <Callout title="Forms">
-        Pair inputs with <code>Field</code> and <code>Label</code> for accessible form layouts with descriptions and errors.
+        Pair inputs with <code>Field</code> and <code>Label</code> for accessible form layouts with
+        descriptions and errors.
       </Callout>
 
       <h2 id="api">API Reference</h2>

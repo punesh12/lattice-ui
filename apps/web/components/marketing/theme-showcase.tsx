@@ -1,7 +1,15 @@
 'use client'
 
 import { useTheme } from 'next-themes'
-import { Button, Card, CardContent, CardDescription, CardHeader, CardTitle, Switch } from '@lattice-ui/ui'
+import {
+  Button,
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+  Switch,
+} from '@lattice-ui/ui'
 import { cn } from '@/lib/utils'
 import { motion } from '@/lib/motion'
 
@@ -53,10 +61,13 @@ export const ThemeShowcase = () => {
           </Card>
 
           <div className={cn('order-1 lg:order-2', motion.fadeInUp, motion.stagger(2))}>
-            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">One toggle, every component</h2>
+            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+              One toggle, every component
+            </h2>
             <p className="mt-3 text-base leading-relaxed text-muted-foreground sm:mt-4 sm:text-lg">
-              Powered by <code className="rounded bg-muted px-1.5 py-0.5 text-sm">next-themes</code> and design tokens.
-              No per-component theme hacks — flip the switch and the entire UI responds.
+              Powered by <code className="rounded bg-muted px-1.5 py-0.5 text-sm">next-themes</code>{' '}
+              and design tokens. No per-component theme hacks — flip the switch and the entire UI
+              responds.
             </p>
             <div className="mt-6 flex items-center gap-4 rounded-lg border border-border p-4 transition-colors hover:border-primary/30 sm:mt-8">
               <Switch

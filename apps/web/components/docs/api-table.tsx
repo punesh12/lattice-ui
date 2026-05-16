@@ -9,7 +9,10 @@ export type ApiProp = {
 
 export function ApiTable({ props }: { props: ApiProp[] }) {
   return (
-    <div data-slot="api-table" className="not-prose my-6 overflow-x-auto rounded-lg border border-border">
+    <div
+      data-slot="api-table"
+      className="not-prose my-6 overflow-x-auto rounded-lg border border-border"
+    >
       <Table>
         <TableHeader>
           <TableRow>
@@ -23,9 +26,13 @@ export function ApiTable({ props }: { props: ApiProp[] }) {
           {props.map((row) => (
             <TableRow key={row.prop}>
               <TableCell className="px-4 py-3 font-mono text-sm">{row.prop}</TableCell>
-              <TableCell className="px-4 py-3 font-mono text-xs text-muted-foreground">{row.type}</TableCell>
+              <TableCell className="px-4 py-3 font-mono text-xs text-muted-foreground">
+                {row.type}
+              </TableCell>
               <TableCell className="px-4 py-3 font-mono text-xs">{row.default ?? '—'}</TableCell>
-              <TableCell className="px-4 py-3 text-sm text-muted-foreground">{row.description}</TableCell>
+              <TableCell className="px-4 py-3 text-sm text-muted-foreground">
+                {row.description}
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

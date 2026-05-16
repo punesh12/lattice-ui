@@ -14,7 +14,9 @@ export const DocsSearch = () => {
   const router = useRouter()
   const [query, setQuery] = useState('')
   const routes = getAllDocRoutes()
-  const filtered = query ? routes.filter((r) => r.title.toLowerCase().includes(query.toLowerCase())) : []
+  const filtered = query
+    ? routes.filter((r) => r.title.toLowerCase().includes(query.toLowerCase()))
+    : []
 
   return (
     <div className="relative w-full max-w-sm">

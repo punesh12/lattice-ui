@@ -17,12 +17,19 @@ const selectableRowVariants = cva(
 )
 
 export interface SelectableRowProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof selectableRowVariants> {}
 
 const SelectableRow = React.forwardRef<HTMLButtonElement, SelectableRowProps>(
   ({ className, state, ...props }, ref) => (
-    <button data-slot="selectable-row" type="button" ref={ref} className={cn(selectableRowVariants({ state }), className)} {...props} />
+    <button
+      data-slot="selectable-row"
+      type="button"
+      ref={ref}
+      className={cn(selectableRowVariants({ state }), className)}
+      {...props}
+    />
   ),
 )
 SelectableRow.displayName = 'SelectableRow'

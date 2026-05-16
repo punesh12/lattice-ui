@@ -155,11 +155,17 @@ const SelectableRowDemo = () => {
   const [selected, setSelected] = useState('a')
   return (
     <div className="flex w-full max-w-sm flex-col gap-2">
-      <SelectableRow state={selected === 'a' ? 'selected' : 'default'} onClick={() => setSelected('a')}>
+      <SelectableRow
+        state={selected === 'a' ? 'selected' : 'default'}
+        onClick={() => setSelected('a')}
+      >
         <span className="font-medium">Option A</span>
         <span className="block text-xs text-muted-foreground">First choice</span>
       </SelectableRow>
-      <SelectableRow state={selected === 'b' ? 'selected' : 'default'} onClick={() => setSelected('b')}>
+      <SelectableRow
+        state={selected === 'b' ? 'selected' : 'default'}
+        onClick={() => setSelected('b')}
+      >
         <span className="font-medium">Option B</span>
         <span className="block text-xs text-muted-foreground">Second choice</span>
       </SelectableRow>
@@ -169,7 +175,15 @@ const SelectableRowDemo = () => {
 
 const ComboboxDemo = () => {
   const [value, setValue] = useState('')
-  return <Combobox options={comboboxOptions} value={value} onValueChange={setValue} placeholder="Select framework…" className="w-[220px]" />
+  return (
+    <Combobox
+      options={comboboxOptions}
+      value={value}
+      onValueChange={setValue}
+      placeholder="Select framework…"
+      className="w-[220px]"
+    />
+  )
 }
 
 const DatePickerDemo = () => {
@@ -184,15 +198,15 @@ const SliderDemo = () => {
 
 const SelectDemo = () => (
   <Select>
-      <SelectTrigger className="w-[180px]">
-        <SelectValue placeholder="Theme" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectItem value="light">Light</SelectItem>
-        <SelectItem value="dark">Dark</SelectItem>
-        <SelectItem value="system">System</SelectItem>
-      </SelectContent>
-    </Select>
+    <SelectTrigger className="w-[180px]">
+      <SelectValue placeholder="Theme" />
+    </SelectTrigger>
+    <SelectContent>
+      <SelectItem value="light">Light</SelectItem>
+      <SelectItem value="dark">Dark</SelectItem>
+      <SelectItem value="system">System</SelectItem>
+    </SelectContent>
+  </Select>
 )
 
 const demos: Record<string, () => React.ReactNode> = {
@@ -240,7 +254,9 @@ const demos: Record<string, () => React.ReactNode> = {
   ),
   'aspect-ratio': () => (
     <AspectRatio ratio={16 / 9} className="w-[280px] overflow-hidden rounded-md bg-muted">
-      <div className="flex h-full items-center justify-center text-sm text-muted-foreground">16:9</div>
+      <div className="flex h-full items-center justify-center text-sm text-muted-foreground">
+        16:9
+      </div>
     </AspectRatio>
   ),
   avatar: () => (
@@ -418,14 +434,14 @@ const demos: Record<string, () => React.ReactNode> = {
     </div>
   ),
   'radio-group': () => (
-    <RadioGroup defaultValue="comfortable" className="flex gap-4">
+    <RadioGroup defaultValue="a" style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
       <div className="flex items-center gap-2">
-        <RadioGroupItem value="default" id="r1" />
-        <Label htmlFor="r1">Default</Label>
+        <RadioGroupItem value="a" id="r1" />
+        <Label htmlFor="r1">Option A</Label>
       </div>
       <div className="flex items-center gap-2">
-        <RadioGroupItem value="comfortable" id="r2" />
-        <Label htmlFor="r2">Comfortable</Label>
+        <RadioGroupItem value="b" id="r2" />
+        <Label htmlFor="r2">Option B</Label>
       </div>
     </RadioGroup>
   ),
@@ -448,7 +464,10 @@ const demos: Record<string, () => React.ReactNode> = {
       </div>
       <div>
         <p className="mb-2 text-xs font-medium text-muted-foreground">Vertical</p>
-        <div className="flex h-8 items-center gap-4 text-sm" style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+        <div
+          className="flex h-8 items-center gap-4 text-sm"
+          style={{ display: 'flex', alignItems: 'center', gap: 16 }}
+        >
           <span>Blog</span>
           <Separator orientation="vertical" style={{ height: 24 }} />
           <span>Docs</span>
@@ -495,7 +514,12 @@ const demos: Record<string, () => React.ReactNode> = {
       <Spinner size="lg" />
     </div>
   ),
-  switch: () => <Switch defaultChecked aria-label="Toggle" />,
+  switch: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 16, alignItems: 'flex-start' }}>
+      <Switch aria-label="Off" />
+      <Switch defaultChecked aria-label="On" />
+    </div>
+  ),
   table: () => (
     <Table className="max-w-md">
       <TableHeader>

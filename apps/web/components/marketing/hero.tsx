@@ -10,7 +10,11 @@ export const Hero = () => (
     <div className="relative mx-auto max-w-6xl text-center">
       <Badge
         variant="secondary"
-        className={cn('mb-5 border-primary/20 bg-primary/10 text-primary sm:mb-6', motion.fadeInUp, motion.stagger(0))}
+        className={cn(
+          'mb-5 border-primary/20 bg-primary/10 text-primary sm:mb-6',
+          motion.fadeInUp,
+          motion.stagger(0),
+        )}
       >
         Announcing Lattice UI v1.0
       </Badge>
@@ -22,7 +26,9 @@ export const Hero = () => (
         )}
       >
         Build polished products with{' '}
-        <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">Lattice UI</span>
+        <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+          Lattice UI
+        </span>
       </h1>
       <p
         className={cn(
@@ -31,8 +37,8 @@ export const Hero = () => (
           motion.stagger(2),
         )}
       >
-        Production-quality React primitives with semantic tokens, full dark mode, and documentation for every
-        component. Ship faster without sacrificing craft.
+        Production-quality React primitives with semantic tokens, full dark mode, and documentation
+        for every component. Ship faster without sacrificing craft.
       </p>
       <div
         className={cn(
@@ -47,7 +53,13 @@ export const Hero = () => (
             <ArrowRight className="h-4 w-4" />
           </Link>
         </Button>
-        <Button size="lg" variant="outline" textTone="foreground" className="w-full sm:w-auto" asChild>
+        <Button
+          size="lg"
+          variant="outline"
+          textTone="foreground"
+          className="w-full sm:w-auto"
+          asChild
+        >
           <Link href="/playground">Open playground</Link>
         </Button>
       </div>

@@ -22,8 +22,8 @@ export default function ColorsPage() {
     <DocProse>
       <h1>Colors</h1>
       <p>
-        Semantic color tokens adapt automatically in light and dark mode. Use Tailwind utilities like{' '}
-        <code>bg-primary</code> and <code>text-muted-foreground</code> in your UI.
+        Semantic color tokens adapt automatically in light and dark mode. Use Tailwind utilities
+        like <code>bg-primary</code> and <code>text-muted-foreground</code> in your UI.
       </p>
 
       <div className="not-prose my-8 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">

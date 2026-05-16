@@ -367,14 +367,14 @@ const [value, setValue] = useState('')
 
   'radio-group': `import { Label, RadioGroup, RadioGroupItem } from '@lattice-ui/ui'
 
-<RadioGroup defaultValue="comfortable" className="flex gap-4">
+<RadioGroup defaultValue="a" style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
   <div className="flex items-center gap-2">
-    <RadioGroupItem value="default" id="r1" />
-    <Label htmlFor="r1">Default</Label>
+    <RadioGroupItem value="a" id="r1" />
+    <Label htmlFor="r1">Option A</Label>
   </div>
   <div className="flex items-center gap-2">
-    <RadioGroupItem value="comfortable" id="r2" />
-    <Label htmlFor="r2">Comfortable</Label>
+    <RadioGroupItem value="b" id="r2" />
+    <Label htmlFor="r2">Option B</Label>
   </div>
 </RadioGroup>`,
 
@@ -501,7 +501,10 @@ const [value, setValue] = useState([50])
 
   switch: `import { Switch } from '@lattice-ui/ui'
 
-<Switch defaultChecked aria-label="Toggle" />`,
+<div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+  <Switch aria-label="Off" />
+  <Switch defaultChecked aria-label="On" />
+</div>`,
 
   table: `import {
   Table,

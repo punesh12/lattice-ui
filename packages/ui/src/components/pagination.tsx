@@ -72,7 +72,13 @@ PaginationContent.displayName = 'PaginationContent'
 
 const PaginationItem = React.forwardRef<HTMLLIElement, React.ComponentProps<'li'>>(
   ({ className, style, ...props }, ref) => (
-    <li data-slot="pagination-item" ref={ref} className={cn('', className)} style={{ ...listReset, ...style }} {...props} />
+    <li
+      data-slot="pagination-item"
+      ref={ref}
+      className={cn('', className)}
+      style={{ ...listReset, ...style }}
+      {...props}
+    />
   ),
 )
 PaginationItem.displayName = 'PaginationItem'
@@ -85,13 +91,20 @@ const PaginationLink = ({ className, isActive, style, ...props }: PaginationLink
   <a
     data-slot="pagination-link"
     aria-current={isActive ? 'page' : undefined}
-    className={cn(buttonVariants({ variant: isActive ? 'outline' : 'ghost', size: 'icon' }), className)}
+    className={cn(
+      buttonVariants({ variant: isActive ? 'outline' : 'ghost', size: 'icon' }),
+      className,
+    )}
     style={{ ...paginationLinkStyle(isActive), ...style }}
     {...props}
   />
 )
 
-const PaginationPrevious = ({ className, style, ...props }: React.ComponentProps<typeof PaginationLink>) => (
+const PaginationPrevious = ({
+  className,
+  style,
+  ...props
+}: React.ComponentProps<typeof PaginationLink>) => (
   <PaginationLink
     data-slot="pagination-previous"
     aria-label="Go to previous page"
@@ -104,7 +117,11 @@ const PaginationPrevious = ({ className, style, ...props }: React.ComponentProps
   </PaginationLink>
 )
 
-const PaginationNext = ({ className, style, ...props }: React.ComponentProps<typeof PaginationLink>) => (
+const PaginationNext = ({
+  className,
+  style,
+  ...props
+}: React.ComponentProps<typeof PaginationLink>) => (
   <PaginationLink
     data-slot="pagination-next"
     aria-label="Go to next page"
@@ -122,7 +139,12 @@ const PaginationEllipsis = ({ className, style, ...props }: React.ComponentProps
     data-slot="pagination-ellipsis"
     aria-hidden
     className={cn('flex h-11 w-11 items-center justify-center', className)}
-    style={{ ...inlineFlexCenter, height: controlHeights.default, width: controlHeights.default, ...style }}
+    style={{
+      ...inlineFlexCenter,
+      height: controlHeights.default,
+      width: controlHeights.default,
+      ...style,
+    }}
     {...props}
   >
     <MoreHorizontal className="h-4 w-4" />
@@ -130,4 +152,12 @@ const PaginationEllipsis = ({ className, style, ...props }: React.ComponentProps
   </span>
 )
 
-export { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationPrevious, PaginationNext, PaginationEllipsis }
+export {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationPrevious,
+  PaginationNext,
+  PaginationEllipsis,
+}

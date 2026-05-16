@@ -12,7 +12,7 @@
   },
   "scripts": {
     "build": "echo 'ui: source-only package'",
-    "lint": "tsc --noEmit"
+    "lint": "eslint src && tsc --noEmit"
   },
   "peerDependencies": {
     "react": "^19.0.0",

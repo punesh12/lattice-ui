@@ -15,7 +15,11 @@ export const ComponentDocContent = ({
   align = 'center',
   previewClassName,
 }: ComponentDocContentProps) => (
-  <PreviewToolbar code={getComponentExample(slug)} align={align} previewClassName={previewClassName}>
+  <PreviewToolbar
+    code={getComponentExample(slug)}
+    align={align}
+    previewClassName={previewClassName}
+  >
     <ComponentDemo slug={slug} />
   </PreviewToolbar>
 )

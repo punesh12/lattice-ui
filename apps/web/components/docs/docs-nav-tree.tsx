@@ -14,7 +14,9 @@ type NavSectionProps = {
 
 const NavSection = ({ title, children }: NavSectionProps) => (
   <div className="mb-6">
-    <p className="mb-2 px-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">{title}</p>
+    <p className="mb-2 px-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+      {title}
+    </p>
     <nav className="space-y-0.5">{children}</nav>
   </div>
 )
@@ -36,7 +38,9 @@ const NavLink = ({ href, children, onNavigate, activeFn = isNavActive }: NavLink
       onClick={onNavigate}
       className={cn(
         'block rounded-md px-3 py-2 text-sm transition-colors',
-        active ? 'bg-sidebar-accent font-medium text-foreground' : 'text-muted-foreground hover:bg-sidebar-accent hover:text-foreground',
+        active
+          ? 'bg-sidebar-accent font-medium text-foreground'
+          : 'text-muted-foreground hover:bg-sidebar-accent hover:text-foreground',
       )}
     >
       {children}
@@ -55,7 +59,12 @@ export function DocsNavTree({ onNavigate, showSiteLinks = false }: DocsNavTreePr
       {showSiteLinks ? (
         <NavSection title="Site">
           {siteNavLinks.map((link) => (
-            <NavLink key={link.href} href={link.href} onNavigate={onNavigate} activeFn={isMarketingNavActive}>
+            <NavLink
+              key={link.href}
+              href={link.href}
+              onNavigate={onNavigate}
+              activeFn={isMarketingNavActive}
+            >
               {link.label}
             </NavLink>
           ))}

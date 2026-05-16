@@ -1,5 +1,13 @@
 import Link from 'next/link'
-import { Button, Card, CardContent, CardDescription, CardHeader, CardTitle, Kbd } from '@lattice-ui/ui'
+import {
+  Button,
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+  Kbd,
+} from '@lattice-ui/ui'
 import { cn } from '@/lib/utils'
 import { motion } from '@/lib/motion'
 
@@ -30,7 +38,10 @@ export const DeveloperExperience = () => (
       </div>
       <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
         {highlights.map((item, index) => (
-          <Card key={item.title} className={cn('lattice-hover-lift', motion.fadeInUp, motion.stagger(index))}>
+          <Card
+            key={item.title}
+            className={cn('lattice-hover-lift', motion.fadeInUp, motion.stagger(index))}
+          >
             <CardHeader>
               <CardTitle className="text-base">{item.title}</CardTitle>
               <CardDescription>{item.description}</CardDescription>

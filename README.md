@@ -31,12 +31,12 @@ pnpm build      # production build (all packages)
 
 ## Routes
 
-| Route | Description |
-|-------|-------------|
-| `/` | Marketing landing page |
-| `/docs` | Documentation introduction |
-| `/docs/components/*` | Component reference |
-| `/playground` | All components preview grid |
+| Route                | Description                 |
+| -------------------- | --------------------------- |
+| `/`                  | Marketing landing page      |
+| `/docs`              | Documentation introduction  |
+| `/docs/components/*` | Component reference         |
+| `/playground`        | All components preview grid |
 
 ## Theming
 
@@ -49,6 +49,12 @@ Primary brand color: `#6366F1` (indigo) in both light and dark themes.
 - Components: `packages/ui/src/components/`
 - Docs nav config: `apps/web/lib/docs.ts`
 - Tailwind theme mapping: `apps/web/app/globals.css` (`@theme` block)
+
+```bash
+pnpm lint          # ESLint across all packages (Turbo)
+pnpm format        # Prettier write
+pnpm format:check  # Prettier check (CI)
+```
 
 ## License
 

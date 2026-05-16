@@ -9,7 +9,14 @@ export interface FilterBarProps extends React.HTMLAttributes<HTMLDivElement> {
   clearLabel?: string
 }
 
-function FilterBar({ className, style, children, onClear, clearLabel = 'Clear all', ...props }: FilterBarProps) {
+function FilterBar({
+  className,
+  style,
+  children,
+  onClear,
+  clearLabel = 'Clear all',
+  ...props
+}: FilterBarProps) {
   return (
     <div
       data-slot="filter-bar"
@@ -19,7 +26,14 @@ function FilterBar({ className, style, children, onClear, clearLabel = 'Clear al
     >
       {children}
       {onClear ? (
-        <Button data-slot="filter-bar-clear" type="button" variant="ghost" size="sm" onClick={onClear} className="text-muted-foreground">
+        <Button
+          data-slot="filter-bar-clear"
+          type="button"
+          variant="ghost"
+          size="sm"
+          onClick={onClear}
+          className="text-muted-foreground"
+        >
           <X className="mr-1 h-3.5 w-3.5" />
           {clearLabel}
         </Button>

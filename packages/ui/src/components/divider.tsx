@@ -8,7 +8,11 @@ export interface DividerProps extends React.HTMLAttributes<HTMLDivElement> {
 function Divider({ className, label, ...props }: DividerProps) {
   if (label) {
     return (
-      <div data-slot="divider" className={cn('relative flex items-center py-2', className)} {...props}>
+      <div
+        data-slot="divider"
+        className={cn('relative flex items-center py-2', className)}
+        {...props}
+      >
         <div className="flex-1 border-t border-border" />
         <span className="px-3 text-xs font-medium text-muted-foreground">{label}</span>
         <div className="flex-1 border-t border-border" />

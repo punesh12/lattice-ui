@@ -16,7 +16,8 @@ const notificationItemVariants = cva(
 )
 
 export interface NotificationItemProps
-  extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'>,
+  extends
+    Omit<React.HTMLAttributes<HTMLDivElement>, 'title'>,
     VariantProps<typeof notificationItemVariants> {
   icon?: React.ReactNode
   title: React.ReactNode
@@ -25,9 +26,22 @@ export interface NotificationItemProps
   action?: React.ReactNode
 }
 
-function NotificationItem({ className, variant, icon, title, description, time, action, ...props }: NotificationItemProps) {
+function NotificationItem({
+  className,
+  variant,
+  icon,
+  title,
+  description,
+  time,
+  action,
+  ...props
+}: NotificationItemProps) {
   return (
-    <div data-slot="notification-item" className={cn(notificationItemVariants({ variant }), className)} {...props}>
+    <div
+      data-slot="notification-item"
+      className={cn(notificationItemVariants({ variant }), className)}
+      {...props}
+    >
       {icon ? <div className="shrink-0 text-muted-foreground">{icon}</div> : null}
       <div className="min-w-0 flex-1">
         <div className="flex items-start justify-between gap-2">

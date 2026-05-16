@@ -15,7 +15,13 @@ export interface DatePickerProps {
   disabled?: boolean
 }
 
-function DatePicker({ date, onDateChange, placeholder = 'Pick a date', className, disabled }: DatePickerProps) {
+function DatePicker({
+  date,
+  onDateChange,
+  placeholder = 'Pick a date',
+  className,
+  disabled,
+}: DatePickerProps) {
   const [open, setOpen] = React.useState(false)
 
   return (
@@ -26,7 +32,11 @@ function DatePicker({ date, onDateChange, placeholder = 'Pick a date', className
           variant="outline"
           size="default"
           disabled={disabled}
-          className={cn('w-full justify-start text-left font-normal', !date && 'text-muted-foreground', className)}
+          className={cn(
+            'w-full justify-start text-left font-normal',
+            !date && 'text-muted-foreground',
+            className,
+          )}
         >
           <CalendarIcon className="mr-2 h-4 w-4" />
           {date ? date.toLocaleDateString(undefined, { dateStyle: 'long' }) : placeholder}
@@ -45,7 +55,8 @@ function DatePicker({ date, onDateChange, placeholder = 'Pick a date', className
             months: 'flex flex-col',
             month_caption: 'flex justify-center pt-1 relative items-center',
             nav: 'flex items-center gap-1',
-            button_previous: 'absolute left-1 h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100',
+            button_previous:
+              'absolute left-1 h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100',
             button_next: 'absolute right-1 h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100',
             month_grid: 'w-full border-collapse',
             weekdays: 'flex',
@@ -53,7 +64,8 @@ function DatePicker({ date, onDateChange, placeholder = 'Pick a date', className
             week: 'flex w-full mt-2',
             day: 'h-9 w-9 text-center text-sm p-0 relative',
             day_button: 'h-9 w-9 p-0 font-normal rounded-md hover:bg-accent',
-            selected: 'bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground rounded-md',
+            selected:
+              'bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground rounded-md',
             today: 'bg-accent text-accent-foreground rounded-md',
             outside: 'text-muted-foreground opacity-50',
             disabled: 'text-muted-foreground opacity-50',

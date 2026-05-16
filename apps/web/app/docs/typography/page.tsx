@@ -2,13 +2,43 @@ import { DocProse } from '@/components/docs/doc-prose'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@lattice-ui/ui'
 
 const scale = [
-  { name: 'Display LG', class: 'text-display-lg', size: '48px', weight: '600', usage: 'Hero headlines' },
-  { name: 'Headline MD', class: 'text-headline-md', size: '30px', weight: '600', usage: 'Page titles' },
-  { name: 'Title MD', class: 'text-title-md', size: '20px', weight: '600', usage: 'Section headings' },
-  { name: 'Body MD', class: 'text-body-md', size: '16px', weight: '400', usage: 'Primary body copy' },
+  {
+    name: 'Display LG',
+    class: 'text-display-lg',
+    size: '48px',
+    weight: '600',
+    usage: 'Hero headlines',
+  },
+  {
+    name: 'Headline MD',
+    class: 'text-headline-md',
+    size: '30px',
+    weight: '600',
+    usage: 'Page titles',
+  },
+  {
+    name: 'Title MD',
+    class: 'text-title-md',
+    size: '20px',
+    weight: '600',
+    usage: 'Section headings',
+  },
+  {
+    name: 'Body MD',
+    class: 'text-body-md',
+    size: '16px',
+    weight: '400',
+    usage: 'Primary body copy',
+  },
   { name: 'Body SM', class: 'text-body-sm', size: '14px', weight: '400', usage: 'Secondary text' },
   { name: 'Label MD', class: 'text-label-md', size: '14px', weight: '500', usage: 'Form labels' },
-  { name: 'Caption', class: 'text-caption', size: '12px', weight: '400', usage: 'Hints and metadata' },
+  {
+    name: 'Caption',
+    class: 'text-caption',
+    size: '12px',
+    weight: '400',
+    usage: 'Hints and metadata',
+  },
 ]
 
 export default function TypographyPage() {
@@ -16,8 +46,8 @@ export default function TypographyPage() {
     <DocProse>
       <h1>Typography</h1>
       <p>
-        Lattice UI uses Inter for UI text and IBM Plex Mono for code. Type scale utilities are defined
-        in global styles.
+        Lattice UI uses Inter for UI text and IBM Plex Mono for code. Type scale utilities are
+        defined in global styles.
       </p>
 
       <div className="not-prose my-8 space-y-6">

@@ -2,7 +2,9 @@ import * as React from 'react'
 import * as ProgressPrimitive from '@radix-ui/react-progress'
 import { cn } from '../lib/utils'
 
-export interface ProgressProps extends React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root> {
+export interface ProgressProps extends React.ComponentPropsWithoutRef<
+  typeof ProgressPrimitive.Root
+> {
   indicatorClassName?: string
   indeterminate?: boolean
 }
@@ -23,7 +25,10 @@ const Progress = React.forwardRef<React.ElementRef<typeof ProgressPrimitive.Root
       ) : (
         <ProgressPrimitive.Indicator
           data-slot="progress-indicator"
-          className={cn('h-full w-full flex-1 bg-primary transition-transform duration-300 ease-out', indicatorClassName)}
+          className={cn(
+            'h-full w-full flex-1 bg-primary transition-transform duration-300 ease-out',
+            indicatorClassName,
+          )}
           style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
         />
       )}

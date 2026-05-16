@@ -20,7 +20,9 @@ export const CENTERED_PANEL_MOTION_CLASS =
   'transition-opacity duration-200 data-[state=closed]:opacity-0 data-[state=open]:opacity-100'
 
 export const centeredPanelClass = (gap: 'gap-4' | 'gap-5' = 'gap-5') =>
-  [CENTERED_PANEL_BASE_CLASS, gap, CENTERED_PANEL_POSITION_CLASS, CENTERED_PANEL_MOTION_CLASS].join(' ')
+  [CENTERED_PANEL_BASE_CLASS, gap, CENTERED_PANEL_POSITION_CLASS, CENTERED_PANEL_MOTION_CLASS].join(
+    ' ',
+  )
 
 /** Inline backdrop — reliable without Tailwind scan from consuming apps. */
 export const overlayBackdropInlineStyle: CSSProperties = {

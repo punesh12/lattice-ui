@@ -6,7 +6,12 @@ const logos = ['Vercel', 'Stripe', 'Linear', 'Notion', 'Figma', 'Raycast']
 export const Logos = () => (
   <section className="border-y border-border bg-muted/30 px-4 py-10 sm:px-6 sm:py-12">
     <div className="mx-auto max-w-6xl">
-      <p className={cn('mb-6 text-center text-xs text-muted-foreground sm:mb-8 sm:text-sm', motion.fadeIn)}>
+      <p
+        className={cn(
+          'mb-6 text-center text-xs text-muted-foreground sm:mb-8 sm:text-sm',
+          motion.fadeIn,
+        )}
+      >
         Trusted by teams building modern products
       </p>
       <ul

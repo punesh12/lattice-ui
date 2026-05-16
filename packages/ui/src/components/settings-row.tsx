@@ -11,7 +11,10 @@ function SettingsRow({ className, label, description, control, ...props }: Setti
   return (
     <div
       data-slot="settings-row"
-      className={cn('flex items-center justify-between gap-4 border-b border-border py-4 last:border-0 min-h-11', className)}
+      className={cn(
+        'flex items-center justify-between gap-4 border-b border-border py-4 last:border-0 min-h-11',
+        className,
+      )}
       {...props}
     >
       <div className="flex flex-col gap-0.5">

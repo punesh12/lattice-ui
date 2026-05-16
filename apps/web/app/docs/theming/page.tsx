@@ -12,7 +12,10 @@ export default function ThemingPage() {
       </p>
 
       <h2>CSS variables</h2>
-      <p>Tokens are defined in <code>@lattice-ui/tokens/globals.css</code> and mapped in your Tailwind theme.</p>
+      <p>
+        Tokens are defined in <code>@lattice-ui/tokens/globals.css</code> and mapped in your
+        Tailwind theme.
+      </p>
       <div className="not-prose">
         <CodeBlock
           code={`:root {
@@ -34,7 +37,9 @@ export default function ThemingPage() {
       </div>
 
       <h2>next-themes</h2>
-      <p>Use <code>next-themes</code> to persist user preference and respect system settings.</p>
+      <p>
+        Use <code>next-themes</code> to persist user preference and respect system settings.
+      </p>
       <div className="not-prose">
         <CodeBlock
           code={`import { ThemeProvider } from 'next-themes'
@@ -46,13 +51,14 @@ export default function ThemingPage() {
       </div>
 
       <Callout title="Tip">
-        Set <code>disableTransitionOnChange</code> to avoid flash of unstyled content when switching themes.
+        Set <code>disableTransitionOnChange</code> to avoid flash of unstyled content when switching
+        themes.
       </Callout>
 
       <h2>Customizing</h2>
       <p>
-        Override any token in your own CSS after importing globals. Components reference semantic names
-        like <code>--primary</code> and <code>--muted-foreground</code>, not raw hex values.
+        Override any token in your own CSS after importing globals. Components reference semantic
+        names like <code>--primary</code> and <code>--muted-foreground</code>, not raw hex values.
       </p>
     </DocProse>
   )

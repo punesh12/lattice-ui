@@ -16,38 +16,51 @@ const DialogTrigger = DialogPrimitive.Trigger
 const DialogPortal = DialogPrimitive.Portal
 const DialogClose = DialogPrimitive.Close
 
-export interface DialogOverlayProps extends Omit<React.ComponentPropsWithoutRef<typeof OverlayBackdrop>, 'data-slot'> {}
+export interface DialogOverlayProps extends Omit<
+  React.ComponentPropsWithoutRef<typeof OverlayBackdrop>,
+  'data-slot'
+> {}
 
-const DialogOverlay = React.forwardRef<React.ElementRef<typeof OverlayBackdrop>, DialogOverlayProps>(
-  (props, ref) => <OverlayBackdrop ref={ref} data-slot="dialog-overlay" {...props} />,
-)
+const DialogOverlay = React.forwardRef<
+  React.ElementRef<typeof OverlayBackdrop>,
+  DialogOverlayProps
+>((props, ref) => <OverlayBackdrop ref={ref} data-slot="dialog-overlay" {...props} />)
 DialogOverlay.displayName = DialogPrimitive.Overlay.displayName
 
-export interface DialogContentProps extends React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content> {
+export interface DialogContentProps extends React.ComponentPropsWithoutRef<
+  typeof DialogPrimitive.Content
+> {
   showClose?: boolean
 }
 
-const DialogContent = React.forwardRef<React.ElementRef<typeof DialogPrimitive.Content>, DialogContentProps>(
-  ({ className, children, showClose = true, style, ...props }, ref) => (
-    <DialogPortal>
-      <DialogOverlay />
-      <DialogPrimitive.Content
-        data-slot="dialog-content"
-        ref={ref}
-        className={cn('outline-none', className)}
-        style={{ ...overlayCenteredPanelInlineStyle(20), ...overlayContentStyle, ...style }}
-        {...props}
-      >
-        {children}
-        {showClose ? <OverlayCloseButton data-slot="dialog-close" /> : null}
-      </DialogPrimitive.Content>
-    </DialogPortal>
-  ),
-)
+const DialogContent = React.forwardRef<
+  React.ElementRef<typeof DialogPrimitive.Content>,
+  DialogContentProps
+>(({ className, children, showClose = true, style, ...props }, ref) => (
+  <DialogPortal>
+    <DialogOverlay />
+    <DialogPrimitive.Content
+      data-slot="dialog-content"
+      ref={ref}
+      className={cn('outline-none', className)}
+      style={{ ...overlayCenteredPanelInlineStyle(20), ...overlayContentStyle, ...style }}
+      {...props}
+    >
+      {children}
+      {showClose ? <OverlayCloseButton data-slot="dialog-close" /> : null}
+    </DialogPrimitive.Content>
+  </DialogPortal>
+))
 DialogContent.displayName = DialogPrimitive.Content.displayName
 
-const DialogHeader = createOverlaySection('dialog-header', 'flex flex-col gap-1.5 text-center sm:text-left')
-const DialogFooter = createOverlaySection('dialog-footer', 'flex flex-col-reverse gap-3 pt-2 sm:flex-row sm:justify-end')
+const DialogHeader = createOverlaySection(
+  'dialog-header',
+  'flex flex-col gap-1.5 text-center sm:text-left',
+)
+const DialogFooter = createOverlaySection(
+  'dialog-footer',
+  'flex flex-col-reverse gap-3 pt-2 sm:flex-row sm:justify-end',
+)
 
 const DialogTitle = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Title>,

@@ -16,8 +16,9 @@ export const WhyLattice = () => (
         <div className={motion.fadeInUp}>
           <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">Why Lattice?</h2>
           <p className="mt-3 text-base leading-relaxed text-muted-foreground sm:mt-4 sm:text-lg">
-            Most libraries give you unstyled primitives or opinionated kits with no middle ground. Lattice UI sits in
-            the sweet spot — structured, themed, and flexible enough for any product surface.
+            Most libraries give you unstyled primitives or opinionated kits with no middle ground.
+            Lattice UI sits in the sweet spot — structured, themed, and flexible enough for any
+            product surface.
           </p>
           <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-6">
             {reasons.map((item, index) => (
@@ -28,11 +29,14 @@ export const WhyLattice = () => (
             ))}
           </div>
         </div>
-        <Alert variant="info" className={cn('self-start lattice-hover-lift', motion.fadeInUp, motion.stagger(2))}>
+        <Alert
+          variant="info"
+          className={cn('self-start lattice-hover-lift', motion.fadeInUp, motion.stagger(2))}
+        >
           <AlertTitle>Designed for product teams</AlertTitle>
           <AlertDescription>
-            Lattice UI ships with patterns for dashboards, settings pages, empty states, and notification feeds — not
-            just form controls.
+            Lattice UI ships with patterns for dashboards, settings pages, empty states, and
+            notification feeds — not just form controls.
           </AlertDescription>
         </Alert>
       </div>

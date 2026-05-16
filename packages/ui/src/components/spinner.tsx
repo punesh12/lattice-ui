@@ -15,8 +15,7 @@ const spinnerVariants = cva('lattice-spin shrink-0 text-primary', {
 })
 
 export interface SpinnerProps
-  extends React.SVGAttributes<SVGSVGElement>,
-    VariantProps<typeof spinnerVariants> {
+  extends React.SVGAttributes<SVGSVGElement>, VariantProps<typeof spinnerVariants> {
   label?: string
 }
 

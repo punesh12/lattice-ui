@@ -17,7 +17,8 @@ const avatarVariants = cva('relative flex shrink-0 overflow-hidden rounded-full'
 })
 
 export interface AvatarProps
-  extends React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>,
+  extends
+    React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>,
     VariantProps<typeof avatarVariants> {
   status?: 'online' | 'offline' | 'busy' | 'away'
 }
@@ -57,7 +58,12 @@ const AvatarImage = React.forwardRef<
   React.ElementRef<typeof AvatarPrimitive.Image>,
   React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>
 >(({ className, ...props }, ref) => (
-  <AvatarPrimitive.Image data-slot="avatar-image" ref={ref} className={cn('aspect-square h-full w-full', className)} {...props} />
+  <AvatarPrimitive.Image
+    data-slot="avatar-image"
+    ref={ref}
+    className={cn('aspect-square h-full w-full', className)}
+    {...props}
+  />
 ))
 AvatarImage.displayName = AvatarPrimitive.Image.displayName
 
@@ -68,7 +74,10 @@ const AvatarFallback = React.forwardRef<
   <AvatarPrimitive.Fallback
     data-slot="avatar-fallback"
     ref={ref}
-    className={cn('flex h-full w-full items-center justify-center rounded-full bg-muted text-sm font-medium text-muted-foreground', className)}
+    className={cn(
+      'flex h-full w-full items-center justify-center rounded-full bg-muted text-sm font-medium text-muted-foreground',
+      className,
+    )}
     {...props}
   />
 ))
@@ -88,7 +97,10 @@ function AvatarGroup({ className, max = 4, children, ...props }: AvatarGroupProp
       {visible.map((child, i) =>
         React.isValidElement(child)
           ? React.cloneElement(child as React.ReactElement<{ className?: string }>, {
-              className: cn('ring-2 ring-background', (child as React.ReactElement<{ className?: string }>).props.className),
+              className: cn(
+                'ring-2 ring-background',
+                (child as React.ReactElement<{ className?: string }>).props.className,
+              ),
               key: i,
             })
           : child,

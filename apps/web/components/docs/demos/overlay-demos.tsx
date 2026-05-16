@@ -26,7 +26,9 @@ export const EditProfileModalDemo = () => (
     <ModalContent>
       <ModalHeader>
         <ModalTitle>Edit profile</ModalTitle>
-        <ModalDescription>Make changes to your profile here. Click outside or press Escape to close.</ModalDescription>
+        <ModalDescription>
+          Make changes to your profile here. Click outside or press Escape to close.
+        </ModalDescription>
       </ModalHeader>
       <Input placeholder="Display name" />
     </ModalContent>

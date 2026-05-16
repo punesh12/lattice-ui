@@ -8,14 +8,18 @@ import { docsConfig } from '@/lib/docs'
 
 export function PlaygroundClient() {
   return (
-    <div className="min-h-screen bg-background" style={{ minHeight: '100vh', width: '100%', overflowX: 'hidden' }}>
+    <div
+      className="min-h-screen bg-background"
+      style={{ minHeight: '100vh', width: '100%', overflowX: 'hidden' }}
+    >
       <Navbar />
 
       <main className="playground-main">
         <div className="playground-intro">
           <h1 className="playground-title text-headline-md">Playground</h1>
           <p className="playground-description text-body-md">
-            Live previews of every Lattice UI component. Toggle the theme to see light and dark variants.
+            Live previews of every Lattice UI component. Toggle the theme to see light and dark
+            variants.
           </p>
         </div>
 
@@ -29,7 +33,14 @@ export function PlaygroundClient() {
                 </Link>
               </div>
               <Preview className="playground-preview" align="center" style={{ minHeight: 120 }}>
-                <div style={{ display: 'flex', width: '100%', maxWidth: '100%', justifyContent: 'center' }}>
+                <div
+                  style={{
+                    display: 'flex',
+                    width: '100%',
+                    maxWidth: '100%',
+                    justifyContent: 'center',
+                  }}
+                >
                   <ComponentDemo slug={component.slug} />
                 </div>
               </Preview>

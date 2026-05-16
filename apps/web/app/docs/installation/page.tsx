@@ -34,7 +34,9 @@ export default function InstallationPage() {
       </div>
 
       <h2>Theme provider</h2>
-      <p>Wrap your application with <code>next-themes</code> and the Lattice toaster.</p>
+      <p>
+        Wrap your application with <code>next-themes</code> and the Lattice toaster.
+      </p>
       <div className="not-prose">
         <CodeBlock
           code={`'use client'
@@ -54,7 +56,9 @@ export function Providers({ children }: { children: React.ReactNode }) {
       </div>
 
       <h2>Fonts</h2>
-      <p>Lattice UI is designed for Inter and IBM Plex Mono. Add them via your preferred font loader.</p>
+      <p>
+        Lattice UI is designed for Inter and IBM Plex Mono. Add them via your preferred font loader.
+      </p>
 
       <div className="not-prose mt-8 flex flex-wrap gap-3">
         <Button asChild>

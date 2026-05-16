@@ -20,14 +20,26 @@ const fileUploadVariants = cva(
 )
 
 export interface FileUploadProps
-  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type' | 'size'>,
+  extends
+    Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type' | 'size'>,
     VariantProps<typeof fileUploadVariants> {
   label?: React.ReactNode
   description?: React.ReactNode
 }
 
 const FileUpload = React.forwardRef<HTMLInputElement, FileUploadProps>(
-  ({ className, state, style, label = 'Drop files here or click to browse', description, disabled, ...props }, ref) => {
+  (
+    {
+      className,
+      state,
+      style,
+      label = 'Drop files here or click to browse',
+      description,
+      disabled,
+      ...props
+    },
+    ref,
+  ) => {
     const [dragging, setDragging] = React.useState(false)
     const resolvedState = disabled ? 'disabled' : dragging ? 'active' : state
 

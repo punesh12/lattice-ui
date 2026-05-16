@@ -68,7 +68,12 @@ const TagDismiss = ({ dismissLabel, onDismiss, stopPropagation = false }: TagDis
   }
 
   return (
-    <button type="button" onClick={onDismiss} aria-label={dismissLabel} className={TAG_DISMISS_CLASS}>
+    <button
+      type="button"
+      onClick={onDismiss}
+      aria-label={dismissLabel}
+      className={TAG_DISMISS_CLASS}
+    >
       <X className="h-3.5 w-3.5" />
     </button>
   )
@@ -106,13 +111,21 @@ const Tag = React.forwardRef<HTMLButtonElement, TagProps>(
 
     const sharedProps = {
       'data-slot': 'tag' as const,
-      className: cn(tagVariants({ variant: resolvedVariant }), isInteractive && 'cursor-pointer', className),
+      className: cn(
+        tagVariants({ variant: resolvedVariant }),
+        isInteractive && 'cursor-pointer',
+        className,
+      ),
       style: { ...tagSizeStyle, ...style },
     }
 
     if (!isInteractive) {
       return (
-        <span ref={ref as React.Ref<HTMLSpanElement>} {...sharedProps} {...(props as React.HTMLAttributes<HTMLSpanElement>)}>
+        <span
+          ref={ref as React.Ref<HTMLSpanElement>}
+          {...sharedProps}
+          {...(props as React.HTMLAttributes<HTMLSpanElement>)}
+        >
           {children}
           {onDismiss ? <TagDismiss dismissLabel={dismissLabel} onDismiss={onDismiss} /> : null}
         </span>
@@ -120,9 +133,18 @@ const Tag = React.forwardRef<HTMLButtonElement, TagProps>(
     }
 
     return (
-      <button ref={ref} type={type} aria-pressed={selected} onClick={onSelect} {...sharedProps} {...props}>
+      <button
+        ref={ref}
+        type={type}
+        aria-pressed={selected}
+        onClick={onSelect}
+        {...sharedProps}
+        {...props}
+      >
         {children}
-        {onDismiss ? <TagDismiss dismissLabel={dismissLabel} onDismiss={onDismiss} stopPropagation /> : null}
+        {onDismiss ? (
+          <TagDismiss dismissLabel={dismissLabel} onDismiss={onDismiss} stopPropagation />
+        ) : null}
       </button>
     )
   },
@@ -142,7 +164,14 @@ const gapClasses = { sm: 'gap-2.5', md: 'gap-4', lg: 'gap-5' } as const
 
 const tagGroupGap: Record<NonNullable<TagGroupProps['gap']>, number> = { sm: 10, md: 16, lg: 20 }
 
-const TagGroup = ({ options, value, onValueChange, className, gap = 'md', style }: TagGroupProps) => (
+const TagGroup = ({
+  options,
+  value,
+  onValueChange,
+  className,
+  gap = 'md',
+  style,
+}: TagGroupProps) => (
   <div
     data-slot="tag-group"
     role="group"

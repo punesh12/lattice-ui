@@ -12,7 +12,8 @@ const buttonVariants = cva(
       variant: {
         default: 'bg-primary text-white hover:bg-primary-hover',
         secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
-        outline: 'border border-border bg-background shadow-sm hover:bg-accent hover:text-accent-foreground',
+        outline:
+          'border border-border bg-background shadow-sm hover:bg-accent hover:text-accent-foreground',
         ghost: 'hover:bg-accent hover:text-accent-foreground',
         destructive: 'bg-destructive text-white hover:bg-destructive/90',
         link: 'h-auto min-h-0 px-0 text-primary underline-offset-4 hover:underline',
@@ -98,7 +99,15 @@ const getButtonStyle = (
 
   if (size && size in iconSizes) {
     const s = iconSizes[size as keyof typeof iconSizes]
-    return { ...buttonLayoutStyle, ...surface, width: s, height: s, minWidth: s, minHeight: s, ...filledLabel }
+    return {
+      ...buttonLayoutStyle,
+      ...surface,
+      width: s,
+      height: s,
+      minWidth: s,
+      minHeight: s,
+      ...filledLabel,
+    }
   }
 
   const key = (size && size in controlHeights ? size : 'default') as keyof typeof controlHeights
@@ -115,8 +124,7 @@ const getButtonStyle = (
 }
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-  VariantProps<typeof buttonVariants> {
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
   asChild?: boolean
   loading?: boolean
   /** Override label color — `foreground` matches body text (e.g. dark theme copy on light buttons). */
@@ -124,7 +132,21 @@ export interface ButtonProps
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, style, asChild = false, loading, disabled, textTone = 'default', children, ...props }, ref) => {
+  (
+    {
+      className,
+      variant,
+      size,
+      style,
+      asChild = false,
+      loading,
+      disabled,
+      textTone = 'default',
+      children,
+      ...props
+    },
+    ref,
+  ) => {
     const Comp = asChild ? Slot : 'button'
     const sizeStyle = getButtonStyle(size ?? 'default', variant)
 
@@ -133,7 +155,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         data-slot="button"
         className={cn(
           buttonVariants({ variant, size }),
-          textTone === 'foreground' && variant !== 'default' && variant !== 'destructive' && 'text-foreground',
+          textTone === 'foreground' &&
+            variant !== 'default' &&
+            variant !== 'destructive' &&
+            'text-foreground',
           className,
         )}
         style={{ ...sizeStyle, ...style }}

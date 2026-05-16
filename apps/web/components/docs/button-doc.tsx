@@ -8,11 +8,36 @@ import { DocProse } from '@/components/docs/doc-prose'
 import { PreviewToolbar } from '@/components/docs/preview-toolbar'
 
 const buttonApi: ApiProp[] = [
-  { prop: 'variant', type: '"default" | "secondary" | "outline" | "ghost" | "destructive" | "link" | "soft"', default: '"default"', description: 'Visual style of the button.' },
-  { prop: 'size', type: '"xs" | "sm" | "default" | "lg" | "icon-xs" | "icon-sm" | "icon" | "icon-lg"', default: '"default"', description: 'Height and padding preset.' },
-  { prop: 'loading', type: 'boolean', default: 'false', description: 'Shows a spinner and disables interaction.' },
-  { prop: 'asChild', type: 'boolean', default: 'false', description: 'Merge props onto a child element via Radix Slot.' },
-  { prop: 'disabled', type: 'boolean', default: 'false', description: 'Prevents interaction and applies disabled styles.' },
+  {
+    prop: 'variant',
+    type: '"default" | "secondary" | "outline" | "ghost" | "destructive" | "link" | "soft"',
+    default: '"default"',
+    description: 'Visual style of the button.',
+  },
+  {
+    prop: 'size',
+    type: '"xs" | "sm" | "default" | "lg" | "icon-xs" | "icon-sm" | "icon" | "icon-lg"',
+    default: '"default"',
+    description: 'Height and padding preset.',
+  },
+  {
+    prop: 'loading',
+    type: 'boolean',
+    default: 'false',
+    description: 'Shows a spinner and disables interaction.',
+  },
+  {
+    prop: 'asChild',
+    type: 'boolean',
+    default: 'false',
+    description: 'Merge props onto a child element via Radix Slot.',
+  },
+  {
+    prop: 'disabled',
+    type: 'boolean',
+    default: 'false',
+    description: 'Prevents interaction and applies disabled styles.',
+  },
 ]
 
 export function ButtonDoc() {
@@ -78,7 +103,8 @@ export function ButtonDoc() {
       </PreviewToolbar>
 
       <Callout title="Accessibility">
-        Icon-only buttons must include an <code>aria-label</code> so screen readers can describe the action.
+        Icon-only buttons must include an <code>aria-label</code> so screen readers can describe the
+        action.
       </Callout>
 
       <h2 id="api">API Reference</h2>

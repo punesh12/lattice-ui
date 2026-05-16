@@ -24,8 +24,7 @@ const sheetVariants = cva(
       side: {
         right:
           'inset-y-0 right-0 h-full w-full max-w-sm border-l data-[state=closed]:translate-x-full data-[state=open]:translate-x-0',
-        left:
-          'inset-y-0 left-0 h-full w-full max-w-sm border-r data-[state=closed]:-translate-x-full data-[state=open]:translate-x-0',
+        left: 'inset-y-0 left-0 h-full w-full max-w-sm border-r data-[state=closed]:-translate-x-full data-[state=open]:translate-x-0',
         bottom:
           'inset-x-0 bottom-0 max-h-[85vh] w-full overflow-y-auto rounded-t-xl border-t data-[state=closed]:translate-y-full data-[state=open]:translate-y-0',
       },
@@ -35,7 +34,8 @@ const sheetVariants = cva(
 )
 
 export interface SheetContentProps
-  extends React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>,
+  extends
+    React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>,
     VariantProps<typeof sheetVariants> {
   showClose?: boolean
 }
@@ -46,27 +46,31 @@ const SheetOverlay = React.forwardRef<
 >((props, ref) => <OverlayBackdrop ref={ref} data-slot="sheet-overlay" {...props} />)
 SheetOverlay.displayName = DialogPrimitive.Overlay.displayName
 
-const SheetContent = React.forwardRef<React.ElementRef<typeof DialogPrimitive.Content>, SheetContentProps>(
-  ({ side = 'right', className, children, showClose = true, style, ...props }, ref) => (
-    <SheetPortal>
-      <SheetOverlay />
-      <DialogPrimitive.Content
-        data-slot="sheet-content"
-        ref={ref}
-        className={cn(sheetVariants({ side }), className)}
-        style={{ ...getSheetContentInlineStyle(side ?? 'right'), ...overlayContentStyle, ...style }}
-        {...props}
-      >
-        {children}
-        {showClose ? <OverlayCloseButton data-slot="sheet-close" /> : null}
-      </DialogPrimitive.Content>
-    </SheetPortal>
-  ),
-)
+const SheetContent = React.forwardRef<
+  React.ElementRef<typeof DialogPrimitive.Content>,
+  SheetContentProps
+>(({ side = 'right', className, children, showClose = true, style, ...props }, ref) => (
+  <SheetPortal>
+    <SheetOverlay />
+    <DialogPrimitive.Content
+      data-slot="sheet-content"
+      ref={ref}
+      className={cn(sheetVariants({ side }), className)}
+      style={{ ...getSheetContentInlineStyle(side ?? 'right'), ...overlayContentStyle, ...style }}
+      {...props}
+    >
+      {children}
+      {showClose ? <OverlayCloseButton data-slot="sheet-close" /> : null}
+    </DialogPrimitive.Content>
+  </SheetPortal>
+))
 SheetContent.displayName = DialogPrimitive.Content.displayName
 
 const SheetHeader = createOverlaySection('sheet-header', 'flex flex-col gap-1.5 pr-8')
-const SheetFooter = createOverlaySection('sheet-footer', 'flex flex-col-reverse gap-3 pt-4 sm:flex-row sm:justify-end')
+const SheetFooter = createOverlaySection(
+  'sheet-footer',
+  'flex flex-col-reverse gap-3 pt-4 sm:flex-row sm:justify-end',
+)
 
 const SheetTitle = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Title>,

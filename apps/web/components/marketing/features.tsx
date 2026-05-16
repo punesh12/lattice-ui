@@ -17,7 +17,8 @@ const features = [
   {
     icon: Puzzle,
     title: 'Composable APIs',
-    description: 'Predictable props and compound components that scale from prototypes to production.',
+    description:
+      'Predictable props and compound components that scale from prototypes to production.',
   },
   {
     icon: Type,
@@ -40,7 +41,9 @@ export const Features = () => (
   <section className="px-4 py-16 sm:px-6 sm:py-20 lg:py-28">
     <div className="mx-auto max-w-6xl">
       <div className={cn('mx-auto max-w-2xl text-center', motion.fadeInUp)}>
-        <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">Everything you need to ship</h2>
+        <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+          Everything you need to ship
+        </h2>
         <p className="mt-3 text-base leading-relaxed text-muted-foreground sm:mt-4 sm:text-lg">
           Lattice UI is designed for product teams who care about consistency, speed, and quality.
         </p>
@@ -62,7 +65,9 @@ export const Features = () => (
                   <Icon className="h-5 w-5" aria-hidden />
                 </div>
                 <CardTitle className="text-base">{feature.title}</CardTitle>
-                <CardDescription className="text-sm leading-relaxed">{feature.description}</CardDescription>
+                <CardDescription className="text-sm leading-relaxed">
+                  {feature.description}
+                </CardDescription>
               </CardHeader>
             </Card>
           )

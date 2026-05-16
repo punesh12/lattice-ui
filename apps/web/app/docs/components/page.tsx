@@ -1,10 +1,5 @@
 import Link from 'next/link'
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@lattice-ui/ui'
+import { Card, CardDescription, CardHeader, CardTitle } from '@lattice-ui/ui'
 import { DocProse } from '@/components/docs/doc-prose'
 import { docsConfig } from '@/lib/docs'
 
@@ -22,7 +17,9 @@ export default function ComponentsOverviewPage() {
           <Link key={component.slug} href={`/docs/components/${component.slug}`} className="group">
             <Card className="h-full transition-colors hover:border-primary/40 hover:bg-muted/30">
               <CardHeader className="gap-1.5 p-4">
-                <CardTitle className="text-base group-hover:text-primary">{component.title}</CardTitle>
+                <CardTitle className="text-base group-hover:text-primary">
+                  {component.title}
+                </CardTitle>
                 <CardDescription className="line-clamp-2 text-sm leading-relaxed">
                   {component.description}
                 </CardDescription>
