@@ -1,0 +1,20 @@
+{
+  "name": "lattice-ui",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/punesh12/lattice-ui.git"
+  },
+  "homepage": "https://github.com/punesh12/lattice-ui#readme",
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,js,json,css,md}\""
+  },
+  "devDependencies": {
+    "prettier": "^3.4.2",
+    "turbo": "^2.3.3"
+  },
+  "packageManager": "pnpm@9.15.0"
+}

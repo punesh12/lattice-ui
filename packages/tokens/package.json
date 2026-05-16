@@ -1,0 +1,12 @@
+{
+  "name": "@lattice-ui/tokens",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "echo 'tokens: CSS-only package'"
+  },
+  "exports": {
+    "./globals.css": "./src/globals.css",
+    "./tailwind-preset": "./tailwind-preset.ts"
+  }
+}
