@@ -1,5 +1,6 @@
 'use client'
 
+/** Alias exports for Dialog — same API, "Modal" naming for product copy. */
 export {
   Dialog as Modal,
   DialogPortal as ModalPortal,

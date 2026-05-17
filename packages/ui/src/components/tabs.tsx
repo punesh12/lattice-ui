@@ -1,5 +1,6 @@
 'use client'
 
+/** Radix Tabs with inline list/trigger layout for consistent hit targets. */
 import * as React from 'react'
 import * as TabsPrimitive from '@radix-ui/react-tabs'
 import { inlineFlexCenter } from '../lib/layout-styles'

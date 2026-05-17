@@ -1,3 +1,7 @@
+/**
+ * Z-index, Tailwind class strings, and inline styles for dialogs, modals, and sheets.
+ * Inline variants exist because consuming apps may not Tailwind-scan packages/ui.
+ */
 import type { CSSProperties } from 'react'
 
 /** Shared overlay layout tokens (dialog, modal, sheet, alert-dialog). */
@@ -19,6 +23,7 @@ export const CENTERED_PANEL_POSITION_CLASS =
 export const CENTERED_PANEL_MOTION_CLASS =
   'transition-opacity duration-200 data-[state=closed]:opacity-0 data-[state=open]:opacity-100'
 
+/** Composes centered panel utility classes for dialog/modal content. */
 export const centeredPanelClass = (gap: 'gap-4' | 'gap-5' = 'gap-5') =>
   [CENTERED_PANEL_BASE_CLASS, gap, CENTERED_PANEL_POSITION_CLASS, CENTERED_PANEL_MOTION_CLASS].join(
     ' ',
@@ -80,6 +85,7 @@ export const overlayCloseInlineStyle: CSSProperties = {
 
 export type SheetSide = 'left' | 'right' | 'bottom'
 
+/** Edge-anchored sheet panel dimensions and borders per slide direction. */
 export const getSheetContentInlineStyle = (side: SheetSide = 'right'): CSSProperties => {
   const base: CSSProperties = {
     position: 'fixed',

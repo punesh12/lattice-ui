@@ -1,6 +1,8 @@
+/** Card surface and semantic sections (header, title, content, footer). */
 import * as React from 'react'
 import { cn } from '../lib/utils'
 
+/** Props for {@link Card}. */
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(({ className, ...props }, ref) => (

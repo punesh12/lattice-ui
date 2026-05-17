@@ -1,8 +1,13 @@
+/**
+ * Radix Checkbox with fixed 20px hit target and token-based checked/invalid states.
+ * Inline box styles mirror CVA classes when Tailwind does not scan this package.
+ */
 import * as React from 'react'
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox'
 import { Check } from 'lucide-react'
 import { cn } from '../lib/utils'
 
+/** Props for {@link Checkbox} — extends Radix Checkbox.Root. */
 export interface CheckboxProps extends React.ComponentPropsWithoutRef<
   typeof CheckboxPrimitive.Root
 > {}
@@ -23,6 +28,7 @@ const checkboxBaseStyle: React.CSSProperties = {
   cursor: 'pointer',
 }
 
+/** Accessible checkbox with design-system focus ring and error border via aria-invalid. */
 const Checkbox = React.forwardRef<React.ElementRef<typeof CheckboxPrimitive.Root>, CheckboxProps>(
   ({ className, style, ...props }, ref) => (
     <CheckboxPrimitive.Root

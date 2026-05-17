@@ -1,3 +1,7 @@
+/**
+ * Radix Avatar with size tokens, optional presence indicator, and stacked AvatarGroup.
+ * Dimensions come from avatar-sizes inline styles for consistent rendering across apps.
+ */
 import * as React from 'react'
 import * as AvatarPrimitive from '@radix-ui/react-avatar'
 import { cva, type VariantProps } from 'class-variance-authority'
@@ -22,6 +26,7 @@ const avatarVariants = cva('relative flex shrink-0 overflow-hidden rounded-full'
   defaultVariants: { size: 'default' },
 })
 
+/** Props for {@link Avatar} — `status` renders a corner presence dot when set. */
 export interface AvatarProps
   extends
     React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>,
@@ -121,12 +126,14 @@ const AvatarFallback = React.forwardRef<
 ))
 AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName
 
+/** Overlapping avatars with optional overflow "+N" badge. */
 export interface AvatarGroupProps extends React.HTMLAttributes<HTMLDivElement> {
   max?: number
   /** Size applied to the overflow badge when present */
   size?: AvatarSize
 }
 
+/** Renders up to `max` avatars and a count badge for the remainder. */
 function AvatarGroup({
   className,
   max = 4,

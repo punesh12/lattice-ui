@@ -1,3 +1,4 @@
+/** Compact status label; inline height from control-sizes for cross-app consistency. */
 import * as React from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { badgeSizeStyle } from '../lib/control-sizes'
@@ -22,6 +23,7 @@ const badgeVariants = cva(
   },
 )
 
+/** Props for {@link Badge}. */
 export interface BadgeProps
   extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof badgeVariants> {}
 

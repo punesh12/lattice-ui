@@ -12,7 +12,9 @@
     "lint": "turbo lint",
     "lint:eslint": "eslint .",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "storybook": "pnpm --filter @lattice-ui/ui storybook",
+    "build-storybook": "pnpm --filter @lattice-ui/ui build-storybook"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",

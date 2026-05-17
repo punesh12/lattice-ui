@@ -1,3 +1,7 @@
+/**
+ * Inline status banner (role="alert") with variant icon and title/description slots.
+ * Flex layout uses inline styles so icon rows align when Tailwind does not scan this package.
+ */
 import * as React from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { AlertCircle, CheckCircle2, Info, TriangleAlert } from 'lucide-react'
@@ -35,6 +39,7 @@ const icons = {
   error: AlertCircle,
 } as const
 
+/** Props for {@link Alert} — variant controls border, background tint, and default icon. */
 export interface AlertProps
   extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof alertVariants> {}
 
@@ -44,6 +49,7 @@ function hasAlertTitle(children: React.ReactNode) {
   )
 }
 
+/** Accessible alert region with leading variant icon and stacked content. */
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
   ({ className, variant = 'default', children, style, ...props }, ref) => {
     const resolved = variant ?? 'default'

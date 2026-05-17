@@ -24,25 +24,43 @@ const NavSection = ({ title, children }: NavSectionProps) => (
 type NavLinkProps = {
   href: string
   children: React.ReactNode
+  external?: boolean
   onNavigate?: () => void
   activeFn?: (pathname: string, href: string) => boolean
 }
 
-const NavLink = ({ href, children, onNavigate, activeFn = isNavActive }: NavLinkProps) => {
+const NavLink = ({
+  href,
+  children,
+  external,
+  onNavigate,
+  activeFn = isNavActive,
+}: NavLinkProps) => {
   const pathname = usePathname()
-  const active = activeFn(pathname, href)
+  const active = !external && activeFn(pathname, href)
+  const className = cn(
+    'block rounded-md px-3 py-2 text-sm transition-colors',
+    active
+      ? 'bg-sidebar-accent font-medium text-foreground'
+      : 'text-muted-foreground hover:bg-sidebar-accent hover:text-foreground',
+  )
+
+  if (external) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={onNavigate}
+        className={className}
+      >
+        {children}
+      </a>
+    )
+  }
 
   return (
-    <Link
-      href={href}
-      onClick={onNavigate}
-      className={cn(
-        'block rounded-md px-3 py-2 text-sm transition-colors',
-        active
-          ? 'bg-sidebar-accent font-medium text-foreground'
-          : 'text-muted-foreground hover:bg-sidebar-accent hover:text-foreground',
-      )}
-    >
+    <Link href={href} onClick={onNavigate} className={className}>
       {children}
     </Link>
   )
@@ -62,6 +80,7 @@ export function DocsNavTree({ onNavigate, showSiteLinks = false }: DocsNavTreePr
             <NavLink
               key={link.href}
               href={link.href}
+              external={link.external}
               onNavigate={onNavigate}
               activeFn={isMarketingNavActive}
             >

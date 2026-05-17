@@ -1,5 +1,6 @@
 'use client'
 
+/** Collapsible app sidebar with provider context and nav item primitives. */
 import * as React from 'react'
 import { PanelLeft } from 'lucide-react'
 import { cn } from '../lib/utils'
@@ -23,6 +24,7 @@ function useSidebar() {
   return ctx
 }
 
+/** Context provider for collapsed state and mobile open toggling. */
 export interface SidebarProviderProps extends React.HTMLAttributes<HTMLDivElement> {
   defaultOpen?: boolean
   defaultCollapsed?: boolean

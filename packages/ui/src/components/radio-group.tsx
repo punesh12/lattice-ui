@@ -1,7 +1,9 @@
+/** Radix RadioGroup with inline grid gap and fixed-size circular items. */
 import * as React from 'react'
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group'
 import { cn } from '../lib/utils'
 
+/** Props for {@link RadioGroup}. */
 export interface RadioGroupProps extends React.ComponentPropsWithoutRef<
   typeof RadioGroupPrimitive.Root
 > {}
@@ -25,6 +27,7 @@ const RadioGroup = React.forwardRef<
 ))
 RadioGroup.displayName = RadioGroupPrimitive.Root.displayName
 
+/** Props for a single {@link RadioGroupItem}. */
 export interface RadioGroupItemProps extends React.ComponentPropsWithoutRef<
   typeof RadioGroupPrimitive.Item
 > {}

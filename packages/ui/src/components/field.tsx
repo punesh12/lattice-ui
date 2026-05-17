@@ -1,3 +1,7 @@
+/**
+ * Form field wrapper: label, control, description, and error with shared a11y wiring.
+ * Clones a single child control to set id, aria-invalid, and aria-describedby when needed.
+ */
 import * as React from 'react'
 import { cn } from '../lib/utils'
 import { Label } from './label'
@@ -29,6 +33,7 @@ type ControlProps = {
   'aria-describedby'?: string
 }
 
+/** Props for {@link Field}. Pass `htmlFor` matching the control id for label association. */
 export interface FieldProps extends React.HTMLAttributes<HTMLDivElement> {
   label?: React.ReactNode
   description?: React.ReactNode
@@ -38,6 +43,7 @@ export interface FieldProps extends React.HTMLAttributes<HTMLDivElement> {
   required?: boolean
 }
 
+/** Vertical field stack with optional label, helper text, and error message. */
 const Field = React.forwardRef<HTMLDivElement, FieldProps>(
   ({ className, style, label, description, error, htmlFor, required, children, ...props }, ref) => {
     const hasError = Boolean(error)
@@ -98,6 +104,7 @@ const Field = React.forwardRef<HTMLDivElement, FieldProps>(
 )
 Field.displayName = 'Field'
 
+/** Groups multiple {@link Field} blocks with consistent vertical spacing. */
 function FieldGroup({ className, style, ...props }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div

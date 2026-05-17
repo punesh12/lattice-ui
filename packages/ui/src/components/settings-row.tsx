@@ -1,6 +1,8 @@
+/** Settings list row: label, optional description, and trailing control slot. */
 import * as React from 'react'
 import { cn } from '../lib/utils'
 
+/** Props for {@link SettingsRow}. */
 export interface SettingsRowProps extends React.HTMLAttributes<HTMLDivElement> {
   label: React.ReactNode
   description?: React.ReactNode

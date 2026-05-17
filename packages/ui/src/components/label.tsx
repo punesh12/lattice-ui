@@ -1,3 +1,4 @@
+/** Radix Label for associating copy with a control via htmlFor / implicit nesting. */
 import * as React from 'react'
 import * as LabelPrimitive from '@radix-ui/react-label'
 import { cva, type VariantProps } from 'class-variance-authority'
@@ -17,6 +18,7 @@ const labelVariants = cva(
   },
 )
 
+/** Props for {@link Label}. */
 export interface LabelProps
   extends
     React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root>,

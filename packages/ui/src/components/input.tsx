@@ -1,3 +1,7 @@
+/**
+ * Text input and InputGroup affix layout.
+ * Inline padding insets prevent typed text from overlapping prefix/suffix icons.
+ */
 import * as React from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 import {
@@ -46,6 +50,7 @@ export type InputAffixProps = React.HTMLAttributes<HTMLSpanElement> & {
   inset?: number
 }
 
+/** Reads `inset` from InputPrefix/InputSuffix children to expand horizontal input padding. */
 const getAffixInsets = (children: React.ReactNode) => {
   let prefixInset: number | undefined
   let suffixInset: number | undefined
@@ -61,6 +66,7 @@ const getAffixInsets = (children: React.ReactNode) => {
   return { prefixInset, suffixInset }
 }
 
+/** Props for {@link Input}. `size` is Lattice density, not the native HTML size attribute. */
 export interface InputProps
   extends
     Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'>,
@@ -72,6 +78,7 @@ export interface InputProps
 const isAriaInvalid = (value: InputProps['aria-invalid']) =>
   value === true || value === 'true' || value === 'grammar' || value === 'spelling'
 
+/** Single-line text control with shared border/height tokens from control-sizes. */
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, size, style, error, 'aria-invalid': ariaInvalid, ...props }, ref) => {
     const sizeKey = (size ?? 'default') as keyof typeof controlHeights
@@ -98,6 +105,10 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 )
 Input.displayName = 'Input'
 
+/**
+ * Wraps one {@link Input} with optional {@link InputPrefix} / {@link InputSuffix}.
+ * Clones the child input to add extra horizontal padding so text clears absolutely positioned affixes.
+ */
 const InputGroup = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, children, ...props }, ref) => {
     const { prefixInset, suffixInset } = getAffixInsets(children)
@@ -150,6 +161,7 @@ const affixStyle = (
   ...(side === 'left' ? { left: controlPaddingX[size] } : { right: controlPaddingX[size] }),
 })
 
+/** Icon or label placed before the input; set `inset` if content is wider than the default icon slot. */
 const InputPrefix = ({ className, style, inset, ...props }: InputAffixProps) => {
   const contentWidth = inset ?? DEFAULT_AFFIX_CONTENT_WIDTH
   return (
@@ -163,6 +175,7 @@ const InputPrefix = ({ className, style, inset, ...props }: InputAffixProps) => 
 }
 InputPrefix.displayName = 'LatticeInputPrefix'
 
+/** Icon or control placed after the input; `inset` reserves matching padding on the right. */
 const InputSuffix = ({ className, style, inset, ...props }: InputAffixProps) => {
   const contentWidth = inset ?? DEFAULT_AFFIX_CONTENT_WIDTH
   return (

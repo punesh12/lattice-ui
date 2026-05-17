@@ -1,3 +1,4 @@
+/** Clickable list row with default, selected, and error surface states. */
 import * as React from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '../lib/utils'
@@ -16,6 +17,7 @@ const selectableRowVariants = cva(
   },
 )
 
+/** Props for {@link SelectableRow}. */
 export interface SelectableRowProps
   extends
     React.ButtonHTMLAttributes<HTMLButtonElement>,

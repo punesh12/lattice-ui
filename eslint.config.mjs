@@ -10,6 +10,7 @@ export default tseslint.config(
       '**/.next/**',
       '**/.turbo/**',
       '**/dist/**',
+      '**/storybook-static/**',
       '**/coverage/**',
     ],
   },

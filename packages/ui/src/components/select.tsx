@@ -1,3 +1,7 @@
+/**
+ * Compositional Radix Select primitives (Root, Trigger, Content, Item).
+ * For a prop-driven menu, use {@link Select} from select-menu.tsx instead.
+ */
 import * as React from 'react'
 import * as SelectPrimitive from '@radix-ui/react-select'
 import { Check, ChevronDown, ChevronUp } from 'lucide-react'
@@ -5,11 +9,12 @@ import { controlSizeStyle, menuItemSizeStyle } from '../lib/control-sizes'
 import { flexRowCenter } from '../lib/layout-styles'
 import { cn } from '../lib/utils'
 
-/** Compositional select root — or use `<Select options={...} />` for the prop-driven menu */
+/** Radix Select root — pair with Trigger, Content, and Item for custom layouts. */
 const SelectRoot = SelectPrimitive.Root
 const SelectGroup = SelectPrimitive.Group
 const SelectValue = SelectPrimitive.Value
 
+/** Trigger button for compositional Select; inline height matches other form controls. */
 export interface SelectTriggerProps extends React.ComponentPropsWithoutRef<
   typeof SelectPrimitive.Trigger
 > {
@@ -28,6 +33,7 @@ const triggerStyleSizes = {
   lg: 'lg' as const,
 }
 
+/** Opens the select list; merges controlSizeStyle so dimensions work without Tailwind scan. */
 const SelectTrigger = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Trigger>,
   SelectTriggerProps
@@ -88,6 +94,7 @@ const SelectScrollDownButton = React.forwardRef<
 ))
 SelectScrollDownButton.displayName = SelectPrimitive.ScrollDownButton.displayName
 
+/** Portaled listbox; inline popover surface styles mirror design tokens in consuming apps. */
 const SelectContent = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Content>

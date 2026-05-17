@@ -1,7 +1,9 @@
+/** Radix Switch with fixed track/thumb dimensions via inline styles. */
 import * as React from 'react'
 import * as SwitchPrimitive from '@radix-ui/react-switch'
 import { cn } from '../lib/utils'
 
+/** Props for {@link Switch}. */
 export interface SwitchProps extends React.ComponentPropsWithoutRef<typeof SwitchPrimitive.Root> {}
 
 const SWITCH_WIDTH = 44

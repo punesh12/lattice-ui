@@ -1,3 +1,4 @@
+/** Screen-reader-only and dialog accessibility helpers shared by overlays. */
 import type { CSSProperties } from 'react'
 
 /** Visually hidden but available to screen readers (Radix DialogTitle pattern). */

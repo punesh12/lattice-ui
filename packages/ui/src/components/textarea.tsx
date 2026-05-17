@@ -1,3 +1,4 @@
+/** Multi-line text control with size variants and shared invalid/border tokens. */
 import * as React from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { controlBorderStyle, controlInvalidStyle } from '../lib/control-sizes'
@@ -17,6 +18,7 @@ const textareaVariants = cva(
   },
 )
 
+/** Props for {@link Textarea} — `size` is Lattice density, not the native HTML attribute. */
 export interface TextareaProps
   extends
     Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, 'size'>,

@@ -1,5 +1,7 @@
+/** Pixel dimensions and CSS variables for Avatar and AvatarGroup overflow badge. */
 import type { CSSProperties } from 'react'
 
+/** Width/height in px for each Avatar size token. */
 export const avatarSizes = {
   xs: 24,
   sm: 32,
@@ -10,6 +12,7 @@ export const avatarSizes = {
 
 export type AvatarSize = keyof typeof avatarSizes
 
+/** Inline width/height and --avatar-size for fallback typography scaling. */
 export const avatarSizeStyle = (size: AvatarSize = 'default'): CSSProperties => {
   const dimension = avatarSizes[size]
   return {

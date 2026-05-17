@@ -1,3 +1,7 @@
+/**
+ * Button primitive: CVA variants plus inline layout and theme-token styles.
+ * Inline styles keep heights and surfaces reliable when consuming apps do not scan packages/ui.
+ */
 import * as React from 'react'
 import { Slot } from '@radix-ui/react-slot'
 import { cva, type VariantProps } from 'class-variance-authority'
@@ -46,6 +50,7 @@ const iconSizes = {
 
 const FILLED_VARIANTS = new Set(['default', 'destructive'])
 
+/** Maps variant to CSS variables — duplicated alongside CVA so tokens apply without Tailwind scan. */
 const variantInlineStyle = (variant: string | null | undefined): React.CSSProperties => {
   switch (variant ?? 'default') {
     case 'secondary':
@@ -85,6 +90,7 @@ const buttonLayoutStyle: React.CSSProperties = {
   appearance: 'none',
 }
 
+/** Merges layout, variant surface, and shared control height/padding from control-sizes. */
 const getButtonStyle = (
   size: keyof typeof controlHeights | keyof typeof iconSizes | null | undefined,
   variant: string | null | undefined,
@@ -123,14 +129,18 @@ const getButtonStyle = (
   }
 }
 
+/** Props for {@link Button}. Supports Radix Slot via `asChild` for link-styled triggers. */
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
+  /** Render as the single child element (e.g. Next.js Link) while keeping button styles. */
   asChild?: boolean
+  /** Disables the control and shows a spinner; ignored when `asChild` is true. */
   loading?: boolean
   /** Override label color — `foreground` matches body text (e.g. dark theme copy on light buttons). */
   textTone?: 'default' | 'foreground'
 }
 
+/** Lattice button with variant/size tokens, loading state, and optional `asChild` composition. */
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {

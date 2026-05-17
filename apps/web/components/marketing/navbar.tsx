@@ -28,30 +28,62 @@ const navLinkStyle = (active: boolean): React.CSSProperties => ({
 type NavLinkItemProps = {
   href: string
   label: string
+  external?: boolean
   onNavigate?: () => void
   mobile?: boolean
 }
 
-const NavLinkItem = ({ href, label, onNavigate, mobile }: NavLinkItemProps) => {
+const NavLinkItem = ({ href, label, external, onNavigate, mobile }: NavLinkItemProps) => {
   const pathname = usePathname()
-  const active = isMarketingNavActive(pathname, href)
+  const active = !external && isMarketingNavActive(pathname, href)
 
   if (mobile) {
+    const className = cn(
+      'rounded-md px-3 py-2.5 text-sm font-medium transition-colors',
+      active
+        ? 'bg-accent font-semibold text-foreground'
+        : 'text-muted-foreground hover:bg-accent hover:text-foreground',
+    )
+
+    if (external) {
+      return (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-slot="marketing-nav-link"
+          onClick={onNavigate}
+          className={className}
+        >
+          {label}
+        </a>
+      )
+    }
+
     return (
       <Link
         href={href}
         data-slot="marketing-nav-link"
         data-active={active ? 'true' : 'false'}
         onClick={onNavigate}
-        className={cn(
-          'rounded-md px-3 py-2.5 text-sm font-medium transition-colors',
-          active
-            ? 'bg-accent font-semibold text-foreground'
-            : 'text-muted-foreground hover:bg-accent hover:text-foreground',
-        )}
+        className={className}
       >
         {label}
       </Link>
+    )
+  }
+
+  if (external) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-slot="marketing-nav-link"
+        style={navLinkStyle(false)}
+      >
+        {label}
+      </a>
     )
   }
 
@@ -103,7 +135,12 @@ export const Navbar = () => {
 
         <nav data-slot="marketing-nav" className="marketing-header-nav" aria-label="Main">
           {siteNavLinks.map((link) => (
-            <NavLinkItem key={link.href} href={link.href} label={link.label} />
+            <NavLinkItem
+              key={link.href}
+              href={link.href}
+              label={link.label}
+              external={link.external}
+            />
           ))}
         </nav>
 
@@ -152,6 +189,7 @@ export const Navbar = () => {
               key={link.href}
               href={link.href}
               label={link.label}
+              external={link.external}
               mobile
               onNavigate={() => setMobileOpen(false)}
             />

@@ -1,3 +1,4 @@
+/** Radix Dropdown Menu with shared menu item sizing from control-sizes. */
 import * as React from 'react'
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
 import { Check, ChevronRight, Circle } from 'lucide-react'

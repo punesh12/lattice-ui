@@ -1,5 +1,9 @@
 'use client'
 
+/**
+ * Centered Radix Dialog composed from overlay-parts and overlay-styles tokens.
+ * Client boundary required for Radix portal, focus trap, and open-state animations.
+ */
 import * as React from 'react'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { cn } from '../lib/utils'
@@ -27,6 +31,7 @@ const DialogOverlay = React.forwardRef<
 >((props, ref) => <OverlayBackdrop ref={ref} data-slot="dialog-overlay" {...props} />)
 DialogOverlay.displayName = DialogPrimitive.Overlay.displayName
 
+/** Centered panel; `showClose` renders the shared OverlayCloseButton. */
 export interface DialogContentProps extends React.ComponentPropsWithoutRef<
   typeof DialogPrimitive.Content
 > {

@@ -1,6 +1,8 @@
+/** Placeholder block with shimmer animation for loading states. */
 import * as React from 'react'
 import { cn } from '../lib/utils'
 
+/** Props for {@link Skeleton}. */
 export interface SkeletonProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 function Skeleton({ className, ...props }: SkeletonProps) {
