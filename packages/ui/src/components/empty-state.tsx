@@ -1,7 +1,9 @@
+/** Centered empty view with icon, title, description, and optional action. */
 import * as React from 'react'
 import { flexColCenter } from '../lib/layout-styles'
 import { cn } from '../lib/utils'
 
+/** Props for {@link EmptyState}. */
 export interface EmptyStateProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> {
   icon?: React.ReactNode
   title: React.ReactNode

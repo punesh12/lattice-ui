@@ -1,3 +1,4 @@
+/** Styled anchor with CVA variants for inline navigation and destructive links. */
 import * as React from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '../lib/utils'
@@ -22,6 +23,7 @@ const linkVariants = cva(
   },
 )
 
+/** Props for {@link Link}. */
 export interface LinkProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement>, VariantProps<typeof linkVariants> {}
 

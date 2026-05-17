@@ -1,5 +1,9 @@
+/**
+ * Reusable inline flex layout snippets for components that cannot rely on Tailwind scan.
+ */
 import type { CSSProperties } from 'react'
 
+/** inline-flex centered box — used for badges and compact controls. */
 export const inlineFlexCenter: CSSProperties = {
   display: 'inline-flex',
   alignItems: 'center',

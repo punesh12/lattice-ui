@@ -1,3 +1,4 @@
+/** Notification list row with unread styling and optional metadata slots. */
 import * as React from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '../lib/utils'

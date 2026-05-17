@@ -1,3 +1,4 @@
+/** Segmented one-time-code input with per-cell focus and paste handling. */
 import * as React from 'react'
 import { flexRowCenter } from '../lib/layout-styles'
 import { cn } from '../lib/utils'
@@ -8,6 +9,7 @@ export const OTP_LENGTH = DEFAULT_OTP_LENGTH
 
 const clampLength = (length: number) => Math.min(8, Math.max(4, Math.floor(length)))
 
+/** Props for {@link OtpInput}. */
 export interface OtpInputProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> {
   value?: string
   onChange?: (value: string) => void

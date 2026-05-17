@@ -1,3 +1,4 @@
+/** Radix Popover primitives — anchor for SelectMenu, Combobox, and custom menus. */
 import * as React from 'react'
 import * as PopoverPrimitive from '@radix-ui/react-popover'
 import { cn } from '../lib/utils'
@@ -6,6 +7,7 @@ const Popover = PopoverPrimitive.Root
 const PopoverTrigger = PopoverPrimitive.Trigger
 const PopoverAnchor = PopoverPrimitive.Anchor
 
+/** Props for {@link PopoverContent}. */
 export interface PopoverContentProps extends React.ComponentPropsWithoutRef<
   typeof PopoverPrimitive.Content
 > {}

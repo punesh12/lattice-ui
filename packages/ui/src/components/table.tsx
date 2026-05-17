@@ -1,3 +1,4 @@
+/** Semantic HTML table primitives with data-slot hooks for styling. */
 import * as React from 'react'
 import { cn } from '../lib/utils'
 

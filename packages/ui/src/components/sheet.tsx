@@ -1,5 +1,9 @@
 'use client'
 
+/**
+ * Edge-anchored panel (Radix Dialog) with slide animations and overlay-parts backdrop.
+ * Inline sheet styles from overlay-styles when Tailwind does not scan packages/ui.
+ */
 import * as React from 'react'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { cva, type VariantProps } from 'class-variance-authority'
@@ -33,6 +37,7 @@ const sheetVariants = cva(
   },
 )
 
+/** Slide-in panel; `side` sets edge and animation; `showClose` adds OverlayCloseButton. */
 export interface SheetContentProps
   extends
     React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>,

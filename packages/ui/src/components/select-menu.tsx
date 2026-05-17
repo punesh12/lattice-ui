@@ -1,5 +1,9 @@
 'use client'
 
+/**
+ * Prop-driven Select (`options` API) built on Popover + Command.
+ * Re-exports {@link Select} which delegates here or to compositional {@link SelectRoot} in select.tsx.
+ */
 import * as React from 'react'
 import { Check, ChevronDown, X } from 'lucide-react'
 import { controlSizeStyle } from '../lib/control-sizes'
@@ -16,6 +20,7 @@ import {
 import { Popover, PopoverContent, PopoverTrigger } from './popover'
 import { SelectRoot } from './select'
 
+/** Single option for the prop-driven {@link SelectMenu}. */
 export type SelectOption = {
   value: string
   label: string
@@ -30,6 +35,7 @@ const triggerStyleSizes = {
   lg: 'lg' as const,
 }
 
+/** Props for {@link SelectMenu} — use `<Select options={...} />` or import SelectMenu directly. */
 export interface SelectMenuProps {
   options: SelectOption[]
   value?: string | string[]
@@ -171,6 +177,7 @@ function SelectMenuTrigger({
   )
 }
 
+/** Searchable, single- or multi-select dropdown; client-only due to open state and filtering. */
 function SelectMenu({
   options,
   value: valueProp,
@@ -318,6 +325,10 @@ function SelectMenu({
   )
 }
 
+/**
+ * Union: pass `options` for SelectMenu, or Radix SelectRoot props for compositional usage.
+ * Split keeps tree-shakeable primitives separate from the heavier Command-based menu.
+ */
 export type SelectProps =
   | (React.ComponentPropsWithoutRef<typeof SelectRoot> & {
       options?: never
@@ -330,6 +341,7 @@ function isSelectMenuProps(props: SelectProps): props is SelectMenuProps {
   return Array.isArray((props as SelectMenuProps).options)
 }
 
+/** Dispatches to SelectMenu when `options` is provided, otherwise to Radix {@link SelectRoot}. */
 function Select(props: SelectProps) {
   if (isSelectMenuProps(props)) {
     return <SelectMenu {...props} />

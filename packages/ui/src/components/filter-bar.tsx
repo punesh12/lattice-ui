@@ -1,9 +1,11 @@
+/** Horizontal filter chip bar with optional clear-all action. */
 import * as React from 'react'
 import { X } from 'lucide-react'
 import { flexRowWrapCenter } from '../lib/layout-styles'
 import { cn } from '../lib/utils'
 import { Button } from './button'
 
+/** Props for {@link FilterBar}. */
 export interface FilterBarProps extends React.HTMLAttributes<HTMLDivElement> {
   onClear?: () => void
   clearLabel?: string

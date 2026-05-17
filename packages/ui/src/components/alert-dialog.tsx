@@ -1,5 +1,9 @@
 'use client'
 
+/**
+ * Destructive/confirm Radix Alert Dialog with centered panel and action/cancel buttons.
+ * Uses overlay-styles inline layout; client boundary matches Radix portal behavior.
+ */
 import * as React from 'react'
 import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog'
 import { cn } from '../lib/utils'

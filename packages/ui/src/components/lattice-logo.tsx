@@ -1,3 +1,4 @@
+/** Lattice brand mark and optional wordmark with size tokens via inline dimensions. */
 import * as React from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { inlineFlexCenter } from '../lib/layout-styles'

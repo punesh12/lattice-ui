@@ -1,3 +1,4 @@
+/** Drag-and-drop file drop zone wrapping a visually hidden native file input. */
 import * as React from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { Upload } from 'lucide-react'

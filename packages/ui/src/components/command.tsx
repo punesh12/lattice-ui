@@ -1,5 +1,9 @@
 'use client'
 
+/**
+ * cmdk-based command list (filter, groups, dialog variant).
+ * Client-only: cmdk maintains selection state and coordinates with Dialog when embedded.
+ */
 import * as React from 'react'
 import {
   CommandEmpty as CommandEmptyPrimitive,

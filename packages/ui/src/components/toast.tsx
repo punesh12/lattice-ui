@@ -1,5 +1,9 @@
 'use client'
 
+/**
+ * Sonner-based toast host and re-exports. Client boundary required for Sonner's portal and hooks.
+ * Icons use inline token colors so variants stay on-brand without Tailwind scanning packages/ui.
+ */
 import { AlertCircle, AlertTriangle, CheckCircle2, Info, Loader2 } from 'lucide-react'
 import {
   Toaster as Sonner,
@@ -8,6 +12,7 @@ import {
   type ToasterProps as SonnerToasterProps,
 } from 'sonner'
 
+/** Allowed viewport anchors for {@link Toaster}. */
 export const TOAST_POSITIONS = [
   'top-left',
   'top-center',
@@ -30,6 +35,7 @@ const iconStyle = (color: string): React.CSSProperties => ({
 
 export type ToasterProps = SonnerToasterProps
 
+/** Renders the global toast viewport; mount once near the app root. */
 const Toaster = ({ position = 'top-right', ...props }: ToasterProps) => (
   <Sonner
     data-slot="toaster"

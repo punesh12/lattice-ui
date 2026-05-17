@@ -1,7 +1,9 @@
+/** App layout scaffold: sidebar provider, header slot, and main content area. */
 import * as React from 'react'
 import { cn } from '../lib/utils'
 import { SidebarProvider } from './sidebar'
 
+/** Props for {@link AppShell}. */
 export interface AppShellProps extends React.HTMLAttributes<HTMLDivElement> {
   sidebar?: React.ReactNode
   header?: React.ReactNode

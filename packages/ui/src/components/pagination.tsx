@@ -1,3 +1,4 @@
+/** Pagination nav, links, and ellipsis using shared control heights. */
 import * as React from 'react'
 import { ChevronLeft, ChevronRight, MoreHorizontal } from 'lucide-react'
 import { controlHeights } from '../lib/control-sizes'

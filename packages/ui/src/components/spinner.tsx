@@ -1,3 +1,4 @@
+/** Loading indicator (Loader2) with optional accessible label. */
 import * as React from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { Loader2 } from 'lucide-react'
@@ -14,6 +15,7 @@ const spinnerVariants = cva('lattice-spin shrink-0 text-primary', {
   defaultVariants: { size: 'default' },
 })
 
+/** Props for {@link Spinner}; `label` sets aria-label when provided. */
 export interface SpinnerProps
   extends React.SVGAttributes<SVGSVGElement>, VariantProps<typeof spinnerVariants> {
   label?: string

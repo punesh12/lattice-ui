@@ -1,5 +1,9 @@
 'use client'
 
+/**
+ * Shared Radix Dialog overlay pieces (backdrop, close, section factory).
+ * Client boundary matches Radix Dialog primitives used by modal, sheet, and alert-dialog.
+ */
 import * as React from 'react'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { X } from 'lucide-react'
@@ -13,6 +17,7 @@ import {
   overlayCloseInlineStyle,
 } from '../lib/overlay-styles'
 
+/** Merged backdrop style: z-index plus inline blur/color from overlay-styles. */
 export const overlayBackdropStyle: React.CSSProperties = {
   zIndex: OVERLAY_Z_INDEX,
   ...overlayBackdropInlineStyle,
@@ -25,9 +30,11 @@ export const overlayContentStyle: React.CSSProperties = {
 export type OverlayBackdropProps = React.ComponentPropsWithoutRef<
   typeof DialogPrimitive.Overlay
 > & {
+  /** Stable slot name for docs and e2e selectors (e.g. dialog-overlay). */
   'data-slot': string
 }
 
+/** Dimmed full-screen layer behind centered panels and sheets. */
 export const OverlayBackdrop = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Overlay>,
   OverlayBackdropProps
@@ -46,6 +53,7 @@ export type OverlayCloseButtonProps = {
   'data-slot': string
 }
 
+/** Icon close control wired to Radix Dialog.Close. */
 export const OverlayCloseButton = ({ 'data-slot': dataSlot }: OverlayCloseButtonProps) => (
   <DialogPrimitive.Close
     data-slot={dataSlot}
@@ -57,6 +65,7 @@ export const OverlayCloseButton = ({ 'data-slot': dataSlot }: OverlayCloseButton
   </DialogPrimitive.Close>
 )
 
+/** Factory for header/footer/body sections with a consistent data-slot and base class. */
 export const createOverlaySection =
   (dataSlot: string, baseClassName: string) =>
   ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (

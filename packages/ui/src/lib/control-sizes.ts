@@ -1,6 +1,10 @@
+/**
+ * Shared pixel dimensions and inline styles for inputs, buttons, selects, and menus.
+ * Centralized here because consuming apps may not Tailwind-scan packages/ui.
+ */
 import type { CSSProperties } from 'react'
 
-/** Pixel dimensions for consistent control sizing (works without Tailwind scan). */
+/** Pixel heights keyed by Lattice size token (xs through lg). */
 export const controlHeights = {
   xs: 32,
   sm: 36,
@@ -8,6 +12,7 @@ export const controlHeights = {
   lg: 48,
 } as const
 
+/** Horizontal padding (px) paired with {@link controlHeights} per size. */
 export const controlPaddingX = {
   xs: 10,
   sm: 12,
@@ -15,6 +20,7 @@ export const controlPaddingX = {
   lg: 24,
 } as const
 
+/** Height and horizontal padding for triggers and single-line controls. */
 export const controlSizeStyle = (size: keyof typeof controlHeights = 'default') => {
   const h = controlHeights[size]
   return {
@@ -43,6 +49,7 @@ export const filledButtonLabelStyle: CSSProperties = {
   color: '#ffffff',
 }
 
+/** Default input/select border and surface — applied inline alongside CVA classes. */
 export const controlBorderStyle: CSSProperties = {
   border: '1px solid var(--input)',
   borderRadius: 'calc(var(--radius) - 2px)',
@@ -50,6 +57,7 @@ export const controlBorderStyle: CSSProperties = {
   boxSizing: 'border-box',
 }
 
+/** Error border and ring used when `error` or `aria-invalid` is set on controls. */
 export const controlInvalidStyle: CSSProperties = {
   borderColor: 'var(--error)',
   boxShadow: '0 0 0 1px color-mix(in srgb, var(--error) 35%, transparent)',

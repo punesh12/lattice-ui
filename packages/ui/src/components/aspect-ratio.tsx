@@ -1,3 +1,4 @@
+/** Radix AspectRatio with preset variant ratios (square, video, portrait). */
 import * as React from 'react'
 import * as AspectRatioPrimitive from '@radix-ui/react-aspect-ratio'
 import { cva, type VariantProps } from 'class-variance-authority'
@@ -30,6 +31,7 @@ const ratioByVariant = {
 
 export type AspectRatioVariant = keyof typeof ratioByVariant
 
+/** Props for {@link AspectRatio} — `variant` picks a preset width/height ratio. */
 export interface AspectRatioProps
   extends
     React.ComponentPropsWithoutRef<typeof AspectRatioPrimitive.Root>,

@@ -1,3 +1,7 @@
+/**
+ * Public entry for @lattice-ui/ui — re-exports components, hooks, and shared utilities.
+ * Prefer named imports; DatePicker is intentionally omitted (deprecated source only).
+ */
 export { cn } from './lib/utils'
 
 export { Button, buttonVariants, type ButtonProps } from './components/button'

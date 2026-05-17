@@ -1,7 +1,9 @@
+/** Radix Separator with inline thickness for horizontal/vertical rules. */
 import * as React from 'react'
 import * as SeparatorPrimitive from '@radix-ui/react-separator'
 import { cn } from '../lib/utils'
 
+/** Props for {@link Separator}. */
 export interface SeparatorProps extends React.ComponentPropsWithoutRef<
   typeof SeparatorPrimitive.Root
 > {}

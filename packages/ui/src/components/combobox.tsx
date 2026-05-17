@@ -1,5 +1,6 @@
 'use client'
 
+/** Single-select searchable dropdown built from Popover + Command. */
 import * as React from 'react'
 import { Check, ChevronsUpDown } from 'lucide-react'
 import { cn } from '../lib/utils'
@@ -14,11 +15,13 @@ import {
 } from './command'
 import { Popover, PopoverContent, PopoverTrigger } from './popover'
 
+/** One selectable row in {@link Combobox}. */
 export interface ComboboxOption {
   value: string
   label: string
 }
 
+/** Props for the prop-driven {@link Combobox}. */
 export interface ComboboxProps {
   options: ComboboxOption[]
   value?: string

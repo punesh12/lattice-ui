@@ -1,7 +1,9 @@
+/** Radix Slider for numeric range input on a track. */
 import * as React from 'react'
 import * as SliderPrimitive from '@radix-ui/react-slider'
 import { cn } from '../lib/utils'
 
+/** Props for {@link Slider}. */
 export interface SliderProps extends React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> {}
 
 const Slider = React.forwardRef<React.ElementRef<typeof SliderPrimitive.Root>, SliderProps>(

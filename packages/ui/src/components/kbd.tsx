@@ -1,3 +1,4 @@
+/** Keyboard key hint styled with inline flex centering for docs and shortcuts UI. */
 import * as React from 'react'
 import { inlineFlexCenter } from '../lib/layout-styles'
 import { cn } from '../lib/utils'

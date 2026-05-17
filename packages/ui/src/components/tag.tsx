@@ -1,5 +1,6 @@
 'use client'
 
+/** Removable filter chips and TagGroup layout; client for dismiss interactions. */
 import * as React from 'react'
 import { cva } from 'class-variance-authority'
 import { X } from 'lucide-react'
@@ -79,6 +80,7 @@ const TagDismiss = ({ dismissLabel, onDismiss, stopPropagation = false }: TagDis
   )
 }
 
+/** Removable chip; `onRemove` is called instead of a native click when provided. */
 export interface TagProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'> {
   variant?: 'default' | 'selected'
   onDismiss?: () => void
