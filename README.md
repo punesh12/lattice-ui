@@ -56,6 +56,14 @@ pnpm format        # Prettier write
 pnpm format:check  # Prettier check (CI)
 ```
 
+## Publishing
+
+`@lattice-ui/tokens` and `@lattice-ui/ui` are published to npm. See [PUBLISHING.md](./PUBLISHING.md) for login, version bumps, and release commands.
+
+```bash
+pnpm add @lattice-ui/ui @lattice-ui/tokens
+```
+
 ## License
 
 MIT — personal portfolio project.

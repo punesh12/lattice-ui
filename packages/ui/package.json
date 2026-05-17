@@ -1,27 +1,70 @@
 {
   "name": "@lattice-ui/ui",
   "version": "0.1.0",
-  "private": true,
-  "main": "./src/index.ts",
-  "types": "./src/index.ts",
-  "exports": {
-    ".": "./src/index.ts",
-    "./utils": "./src/lib/utils.ts",
-    "./toast": "./src/components/toast.tsx"
+  "description": "Structured React components for modern interfaces — Radix UI, Tailwind v4, TypeScript",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/punesh12/lattice-ui.git",
+    "directory": "packages/ui"
   },
+  "homepage": "https://github.com/punesh12/lattice-ui#readme",
+  "bugs": {
+    "url": "https://github.com/punesh12/lattice-ui/issues"
+  },
+  "keywords": [
+    "react",
+    "components",
+    "ui",
+    "radix-ui",
+    "tailwind",
+    "design-system",
+    "typescript"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": ["dist"],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "development": "./src/index.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./utils": {
+      "types": "./dist/utils.d.ts",
+      "development": "./src/lib/utils.ts",
+      "import": "./dist/utils.js",
+      "require": "./dist/utils.cjs"
+    },
+    "./toast": {
+      "types": "./dist/toast.d.ts",
+      "development": "./src/components/toast.tsx",
+      "import": "./dist/toast.js",
+      "require": "./dist/toast.cjs"
+    }
+  },
+  "sideEffects": false,
   "scripts": {
-    "build": "echo 'ui: source-only package'",
+    "build": "tsup && node scripts/stamp-client-directive.mjs",
     "lint": "eslint src && tsc --noEmit",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "storybook-build": "storybook build",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "prepublishOnly": "pnpm build && pnpm test"
   },
   "peerDependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
   },
   "dependencies": {
+    "@lattice-ui/tokens": "workspace:^",
     "@radix-ui/react-alert-dialog": "^1.1.4",
     "@radix-ui/react-aspect-ratio": "^1.1.1",
     "@radix-ui/react-avatar": "^1.1.2",
@@ -71,6 +114,7 @@
     "react-dom": "^19.0.0",
     "storybook": "^8.6.14",
     "tailwindcss": "^4.0.0",
+    "tsup": "^8.4.0",
     "typescript": "^5.7.2",
     "vite": "^6.0.7",
     "vitest": "^2.1.8"
