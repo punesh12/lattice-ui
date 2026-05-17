@@ -78,7 +78,7 @@ Storybook static output is written to `packages/ui/storybook-static` (not the re
 
 | Setting | Value |
 | --- | --- |
-| Build Command | `pnpm storybook-build` |
+| Build Command | `pnpm build-storybook` |
 | Output Directory | `packages/ui/storybook-static` |
 | Install Command | `pnpm install` |
 | Framework Preset | Other |
@@ -88,7 +88,7 @@ Storybook static output is written to `packages/ui/storybook-static` (not the re
 | Setting | Value |
 | --- | --- |
 | Root Directory | `packages/ui` |
-| Build Command | `pnpm run storybook-build` |
+| Build Command | `pnpm run build-storybook` |
 | Output Directory | `storybook-static` |
 | Install Command | `cd ../.. && pnpm install` |
 
