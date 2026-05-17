@@ -14,7 +14,10 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "storybook": "pnpm --filter @lattice-ui/ui storybook",
-    "build-storybook": "pnpm --filter @lattice-ui/ui build-storybook"
+    "build-storybook": "pnpm --filter @lattice-ui/ui build-storybook",
+    "publish:tokens": "pnpm --filter @lattice-ui/tokens publish --access public --no-git-checks",
+    "publish:ui": "pnpm --filter @lattice-ui/ui publish --access public --no-git-checks",
+    "publish:packages": "pnpm publish:tokens && pnpm publish:ui"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",

@@ -4,6 +4,7 @@ node_modules/
 .next
 dist
 storybook-static
+dist
 *.tsbuildinfo
 .DS_Store
 .env

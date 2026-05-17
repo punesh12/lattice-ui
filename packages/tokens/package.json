@@ -1,13 +1,30 @@
 {
   "name": "@lattice-ui/tokens",
   "version": "0.1.0",
-  "private": true,
+  "description": "Design tokens and global CSS variables for Lattice UI",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/punesh12/lattice-ui.git",
+    "directory": "packages/tokens"
+  },
+  "homepage": "https://github.com/punesh12/lattice-ui#readme",
+  "bugs": {
+    "url": "https://github.com/punesh12/lattice-ui/issues"
+  },
+  "keywords": ["design-tokens", "css-variables", "tailwind", "lattice-ui"],
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": ["src", "tailwind-preset.ts"],
   "scripts": {
     "build": "echo 'tokens: CSS-only package'",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "prepublishOnly": "pnpm lint"
   },
   "exports": {
     "./globals.css": "./src/globals.css",
     "./tailwind-preset": "./tailwind-preset.ts"
-  }
+  },
+  "sideEffects": ["**/*.css"]
 }
