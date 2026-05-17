@@ -7,7 +7,6 @@
   "exports": {
     ".": "./src/index.ts",
     "./utils": "./src/lib/utils.ts",
-    "./date-picker": "./src/components/date-picker.tsx",
     "./toast": "./src/components/toast.tsx"
   },
   "scripts": {

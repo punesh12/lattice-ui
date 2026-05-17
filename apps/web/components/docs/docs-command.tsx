@@ -37,7 +37,12 @@ export function DocsCommand() {
       >
         <span>⌘K</span>
       </button>
-      <CommandDialog open={open} onOpenChange={setOpen}>
+      <CommandDialog
+        open={open}
+        onOpenChange={setOpen}
+        title="Search documentation"
+        description="Search docs pages and components"
+      >
         <CommandInput placeholder="Search documentation..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>

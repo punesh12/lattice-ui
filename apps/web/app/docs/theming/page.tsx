@@ -44,15 +44,20 @@ export default function ThemingPage() {
         <CodeBlock
           code={`import { ThemeProvider } from 'next-themes'
 
-<ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
   {children}
 </ThemeProvider>`}
         />
       </div>
 
-      <Callout title="Tip">
-        Set <code>disableTransitionOnChange</code> to avoid flash of unstyled content when switching
-        themes.
+      <Callout title="Theme toggle">
+        Use the header theme control to cycle light, dark, and system (monitor icon). System follows
+        your OS preference via <code>prefers-color-scheme</code>.
+      </Callout>
+
+      <Callout title="Smooth transitions">
+        Lattice uses the View Transitions API (with a CSS fallback) when changing themes. Respect{' '}
+        <code>prefers-reduced-motion</code> for instant switches when needed.
       </Callout>
 
       <h2>Customizing</h2>

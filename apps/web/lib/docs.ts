@@ -78,11 +78,6 @@ export const docsConfig = {
       description: 'Displays a menu located at the pointer, triggered by a right-click.',
     },
     {
-      slug: 'date-picker',
-      title: 'Date Picker',
-      description: 'A date picker component with popover calendar.',
-    },
-    {
       slug: 'dialog',
       title: 'Dialog',
       description: 'A window overlaid on either the primary window or another dialog window.',

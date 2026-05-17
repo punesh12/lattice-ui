@@ -42,3 +42,15 @@ export const menuItemSizeStyle: CSSProperties = {
 export const filledButtonLabelStyle: CSSProperties = {
   color: '#ffffff',
 }
+
+export const controlBorderStyle: CSSProperties = {
+  border: '1px solid var(--input)',
+  borderRadius: 'calc(var(--radius) - 2px)',
+  backgroundColor: 'var(--background)',
+  boxSizing: 'border-box',
+}
+
+export const controlInvalidStyle: CSSProperties = {
+  borderColor: 'var(--error)',
+  boxShadow: '0 0 0 1px color-mix(in srgb, var(--error) 35%, transparent)',
+}

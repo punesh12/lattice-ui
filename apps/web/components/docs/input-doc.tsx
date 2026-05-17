@@ -1,6 +1,6 @@
 'use client'
 
-import { Input, InputGroup, InputPrefix, InputSuffix } from '@lattice-ui/ui'
+import { Field, Input, InputGroup, InputPrefix, InputSuffix } from '@lattice-ui/ui'
 import { Search, Mail } from 'lucide-react'
 import { ApiTable, type ApiProp } from '@/components/docs/api-table'
 import { Callout } from '@/components/docs/callout'
@@ -23,9 +23,15 @@ const inputApi: ApiProp[] = [
     description: 'Prevents editing and applies disabled styles.',
   },
   {
+    prop: 'error',
+    type: 'boolean',
+    default: 'false',
+    description: 'Applies red error border and sets aria-invalid.',
+  },
+  {
     prop: 'aria-invalid',
     type: 'boolean',
-    description: 'Applies error border and ring when true.',
+    description: 'Also applies error border styling when true.',
   },
 ]
 
@@ -62,35 +68,50 @@ export function InputDoc() {
       <h2 id="prefix-suffix">Prefix & suffix</h2>
       <PreviewToolbar
         code={`<InputGroup>
-  <InputPrefix><Mail className="h-4 w-4" /></InputPrefix>
-  <Input className="pl-9" placeholder="you@example.com" />
+  <InputPrefix><Mail style={{ width: 16, height: 16 }} /></InputPrefix>
+  <Input placeholder="you@example.com" />
 </InputGroup>`}
       >
         <InputGroup className="max-w-sm">
           <InputPrefix>
-            <Mail className="h-4 w-4" />
+            <Mail style={{ width: 16, height: 16 }} aria-hidden />
           </InputPrefix>
-          <Input className="pl-9" placeholder="you@example.com" />
+          <Input placeholder="you@example.com" />
         </InputGroup>
       </PreviewToolbar>
 
       <PreviewToolbar
         code={`<InputGroup>
-  <Input placeholder="Search…" className="pr-9" />
-  <InputSuffix><Search className="h-4 w-4" /></InputSuffix>
+  <Input placeholder="Search…" />
+  <InputSuffix><Search style={{ width: 16, height: 16 }} /></InputSuffix>
 </InputGroup>`}
       >
         <InputGroup className="max-w-sm">
-          <Input placeholder="Search…" className="pr-9" />
+          <Input placeholder="Search…" />
           <InputSuffix>
-            <Search className="h-4 w-4" />
+            <Search style={{ width: 16, height: 16 }} aria-hidden />
           </InputSuffix>
         </InputGroup>
       </PreviewToolbar>
 
-      <h2 id="invalid">Invalid state</h2>
-      <PreviewToolbar code={`<Input aria-invalid placeholder="Required field" />`}>
-        <Input aria-invalid placeholder="Required field" className="max-w-sm" />
+      <h2 id="invalid">Error state</h2>
+      <PreviewToolbar code={`<Input error placeholder="Required field" />`}>
+        <Input error placeholder="Required field" className="max-w-sm" />
+      </PreviewToolbar>
+
+      <PreviewToolbar
+        code={`<Field label="Email" htmlFor="email" error="Please enter a valid email.">
+  <Input id="email" type="email" placeholder="you@example.com" />
+</Field>`}
+      >
+        <Field
+          label="Email"
+          htmlFor="email"
+          error="Please enter a valid email."
+          className="max-w-sm"
+        >
+          <Input id="email" type="email" placeholder="you@example.com" />
+        </Field>
       </PreviewToolbar>
 
       <Callout title="Forms">

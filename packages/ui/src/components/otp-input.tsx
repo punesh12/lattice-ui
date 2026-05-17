@@ -2,21 +2,40 @@ import * as React from 'react'
 import { flexRowCenter } from '../lib/layout-styles'
 import { cn } from '../lib/utils'
 
-const OTP_LENGTH = 6
+export const DEFAULT_OTP_LENGTH = 6
+/** @deprecated Use `DEFAULT_OTP_LENGTH` or the `length` prop */
+export const OTP_LENGTH = DEFAULT_OTP_LENGTH
+
+const clampLength = (length: number) => Math.min(8, Math.max(4, Math.floor(length)))
 
 export interface OtpInputProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> {
   value?: string
   onChange?: (value: string) => void
+  /** Number of digit cells — default `6` (min 4, max 8) */
+  length?: number
   error?: boolean
   disabled?: boolean
 }
 
 const OtpInput = React.forwardRef<HTMLDivElement, OtpInputProps>(
-  ({ className, style, value = '', onChange, error, disabled, ...props }, ref) => {
+  (
+    {
+      className,
+      style,
+      value = '',
+      onChange,
+      length = DEFAULT_OTP_LENGTH,
+      error,
+      disabled,
+      ...props
+    },
+    ref,
+  ) => {
+    const otpLength = clampLength(length)
     const inputsRef = React.useRef<(HTMLInputElement | null)[]>([])
-    const digits = value.padEnd(OTP_LENGTH, ' ').slice(0, OTP_LENGTH).split('')
+    const digits = value.padEnd(otpLength, ' ').slice(0, otpLength).split('')
 
-    const update = (next: string) => onChange?.(next.replace(/\s/g, ''))
+    const update = (next: string) => onChange?.(next.replace(/\s/g, '').slice(0, otpLength))
 
     const handleChange = (index: number, char: string) => {
       const cleaned = char.replace(/\D/g, '').slice(-1)
@@ -24,7 +43,7 @@ const OtpInput = React.forwardRef<HTMLDivElement, OtpInputProps>(
       arr[index] = cleaned
       const next = arr.join('').trimEnd()
       update(next)
-      if (cleaned && index < OTP_LENGTH - 1) inputsRef.current[index + 1]?.focus()
+      if (cleaned && index < otpLength - 1) inputsRef.current[index + 1]?.focus()
     }
 
     const handleKeyDown = (index: number, e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -35,15 +54,16 @@ const OtpInput = React.forwardRef<HTMLDivElement, OtpInputProps>(
 
     const handlePaste = (e: React.ClipboardEvent) => {
       e.preventDefault()
-      const pasted = e.clipboardData.getData('text').replace(/\D/g, '').slice(0, OTP_LENGTH)
+      const pasted = e.clipboardData.getData('text').replace(/\D/g, '').slice(0, otpLength)
       update(pasted)
-      const focusIndex = Math.min(pasted.length, OTP_LENGTH - 1)
+      const focusIndex = Math.min(pasted.length, otpLength - 1)
       inputsRef.current[focusIndex]?.focus()
     }
 
     return (
       <div
         data-slot="otp-input"
+        data-length={otpLength}
         ref={ref}
         role="group"
         aria-label="One-time password"
@@ -52,7 +72,7 @@ const OtpInput = React.forwardRef<HTMLDivElement, OtpInputProps>(
         onPaste={handlePaste}
         {...props}
       >
-        {Array.from({ length: OTP_LENGTH }).map((_, i) => (
+        {Array.from({ length: otpLength }).map((_, i) => (
           <input
             key={i}
             ref={(el) => {
@@ -92,4 +112,4 @@ const OtpInput = React.forwardRef<HTMLDivElement, OtpInputProps>(
 )
 OtpInput.displayName = 'OtpInput'
 
-export { OtpInput, OTP_LENGTH }
+export { OtpInput }

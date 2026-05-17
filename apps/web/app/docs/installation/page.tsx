@@ -29,13 +29,16 @@ export default function InstallationPage() {
       <div className="not-prose">
         <CodeBlock
           code={`@import 'tailwindcss';
-@import '@lattice-ui/tokens/globals.css';`}
+ @import '@lattice-ui/tokens/globals.css';`}
         />
       </div>
 
       <h2>Theme provider</h2>
       <p>
-        Wrap your application with <code>next-themes</code> and the Lattice toaster.
+        Wrap your application with <code>next-themes</code> and the Lattice toaster. Set{' '}
+        <code>position</code> on <code>Toaster</code> to any corner or edge (<code>top-left</code>,{' '}
+        <code>top-center</code>, <code>top-right</code>, <code>bottom-left</code>,{' '}
+        <code>bottom-center</code>, <code>bottom-right</code>).
       </p>
       <div className="not-prose">
         <CodeBlock
@@ -48,7 +51,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       {children}
-      <Toaster position="top-right" richColors />
+      <Toaster position="top-right" closeButton />
     </ThemeProvider>
   )
 }`}

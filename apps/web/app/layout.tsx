@@ -7,7 +7,10 @@ import './globals.css'
 import { Providers } from '@/components/providers'
 
 export const metadata: Metadata = {
-  title: 'Lattice UI — Structured components for modern interfaces',
+  title: {
+    default: 'Lattice UI',
+    template: '%s — Lattice UI',
+  },
   description: 'Production-quality React component library with full light and dark theme support.',
 }
 
@@ -16,6 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning>
       <body
         className="min-h-screen"
+        suppressHydrationWarning
         style={
           {
             '--font-sans': '"Inter", system-ui, sans-serif',

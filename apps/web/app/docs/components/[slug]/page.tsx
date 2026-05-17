@@ -26,7 +26,7 @@ export async function generateMetadata({
   const component = getComponentBySlug(slug)
   if (!component) return { title: 'Component' }
   return {
-    title: `${component.title} — Lattice UI`,
+    title: component.title,
     description: component.description,
   }
 }

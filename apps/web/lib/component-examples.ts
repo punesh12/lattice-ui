@@ -64,15 +64,25 @@ export const componentExamples: Record<string, string> = {
 
   'aspect-ratio': `import { AspectRatio } from '@lattice-ui/ui'
 
+{/* Preset variants: square | video | portrait | photo | cinema | ultrawide */}
+<AspectRatio variant="video" className="rounded-md bg-muted">
+  <img src="/photo.jpg" alt="Photo" className="h-full w-full object-cover" />
+</AspectRatio>
+
+{/* Or pass a custom ratio */}
 <AspectRatio ratio={16 / 9} className="rounded-md bg-muted">
   <img src="/photo.jpg" alt="Photo" className="h-full w-full object-cover" />
 </AspectRatio>`,
 
   avatar: `import { Avatar, AvatarFallback, AvatarImage } from '@lattice-ui/ui'
 
-<Avatar>
+<Avatar size="default">
   <AvatarImage src="https://github.com/shadcn.png" alt="User" />
   <AvatarFallback>LT</AvatarFallback>
+</Avatar>
+
+<Avatar size="lg" status="online">
+  <AvatarFallback>PB</AvatarFallback>
 </Avatar>`,
 
   badge: `import { Badge } from '@lattice-ui/ui'
@@ -174,12 +184,6 @@ const options = [
   </ContextMenuContent>
 </ContextMenu>`,
 
-  'date-picker': `import { DatePicker } from '@lattice-ui/ui/date-picker'
-
-const [date, setDate] = useState<Date | undefined>()
-
-<DatePicker date={date} onDateChange={setDate} />`,
-
   dialog: `import {
   Button,
   Dialog,
@@ -266,9 +270,19 @@ import { Inbox } from 'lucide-react'
 
   field: `import { Field, Input } from '@lattice-ui/ui'
 
-<Field label="Email" description="We'll never share your email.">
-  <Input type="email" placeholder="you@example.com" />
+<Field label="Email" htmlFor="email" description="We'll never share your email.">
+  <Input id="email" type="email" placeholder="you@example.com" />
+</Field>
+
+<Field label="Email" htmlFor="email" error="Please enter a valid email address.">
+  <Input id="email" type="email" placeholder="you@example.com" />
 </Field>`,
+
+  input: `import { Input } from '@lattice-ui/ui'
+
+<Input placeholder="Email address" type="email" />
+
+<Input error placeholder="Required field" />`,
 
   'file-upload': `import { FileUpload } from '@lattice-ui/ui'
 
@@ -319,7 +333,8 @@ import { Inbox } from 'lucide-react'
 
 const [value, setValue] = useState('')
 
-<OtpInput value={value} onChange={setValue} />`,
+<OtpInput value={value} onChange={setValue} />
+<OtpInput length={4} value={value} onChange={setValue} />`,
 
   pagination: `import {
   Pagination,
@@ -380,28 +395,34 @@ const [value, setValue] = useState('')
 
   'scroll-area': `import { ScrollArea } from '@lattice-ui/ui'
 
-<ScrollArea className="h-32 w-52 rounded-md border p-3">
+<ScrollArea showScrollbar className="h-32 w-52 rounded-md border p-3">
   {/* scrollable content */}
+</ScrollArea>
+
+<ScrollArea showScrollbar={false} className="h-32 w-52 rounded-md border p-3">
+  {/* scrollable, no visible scrollbar */}
 </ScrollArea>`,
 
-  select: `import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@lattice-ui/ui'
+  select: `import { Select } from '@lattice-ui/ui'
 
-<Select>
-  <SelectTrigger className="w-[180px]">
-    <SelectValue placeholder="Theme" />
-  </SelectTrigger>
-  <SelectContent>
-    <SelectItem value="light">Light</SelectItem>
-    <SelectItem value="dark">Dark</SelectItem>
-    <SelectItem value="system">System</SelectItem>
-  </SelectContent>
-</Select>`,
+const options = [
+  { value: 'light', label: 'Light' },
+  { value: 'dark', label: 'Dark' },
+  { value: 'system', label: 'System' },
+]
+
+<Select options={options} placeholder="Theme" />
+
+<Select options={options} searchable placeholder="Search theme…" />
+
+<Select
+  options={options}
+  multiple
+  searchable
+  value={selected}
+  onValueChange={setSelected}
+  placeholder="Select themes"
+/>`,
 
   'selectable-row': `import { SelectableRow } from '@lattice-ui/ui'
 
@@ -558,14 +579,17 @@ const [value, setValue] = useState([50])
 
 <Textarea placeholder="Write a message…" />`,
 
-  toast: `import { Button, toast } from '@lattice-ui/ui'
+  toast: `import { Button, Toaster, toast } from '@lattice-ui/ui'
 
-<Button
-  variant="outline"
-  onClick={() => toast.success('Changes saved', { description: 'Your settings were updated.' })}
->
-  Show toast
-</Button>`,
+// Default placement for all toasts (mount once in your app root)
+<Toaster position="top-right" closeButton />
+
+toast.success('Changes saved', { description: 'Your settings were updated.' })
+// Or override placement per toast
+toast.info('New update', {
+  description: 'Version 1.1 is available.',
+  position: 'bottom-center',
+})`,
 
   tooltip: `import {
   Button,

@@ -13,7 +13,8 @@ import {
 import { Search } from 'lucide-react'
 import { flexRowCenter } from '../lib/layout-styles'
 import { cn } from '../lib/utils'
-import { Dialog, DialogContent } from './dialog'
+import { Dialog, DialogContent, DialogDescription, DialogTitle } from './dialog'
+import { visuallyHiddenStyle } from '../lib/a11y-styles'
 
 const Command = React.forwardRef<
   React.ElementRef<typeof CommandRootPrimitive>,
@@ -173,11 +174,11 @@ function CommandDialog({
         className="overflow-hidden p-0 shadow-lg"
         showClose={false}
       >
-        <Command className="[&_[cmdk-group-heading]]:text-muted-foreground">
-          <span className="sr-only">{title}</span>
-          {description ? <span className="sr-only">{description}</span> : null}
-          {children}
-        </Command>
+        <DialogTitle style={visuallyHiddenStyle}>{title}</DialogTitle>
+        {description ? (
+          <DialogDescription style={visuallyHiddenStyle}>{description}</DialogDescription>
+        ) : null}
+        <Command className="[&_[cmdk-group-heading]]:text-muted-foreground">{children}</Command>
       </DialogContent>
     </Dialog>
   )

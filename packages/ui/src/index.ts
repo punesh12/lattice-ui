@@ -22,7 +22,7 @@ export {
 } from './components/radio-group'
 export { Switch, type SwitchProps } from './components/switch'
 export {
-  Select,
+  SelectRoot,
   SelectGroup,
   SelectValue,
   SelectTrigger,
@@ -34,10 +34,22 @@ export {
   SelectScrollDownButton,
   type SelectTriggerProps,
 } from './components/select'
+export {
+  Select,
+  SelectMenu,
+  type SelectProps,
+  type SelectMenuProps,
+  type SelectOption,
+} from './components/select-menu'
 export { Combobox, type ComboboxProps, type ComboboxOption } from './components/combobox'
 export { Slider, type SliderProps } from './components/slider'
-export { OtpInput, OTP_LENGTH, type OtpInputProps } from './components/otp-input'
-// DatePicker uses react-day-picker (client-only) — import from '@lattice-ui/ui/date-picker'
+export {
+  OtpInput,
+  DEFAULT_OTP_LENGTH,
+  OTP_LENGTH,
+  type OtpInputProps,
+} from './components/otp-input'
+// DatePicker is disabled (hidden from docs/exports). Source: ./components/date-picker.tsx
 export { Badge, badgeVariants, type BadgeProps } from './components/badge'
 export { Tag, TagGroup, tagVariants, type TagProps, type TagGroupProps } from './components/tag'
 export {
@@ -46,8 +58,10 @@ export {
   AvatarFallback,
   AvatarGroup,
   avatarVariants,
+  avatarSizes,
   type AvatarProps,
   type AvatarGroupProps,
+  type AvatarSize,
 } from './components/avatar'
 export {
   Card,
@@ -80,7 +94,13 @@ export { Separator, type SeparatorProps } from './components/separator'
 export { Divider, type DividerProps } from './components/divider'
 export { Kbd, type KbdProps } from './components/kbd'
 export { Spinner, spinnerVariants, type SpinnerProps } from './components/spinner'
-export { AspectRatio, type AspectRatioProps } from './components/aspect-ratio'
+export {
+  AspectRatio,
+  aspectRatioVariants,
+  ratioByVariant,
+  type AspectRatioProps,
+  type AspectRatioVariant,
+} from './components/aspect-ratio'
 export {
   ScrollArea,
   ScrollBar,
@@ -230,7 +250,15 @@ export {
   ContextMenuSubTrigger,
   ContextMenuRadioGroup,
 } from './components/context-menu'
-export { Toaster, toast, type ExternalToast, type ToastT } from './components/toast'
+export {
+  Toaster,
+  toast,
+  TOAST_POSITIONS,
+  type ExternalToast,
+  type ToastPosition,
+  type ToasterProps,
+  type ToastT,
+} from './components/toast'
 export {
   Alert,
   AlertTitle,
