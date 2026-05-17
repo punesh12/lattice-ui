@@ -5,9 +5,9 @@ import { Toaster } from '@lattice-ui/ui/toast'
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       {children}
-      <Toaster position="top-right" richColors />
+      <Toaster position="top-right" closeButton />
     </ThemeProvider>
   )
 }

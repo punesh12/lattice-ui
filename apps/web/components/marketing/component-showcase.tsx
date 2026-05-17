@@ -82,13 +82,10 @@ export const ComponentShowcase = () => (
             <div className="space-y-2">
               <Label htmlFor="card-number">Card number</Label>
               <InputGroup>
-                <Input
-                  id="card-number"
-                  placeholder="1234 5678 9012 3456"
-                  className="w-full"
-                  style={{ paddingRight: 52 }}
-                />
-                <InputSuffix className="text-xs font-semibold tracking-wide">VISA</InputSuffix>
+                <Input id="card-number" placeholder="1234 5678 9012 3456" className="w-full" />
+                <InputSuffix inset={36} className="text-xs font-semibold tracking-wide">
+                  VISA
+                </InputSuffix>
               </InputGroup>
             </div>
             <div className="flex items-center gap-2">

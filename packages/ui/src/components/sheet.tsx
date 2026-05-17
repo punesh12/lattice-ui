@@ -54,6 +54,7 @@ const SheetContent = React.forwardRef<
     <SheetOverlay />
     <DialogPrimitive.Content
       data-slot="sheet-content"
+      data-side={side ?? 'right'}
       ref={ref}
       className={cn(sheetVariants({ side }), className)}
       style={{ ...getSheetContentInlineStyle(side ?? 'right'), ...overlayContentStyle, ...style }}

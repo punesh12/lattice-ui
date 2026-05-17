@@ -1,5 +1,6 @@
 'use client'
 
+/** @deprecated Hidden from docs and package exports — kept for future use. */
 import * as React from 'react'
 import { Calendar as CalendarIcon } from 'lucide-react'
 import { DayPicker } from 'react-day-picker'

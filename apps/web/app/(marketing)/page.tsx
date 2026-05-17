@@ -1,6 +1,5 @@
 import { Navbar } from '@/components/marketing/navbar'
 import { Hero } from '@/components/marketing/hero'
-import { Logos } from '@/components/marketing/logos'
 import { Features } from '@/components/marketing/features'
 import { ComponentShowcase } from '@/components/marketing/component-showcase'
 import { ThemeShowcase } from '@/components/marketing/theme-showcase'
@@ -15,7 +14,6 @@ export default function MarketingPage(): React.ReactNode {
       <Navbar />
       <main>
         <Hero />
-        <Logos />
         <Features />
         <ComponentShowcase />
         <ThemeShowcase />

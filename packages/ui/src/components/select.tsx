@@ -5,7 +5,8 @@ import { controlSizeStyle, menuItemSizeStyle } from '../lib/control-sizes'
 import { flexRowCenter } from '../lib/layout-styles'
 import { cn } from '../lib/utils'
 
-const Select = SelectPrimitive.Root
+/** Compositional select root — or use `<Select options={...} />` for the prop-driven menu */
+const SelectRoot = SelectPrimitive.Root
 const SelectGroup = SelectPrimitive.Group
 const SelectValue = SelectPrimitive.Value
 
@@ -190,7 +191,7 @@ const SelectSeparator = React.forwardRef<
 SelectSeparator.displayName = SelectPrimitive.Separator.displayName
 
 export {
-  Select,
+  SelectRoot,
   SelectGroup,
   SelectValue,
   SelectTrigger,

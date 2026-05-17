@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
+import { controlBorderStyle, controlInvalidStyle } from '../lib/control-sizes'
 import { cn } from '../lib/utils'
 
 const textareaVariants = cva(
@@ -19,17 +20,33 @@ const textareaVariants = cva(
 export interface TextareaProps
   extends
     Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, 'size'>,
-    VariantProps<typeof textareaVariants> {}
+    VariantProps<typeof textareaVariants> {
+  error?: boolean
+}
+
+const isAriaInvalid = (value: TextareaProps['aria-invalid']) =>
+  value === true || value === 'true' || value === 'grammar' || value === 'spelling'
 
 const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ className, size, ...props }, ref) => (
-    <textarea
-      data-slot="textarea"
-      className={cn(textareaVariants({ size, className }))}
-      ref={ref}
-      {...props}
-    />
-  ),
+  ({ className, size, style, error, 'aria-invalid': ariaInvalid, ...props }, ref) => {
+    const invalid = error === true || isAriaInvalid(ariaInvalid)
+
+    return (
+      <textarea
+        data-slot="textarea"
+        className={cn(textareaVariants({ size, className }))}
+        style={{
+          width: '100%',
+          ...controlBorderStyle,
+          ...(invalid ? controlInvalidStyle : undefined),
+          ...style,
+        }}
+        ref={ref}
+        aria-invalid={invalid || undefined}
+        {...props}
+      />
+    )
+  },
 )
 Textarea.displayName = 'Textarea'
 

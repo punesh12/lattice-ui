@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { DatePicker } from '@lattice-ui/ui/date-picker'
 import {
   Alert,
   AlertDescription,
@@ -108,6 +107,8 @@ import {
   TagGroup,
   Textarea,
   toast,
+  TOAST_POSITIONS,
+  type ToastPosition,
   Tooltip,
   TooltipContent,
   TooltipProvider,
@@ -122,18 +123,91 @@ const comboboxOptions = [
   { value: 'vue', label: 'Vue' },
 ]
 
-const ToastDemo = () => (
-  <Button
-    variant="outline"
-    onClick={() => toast.success('Changes saved', { description: 'Your settings were updated.' })}
-  >
-    Show toast
-  </Button>
-)
+const ToastDemo = () => {
+  const [position, setPosition] = useState<ToastPosition>('top-right')
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 12, alignItems: 'flex-start' }}>
+      <Select value={position} onValueChange={(value) => setPosition(value as ToastPosition)}>
+        <SelectTrigger style={{ width: 200 }}>
+          <SelectValue placeholder="Position" />
+        </SelectTrigger>
+        <SelectContent>
+          {TOAST_POSITIONS.map((pos) => (
+            <SelectItem key={pos} value={pos}>
+              {pos}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() =>
+            toast.success('Changes saved', {
+              description: 'Your settings were updated.',
+              position,
+            })
+          }
+        >
+          Success
+        </Button>
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() =>
+            toast.info('New update', { description: 'Version 1.1 is available.', position })
+          }
+        >
+          Info
+        </Button>
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() =>
+            toast.warning('Storage almost full', {
+              description: 'Free up space to continue.',
+              position,
+            })
+          }
+        >
+          Warning
+        </Button>
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() =>
+            toast.error('Something went wrong', {
+              description: 'Please try again later.',
+              position,
+            })
+          }
+        >
+          Error
+        </Button>
+      </div>
+    </div>
+  )
+}
 
 const OtpDemo = () => {
-  const [value, setValue] = useState('')
-  return <OtpInput value={value} onChange={setValue} />
+  const [value6, setValue6] = useState('')
+  const [value4, setValue4] = useState('')
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 20, alignItems: 'flex-start' }}>
+      <div>
+        <p style={{ marginBottom: 8, fontSize: 12, color: 'var(--muted-foreground)' }}>
+          6 digits (default)
+        </p>
+        <OtpInput value={value6} onChange={setValue6} />
+      </div>
+      <div>
+        <p style={{ marginBottom: 8, fontSize: 12, color: 'var(--muted-foreground)' }}>4 digits</p>
+        <OtpInput length={4} value={value4} onChange={setValue4} />
+      </div>
+    </div>
+  )
 }
 
 const TagGroupDemo = () => {
@@ -186,28 +260,67 @@ const ComboboxDemo = () => {
   )
 }
 
-const DatePickerDemo = () => {
-  const [date, setDate] = useState<Date | undefined>()
-  return <DatePicker date={date} onDateChange={setDate} />
-}
-
 const SliderDemo = () => {
   const [value, setValue] = useState([50])
   return <Slider value={value} onValueChange={setValue} className="w-[200px]" />
 }
 
-const SelectDemo = () => (
-  <Select>
-    <SelectTrigger className="w-[180px]">
-      <SelectValue placeholder="Theme" />
-    </SelectTrigger>
-    <SelectContent>
-      <SelectItem value="light">Light</SelectItem>
-      <SelectItem value="dark">Dark</SelectItem>
-      <SelectItem value="system">System</SelectItem>
-    </SelectContent>
-  </Select>
-)
+const themeOptions = [
+  { value: 'light', label: 'Light' },
+  { value: 'dark', label: 'Dark' },
+  { value: 'system', label: 'System' },
+]
+
+const frameworkOptions = [
+  { value: 'react', label: 'React' },
+  { value: 'next', label: 'Next.js' },
+  { value: 'vue', label: 'Vue' },
+  { value: 'svelte', label: 'Svelte' },
+  { value: 'angular', label: 'Angular' },
+  { value: 'solid', label: 'Solid' },
+]
+
+const skillOptions = [
+  { value: 'ts', label: 'TypeScript' },
+  { value: 'css', label: 'CSS' },
+  { value: 'a11y', label: 'Accessibility' },
+  { value: 'testing', label: 'Testing' },
+  { value: 'design', label: 'Design systems' },
+]
+
+const SelectDemo = () => {
+  const [theme, setTheme] = useState('light')
+  const [framework, setFramework] = useState('')
+  const [skills, setSkills] = useState<string[]>(['ts', 'css'])
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 12, width: 280 }}>
+      <Select
+        options={themeOptions}
+        value={theme}
+        onValueChange={(value) => setTheme(value as string)}
+        placeholder="Theme"
+      />
+      <Select
+        options={frameworkOptions}
+        searchable
+        value={framework}
+        onValueChange={(value) => setFramework(value as string)}
+        placeholder="Search frameworks…"
+        searchPlaceholder="Filter…"
+      />
+      <Select
+        options={skillOptions}
+        multiple
+        searchable
+        value={skills}
+        onValueChange={(value) => setSkills(value as string[])}
+        placeholder="Skills"
+        searchPlaceholder="Search skills…"
+      />
+    </div>
+  )
+}
 
 const demos: Record<string, () => React.ReactNode> = {
   alert: () => (
@@ -253,17 +366,57 @@ const demos: Record<string, () => React.ReactNode> = {
     </AppShell>
   ),
   'aspect-ratio': () => (
-    <AspectRatio ratio={16 / 9} className="w-[280px] overflow-hidden rounded-md bg-muted">
-      <div className="flex h-full items-center justify-center text-sm text-muted-foreground">
-        16:9
-      </div>
-    </AspectRatio>
+    <div
+      style={{ display: 'flex', flexDirection: 'column', gap: 20, width: '100%', maxWidth: 280 }}
+    >
+      {(['square', 'video', 'portrait', 'photo', 'cinema', 'ultrawide'] as const).map((variant) => (
+        <div key={variant} style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <span
+            style={{
+              fontSize: 12,
+              fontWeight: 500,
+              color: 'var(--muted-foreground)',
+              textTransform: 'capitalize',
+            }}
+          >
+            {variant}
+          </span>
+          <AspectRatio
+            variant={variant}
+            style={{ width: '100%', borderRadius: 8, backgroundColor: 'var(--muted)' }}
+          >
+            <div
+              style={{
+                display: 'flex',
+                height: '100%',
+                width: '100%',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: 11,
+                color: 'var(--muted-foreground)',
+              }}
+            >
+              {variant === 'square' && '1:1'}
+              {variant === 'video' && '16:9'}
+              {variant === 'portrait' && '4:5'}
+              {variant === 'photo' && '4:3'}
+              {variant === 'cinema' && '21:9'}
+              {variant === 'ultrawide' && '2:1'}
+            </div>
+          </AspectRatio>
+        </div>
+      ))}
+    </div>
   ),
   avatar: () => (
-    <Avatar>
-      <AvatarImage src="https://github.com/shadcn.png" alt="User" />
-      <AvatarFallback>LT</AvatarFallback>
-    </Avatar>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      {(['xs', 'sm', 'default', 'lg', 'xl'] as const).map((size) => (
+        <Avatar key={size} size={size}>
+          <AvatarImage src="https://github.com/shadcn.png" alt="User" />
+          <AvatarFallback>LT</AvatarFallback>
+        </Avatar>
+      ))}
+    </div>
   ),
   badge: () => (
     <div className="flex gap-2">
@@ -327,7 +480,6 @@ const demos: Record<string, () => React.ReactNode> = {
       </ContextMenuContent>
     </ContextMenu>
   ),
-  'date-picker': () => <DatePickerDemo />,
   dialog: () => <EditProfileModalDemo />,
   modal: () => <EditProfileModalDemo />,
   divider: () => (
@@ -358,9 +510,16 @@ const demos: Record<string, () => React.ReactNode> = {
     />
   ),
   field: () => (
-    <Field label="Email" description="We'll never share your email." className="max-w-sm">
-      <Input type="email" placeholder="you@example.com" />
-    </Field>
+    <div
+      style={{ display: 'flex', flexDirection: 'column', gap: 24, width: '100%', maxWidth: 320 }}
+    >
+      <Field label="Email" htmlFor="field-email" description="We'll never share your email.">
+        <Input id="field-email" type="email" placeholder="you@example.com" />
+      </Field>
+      <Field label="Email" htmlFor="field-email-error" error="Please enter a valid email address.">
+        <Input id="field-email-error" type="email" placeholder="you@example.com" />
+      </Field>
+    </div>
   ),
   'file-upload': () => <FileUpload className="max-w-sm" />,
   'filter-bar': () => (
@@ -446,13 +605,72 @@ const demos: Record<string, () => React.ReactNode> = {
     </RadioGroup>
   ),
   'scroll-area': () => (
-    <ScrollArea className="h-[120px] w-[200px] rounded-md border p-3">
-      <div className="space-y-2 text-sm">
-        {Array.from({ length: 12 }).map((_, i) => (
-          <p key={i}>Item {i + 1}</p>
-        ))}
+    <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+      <div>
+        <p style={{ marginBottom: 8, fontSize: 12, color: 'var(--muted-foreground)' }}>
+          Scrollbar visible
+        </p>
+        <div
+          style={{
+            height: 120,
+            width: 200,
+            borderRadius: 8,
+            border: '1px solid var(--border)',
+            overflow: 'hidden',
+          }}
+        >
+          <ScrollArea showScrollbar style={{ height: '100%', width: '100%' }}>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 8,
+                fontSize: 14,
+                padding: 12,
+              }}
+            >
+              {Array.from({ length: 12 }).map((_, i) => (
+                <p key={i} style={{ margin: 0 }}>
+                  Item {i + 1}
+                </p>
+              ))}
+            </div>
+          </ScrollArea>
+        </div>
       </div>
-    </ScrollArea>
+      <div>
+        <p style={{ marginBottom: 8, fontSize: 12, color: 'var(--muted-foreground)' }}>
+          Scrollbar hidden
+        </p>
+        <div
+          style={{
+            height: 120,
+            width: 200,
+            borderRadius: 8,
+            border: '1px solid var(--border)',
+            overflow: 'hidden',
+          }}
+        >
+          <ScrollArea showScrollbar={false} style={{ height: '100%', width: '100%' }}>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 8,
+                fontSize: 14,
+                padding: 12,
+              }}
+            >
+              {Array.from({ length: 12 }).map((_, i) => (
+                <p key={i} style={{ margin: 0 }}>
+                  Item {i + 1}
+                </p>
+              ))}
+            </div>
+          </ScrollArea>
+        </div>
+      </div>
+    </div>
   ),
   select: () => <SelectDemo />,
   'selectable-row': () => <SelectableRowDemo />,

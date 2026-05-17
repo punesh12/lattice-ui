@@ -53,7 +53,7 @@ const radioDotStyle: React.CSSProperties = {
   width: 8,
   height: 8,
   borderRadius: '50%',
-  backgroundColor: 'var(--foreground)',
+  backgroundColor: 'var(--primary)',
   flexShrink: 0,
 }
 
