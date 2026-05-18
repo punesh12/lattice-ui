@@ -4,13 +4,13 @@ Lattice UI ships two public packages:
 
 | Package | Description |
 | --- | --- |
-| `@lattice-ui/tokens` | CSS variables (`globals.css`) and Tailwind preset |
-| `@lattice-ui/ui` | React component library (depends on tokens) |
+| `@punesh12/lattice-ui-tokens` | CSS variables (`globals.css`) and Tailwind preset |
+| `@punesh12/lattice-ui` | React component library (depends on tokens) |
 
 ## Prerequisites
 
 1. **npm account** — [create one](https://www.npmjs.com/signup) if needed.
-2. **Scope access** — `@lattice-ui` must be available on npm. If taken, change the `name` in each `package.json` before publishing.
+2. **Scope access** — Packages publish under **`@punesh12`** (your npm username). The `@punesh12/lattice-ui` scope is owned by another project on npm and cannot be used.
 3. **Login** (one-time per machine):
 
    ```bash
@@ -21,7 +21,7 @@ Lattice UI ships two public packages:
 
    ```bash
    pnpm install
-   pnpm --filter @lattice-ui/ui build
+   pnpm --filter @punesh12/lattice-ui build
    ```
 
 ## Publish order
@@ -61,7 +61,7 @@ Keep both packages on compatible versions when tokens change.
 ## Consumer install
 
 ```bash
-pnpm add @lattice-ui/ui @lattice-ui/tokens
+pnpm add @punesh12/lattice-ui @punesh12/lattice-ui-tokens
 ```
 
 See [Installation](https://github.com/punesh12/lattice-ui) in the docs for Tailwind and theme setup.

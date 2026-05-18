@@ -11,7 +11,7 @@ const external = [
   'cmdk',
   'sonner',
   'react-day-picker',
-  '@lattice-ui/tokens',
+  '@punesh12/lattice-ui-tokens',
 ]
 
 export default defineConfig({

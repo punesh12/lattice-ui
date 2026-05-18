@@ -10,3 +10,6 @@ dist
 .env
 .env.local
 coverage
+apps/showcase
+Lattice_UI_Cursor_Implementation_Prompt.md
+
