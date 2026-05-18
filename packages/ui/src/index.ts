@@ -1,5 +1,5 @@
 /**
- * Public entry for @lattice-ui/ui — re-exports components, hooks, and shared utilities.
+ * Public entry for @punesh12/lattice-ui — re-exports components, hooks, and shared utilities.
  * Prefer named imports; DatePicker is intentionally omitted (deprecated source only).
  */
 export { cn } from './lib/utils'

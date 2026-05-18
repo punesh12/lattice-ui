@@ -37,7 +37,7 @@ Lattice UI is a production-oriented React design system and documentation monore
 
 - **50+ components** — forms, overlays, navigation, data display, and app patterns (shell, filter bar, notification item, and more)
 - **Accessible by default** — Radix primitives, focus management, and ARIA-aware building blocks
-- **Design tokens** — shared CSS variables for light/dark themes via `@lattice-ui/tokens`
+- **Design tokens** — shared CSS variables for light/dark themes via `@punesh12/lattice-ui-tokens`
 - **TypeScript-first** — typed props, variants (CVA), and published `.d.ts` builds
 - **Next.js App Router ready** — client boundaries and `transpilePackages` support
 - **Docs + playground** — marketing landing, per-component reference, live demos, and copy-ready examples
@@ -50,9 +50,9 @@ Lattice UI is a production-oriented React design system and documentation monore
 
 | Package | npm | Description |
 | ------- | --- | ----------- |
-| [`@lattice-ui/ui`](./packages/ui) | `@lattice-ui/ui` | React component library |
-| [`@lattice-ui/tokens`](./packages/tokens) | `@lattice-ui/tokens` | Global CSS variables and Tailwind preset |
-| [`@lattice-ui/web`](./apps/web) | — (private) | Documentation and marketing site |
+| [`@punesh12/lattice-ui`](./packages/ui) | `@punesh12/lattice-ui` | React component library |
+| [`@punesh12/lattice-ui-tokens`](./packages/tokens) | `@punesh12/lattice-ui-tokens` | Global CSS variables and Tailwind preset |
+| [`@punesh12/lattice-web`](./apps/web) | — (private) | Documentation and marketing site |
 
 ---
 
@@ -69,9 +69,9 @@ Lattice UI is a production-oriented React design system and documentation monore
 Install both the component library and design tokens:
 
 ```bash
-pnpm add @lattice-ui/ui @lattice-ui/tokens
+pnpm add @punesh12/lattice-ui @punesh12/lattice-ui-tokens
 # or
-npm install @lattice-ui/ui @lattice-ui/tokens
+npm install @punesh12/lattice-ui @punesh12/lattice-ui-tokens
 ```
 
 ### Tailwind CSS v4
@@ -80,7 +80,7 @@ Import tokens in your global stylesheet (before or with Tailwind):
 
 ```css
 @import 'tailwindcss';
-@import '@lattice-ui/tokens/globals.css';
+@import '@punesh12/lattice-ui-tokens/globals.css';
 ```
 
 ### Next.js
@@ -89,7 +89,7 @@ Add packages to `transpilePackages` in `next.config.ts`:
 
 ```ts
 const nextConfig = {
-  transpilePackages: ['@lattice-ui/ui', '@lattice-ui/tokens'],
+  transpilePackages: ['@punesh12/lattice-ui', '@punesh12/lattice-ui-tokens'],
 }
 ```
 
@@ -99,7 +99,7 @@ const nextConfig = {
 'use client'
 
 import { ThemeProvider } from 'next-themes'
-import { Toaster } from '@lattice-ui/ui/toast'
+import { Toaster } from '@punesh12/lattice-ui/toast'
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -115,9 +115,9 @@ export function Providers({ children }: { children: React.ReactNode }) {
 
 | Import | Use case |
 | ------ | -------- |
-| `@lattice-ui/ui` | All components and utilities |
-| `@lattice-ui/ui/utils` | `cn()` and shared helpers |
-| `@lattice-ui/ui/toast` | `Toaster`, `toast`, and toast types |
+| `@punesh12/lattice-ui` | All components and utilities |
+| `@punesh12/lattice-ui/utils` | `cn()` and shared helpers |
+| `@punesh12/lattice-ui/toast` | `Toaster`, `toast`, and toast types |
 
 Full setup (fonts, theming, examples): run the docs site locally and open `/docs/installation`.
 
@@ -126,7 +126,7 @@ Full setup (fonts, theming, examples): run the docs site locally and open `/docs
 ## Quick start
 
 ```tsx
-import { Button, Input, Card, CardHeader, CardTitle, CardContent } from '@lattice-ui/ui'
+import { Button, Input, Card, CardHeader, CardTitle, CardContent } from '@punesh12/lattice-ui'
 
 export function Example() {
   return (
@@ -173,11 +173,11 @@ lattice-ui/
 │       ├── components/        # Doc shell, demos, marketing
 │       └── lib/               # docs.ts nav, site config
 ├── packages/
-│   ├── ui/                  # @lattice-ui/ui — components, Storybook, tests
+│   ├── ui/                  # @punesh12/lattice-ui — components, Storybook, tests
 │   │   ├── src/components/  # Component source
 │   │   ├── .storybook/      # Storybook config
 │   │   └── dist/            # Published build output (after pnpm build)
-│   └── tokens/              # @lattice-ui/tokens — CSS variables
+│   └── tokens/              # @punesh12/lattice-ui-tokens — CSS variables
 │       └── src/globals.css
 ├── turbo.json               # Turborepo task pipeline
 ├── PUBLISHING.md            # npm release & Vercel Storybook deploy
@@ -264,15 +264,15 @@ All commands run from the **repository root** unless noted.
 | `pnpm format` | Format with Prettier |
 | `pnpm format:check` | Check formatting (CI) |
 | `pnpm test` | Run unit tests once (Turbo) |
-| `pnpm test:ui` | Run `@lattice-ui/ui` tests only |
+| `pnpm test:ui` | Run `@punesh12/lattice-ui` tests only |
 | `pnpm test:watch` | Vitest watch mode (UI package) |
 
 ### Publishing
 
 | Script | Description |
 | ------ | ----------- |
-| `pnpm publish:tokens` | Publish `@lattice-ui/tokens` to npm |
-| `pnpm publish:ui` | Publish `@lattice-ui/ui` to npm |
+| `pnpm publish:tokens` | Publish `@punesh12/lattice-ui-tokens` to npm |
+| `pnpm publish:ui` | Publish `@punesh12/lattice-ui` to npm |
 | `pnpm publish:packages` | Publish tokens, then ui |
 
 See [PUBLISHING.md](./PUBLISHING.md) for authentication, versioning, and dry runs.
@@ -282,9 +282,9 @@ See [PUBLISHING.md](./PUBLISHING.md) for authentication, versioning, and dry run
 Inside `packages/ui`:
 
 ```bash
-pnpm --filter @lattice-ui/ui build    # tsup → dist/
-pnpm --filter @lattice-ui/ui lint     # eslint + tsc
-pnpm --filter @lattice-ui/ui test     # vitest run
+pnpm --filter @punesh12/lattice-ui build    # tsup → dist/
+pnpm --filter @punesh12/lattice-ui lint     # eslint + tsc
+pnpm --filter @punesh12/lattice-ui test     # vitest run
 ```
 
 ---
@@ -296,7 +296,7 @@ Tests use **Vitest** and **@testing-library/react** in `packages/ui/src/__tests_
 ```bash
 pnpm test           # CI-style run (all packages via Turbo)
 pnpm test:watch     # Watch mode while developing components
-pnpm test:ui        # Scoped to @lattice-ui/ui
+pnpm test:ui        # Scoped to @punesh12/lattice-ui
 ```
 
 Coverage today includes utilities, Button, Input, Checkbox, Alert, Avatar, Breadcrumb, and Select menu behavior. Add tests alongside new components in `packages/ui/src/__tests__/`.
@@ -313,16 +313,16 @@ Semantic CSS variables are defined in `packages/tokens/src/globals.css`:
 
 The docs site uses **next-themes** with `attribute="class"`, `defaultTheme="system"`, and `enableSystem` for OS preference.
 
-Extend or override tokens in your app after importing `@lattice-ui/tokens/globals.css`. Component styling also uses `data-slot` attributes documented in the docs site `globals.css` for apps that do not scan the UI package with Tailwind.
+Extend or override tokens in your app after importing `@punesh12/lattice-ui-tokens/globals.css`. Component styling also uses `data-slot` attributes documented in the docs site `globals.css` for apps that do not scan the UI package with Tailwind.
 
 ---
 
 ## Publishing
 
-`@lattice-ui/tokens` and `@lattice-ui/ui` are configured for public npm release:
+`@punesh12/lattice-ui-tokens` and `@punesh12/lattice-ui` are configured for public npm release:
 
 1. Log in: `npm login`
-2. Build UI: `pnpm --filter @lattice-ui/ui build`
+2. Build UI: `pnpm --filter @punesh12/lattice-ui build`
 3. Publish tokens first, then ui: `pnpm publish:packages`
 
 Details, version bumps, and Storybook hosting: **[PUBLISHING.md](./PUBLISHING.md)**.

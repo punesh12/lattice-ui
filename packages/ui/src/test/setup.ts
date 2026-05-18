@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom/vitest'
-import '@lattice-ui/tokens/globals.css'
+import '@punesh12/lattice-ui-tokens/globals.css'
 import { cleanup } from '@testing-library/react'
 import type { ReactNode } from 'react'
 import { afterEach, vi } from 'vitest'

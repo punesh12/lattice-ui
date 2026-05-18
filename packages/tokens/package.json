@@ -1,5 +1,5 @@
 {
-  "name": "@lattice-ui/tokens",
+  "name": "@punesh12/lattice-ui-tokens",
   "version": "0.1.0",
   "description": "Design tokens and global CSS variables for Lattice UI",
   "license": "MIT",
@@ -16,7 +16,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "files": ["src", "tailwind-preset.ts"],
+  "files": ["src", "tailwind-preset.ts", "README.md"],
   "scripts": {
     "build": "echo 'tokens: CSS-only package'",
     "lint": "eslint .",
