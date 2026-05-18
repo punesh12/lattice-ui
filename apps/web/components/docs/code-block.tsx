@@ -2,7 +2,7 @@
 
 import { Check, Copy } from 'lucide-react'
 import { useState } from 'react'
-import { Button, cn } from '@lattice-ui/ui'
+import { Button, cn } from '@punesh12/lattice-ui'
 
 export function CodeBlock({ code, className }: { code: string; className?: string }) {
   const [copied, setCopied] = useState(false)

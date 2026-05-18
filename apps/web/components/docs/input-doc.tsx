@@ -1,6 +1,6 @@
 'use client'
 
-import { Field, Input, InputGroup, InputPrefix, InputSuffix } from '@lattice-ui/ui'
+import { Field, Input, InputGroup, InputPrefix, InputSuffix } from '@punesh12/lattice-ui'
 import { Search, Mail } from 'lucide-react'
 import { ApiTable, type ApiProp } from '@/components/docs/api-table'
 import { Callout } from '@/components/docs/callout'
@@ -43,7 +43,7 @@ export function InputDoc() {
 
       <h2 id="usage">Usage</h2>
       <PreviewToolbar
-        code={`import { Input } from '@lattice-ui/ui'
+        code={`import { Input } from '@punesh12/lattice-ui'
 
 <Input placeholder="Email address" type="email" />`}
       >

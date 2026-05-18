@@ -1,5 +1,5 @@
 import { Accessibility, BookOpen, Layers, Palette, Puzzle, Type } from 'lucide-react'
-import { Card, CardDescription, CardHeader, CardTitle } from '@lattice-ui/ui'
+import { Card, CardDescription, CardHeader, CardTitle } from '@punesh12/lattice-ui'
 import { cn } from '@/lib/utils'
 import { motion } from '@/lib/motion'
 

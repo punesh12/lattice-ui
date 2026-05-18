@@ -1,6 +1,6 @@
 'use client'
 
-import { cn } from '@lattice-ui/ui'
+import { cn } from '@punesh12/lattice-ui'
 
 export type TocItem = { id: string; title: string; level: number }
 

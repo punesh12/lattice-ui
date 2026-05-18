@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { Badge, Button, LatticeLogo } from '@lattice-ui/ui'
+import { Badge, Button, LatticeLogo } from '@punesh12/lattice-ui'
 import { cn } from '@/lib/utils'
 import { HeaderMenuButton } from '@/components/header-menu-button'
 import { isMarketingNavActive } from '@/lib/nav'

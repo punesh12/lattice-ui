@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, BookOpen, Boxes, Home, LayoutGrid } from 'lucide-react'
-import { Button } from '@lattice-ui/ui'
+import { Button } from '@punesh12/lattice-ui'
 import { cn } from '@/lib/utils'
 import { motion } from '@/lib/motion'
 

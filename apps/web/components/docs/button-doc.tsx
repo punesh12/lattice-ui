@@ -1,7 +1,7 @@
 'use client'
 
 import { Plus } from 'lucide-react'
-import { Button } from '@lattice-ui/ui'
+import { Button } from '@punesh12/lattice-ui'
 import { ApiTable, type ApiProp } from '@/components/docs/api-table'
 import { Callout } from '@/components/docs/callout'
 import { DocProse } from '@/components/docs/doc-prose'
@@ -48,7 +48,7 @@ export function ButtonDoc() {
 
       <h2 id="usage">Usage</h2>
       <PreviewToolbar
-        code={`import { Button } from '@lattice-ui/ui'
+        code={`import { Button } from '@punesh12/lattice-ui'
 
 <Button>Click me</Button>`}
       >

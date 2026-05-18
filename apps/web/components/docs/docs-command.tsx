@@ -9,7 +9,7 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from '@lattice-ui/ui'
+} from '@punesh12/lattice-ui'
 import { docsConfig, getAllDocRoutes } from '@/lib/docs'
 
 export function DocsCommand() {

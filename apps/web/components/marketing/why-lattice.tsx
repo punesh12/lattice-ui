@@ -1,4 +1,4 @@
-import { Alert, AlertDescription, AlertTitle, Separator } from '@lattice-ui/ui'
+import { Alert, AlertDescription, AlertTitle, Separator } from '@punesh12/lattice-ui'
 import { cn } from '@/lib/utils'
 import { motion } from '@/lib/motion'
 

@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Button } from '@lattice-ui/ui'
+import { Button } from '@punesh12/lattice-ui'
 import { CodeBlock } from '@/components/docs/code-block'
 import { CodeTabs } from '@/components/docs/code-tabs'
 import { DocProse } from '@/components/docs/doc-prose'
@@ -16,10 +16,10 @@ export default function InstallationPage() {
       <div className="not-prose">
         <CodeTabs
           commands={{
-            npm: 'npm install @lattice-ui/ui @lattice-ui/tokens',
-            pnpm: 'pnpm add @lattice-ui/ui @lattice-ui/tokens',
-            yarn: 'yarn add @lattice-ui/ui @lattice-ui/tokens',
-            bun: 'bun add @lattice-ui/ui @lattice-ui/tokens',
+            npm: 'npm install @punesh12/lattice-ui @punesh12/lattice-ui-tokens',
+            pnpm: 'pnpm add @punesh12/lattice-ui @punesh12/lattice-ui-tokens',
+            yarn: 'yarn add @punesh12/lattice-ui @punesh12/lattice-ui-tokens',
+            bun: 'bun add @punesh12/lattice-ui @punesh12/lattice-ui-tokens',
           }}
         />
       </div>
@@ -29,7 +29,7 @@ export default function InstallationPage() {
       <div className="not-prose">
         <CodeBlock
           code={`@import 'tailwindcss';
- @import '@lattice-ui/tokens/globals.css';`}
+ @import '@punesh12/lattice-ui-tokens/globals.css';`}
         />
       </div>
 
@@ -45,7 +45,7 @@ export default function InstallationPage() {
           code={`'use client'
 
 import { ThemeProvider } from 'next-themes'
-import { Toaster } from '@lattice-ui/ui/toast'
+import { Toaster } from '@punesh12/lattice-ui/toast'
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (

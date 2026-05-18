@@ -14,7 +14,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from '@lattice-ui/ui'
+} from '@punesh12/lattice-ui'
 
 export const EditProfileModalDemo = () => (
   <Modal>

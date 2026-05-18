@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Card, CardDescription, CardHeader, CardTitle } from '@lattice-ui/ui'
+import { Card, CardDescription, CardHeader, CardTitle } from '@punesh12/lattice-ui'
 import { DocProse } from '@/components/docs/doc-prose'
 import { docsConfig } from '@/lib/docs'
 

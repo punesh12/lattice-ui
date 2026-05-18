@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { LatticeLogo, Separator } from '@lattice-ui/ui'
+import { LatticeLogo, Separator } from '@punesh12/lattice-ui'
 
 const links = {
   Product: [

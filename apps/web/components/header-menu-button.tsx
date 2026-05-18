@@ -1,7 +1,7 @@
 'use client'
 
 import { Menu, X } from 'lucide-react'
-import { Button } from '@lattice-ui/ui'
+import { Button } from '@punesh12/lattice-ui'
 
 type HeaderMenuButtonProps = {
   open: boolean

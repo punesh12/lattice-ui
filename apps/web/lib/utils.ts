@@ -1,1 +1,1 @@
-export { cn } from '@lattice-ui/ui/utils'
+export { cn } from '@punesh12/lattice-ui/utils'
