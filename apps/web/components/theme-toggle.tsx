@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { Monitor, Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
-import { Button } from '@lattice-ui/ui'
+import { Button } from '@punesh12/lattice-ui'
 import { setThemeWithTransition } from '@/lib/set-theme-with-transition'
 import { getNextTheme, type AppTheme } from '@/lib/theme'
 

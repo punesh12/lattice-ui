@@ -3,7 +3,7 @@
 import { Search } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
-import { Input } from '@lattice-ui/ui'
+import { Input } from '@punesh12/lattice-ui'
 import { cn } from '@/lib/utils'
 import { getAllDocRoutes } from '@/lib/docs'
 

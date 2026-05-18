@@ -1,6 +1,6 @@
 /** Example usage snippets for component doc pages. */
 export const componentExamples: Record<string, string> = {
-  alert: `import { Alert, AlertDescription, AlertTitle } from '@lattice-ui/ui'
+  alert: `import { Alert, AlertDescription, AlertTitle } from '@punesh12/lattice-ui'
 
 <Alert variant="info">
   <AlertTitle>Heads up</AlertTitle>
@@ -18,7 +18,7 @@ export const componentExamples: Record<string, string> = {
   AlertDialogTitle,
   AlertDialogTrigger,
   Button,
-} from '@lattice-ui/ui'
+} from '@punesh12/lattice-ui'
 
 <AlertDialog>
   <AlertDialogTrigger asChild>
@@ -43,7 +43,7 @@ export const componentExamples: Record<string, string> = {
   SidebarHeader,
   SidebarNav,
   SidebarNavItem,
-} from '@lattice-ui/ui'
+} from '@punesh12/lattice-ui'
 
 <AppShell
   header={<div className="border-b px-4 py-2">Dashboard</div>}
@@ -62,7 +62,7 @@ export const componentExamples: Record<string, string> = {
   Main content area
 </AppShell>`,
 
-  'aspect-ratio': `import { AspectRatio } from '@lattice-ui/ui'
+  'aspect-ratio': `import { AspectRatio } from '@punesh12/lattice-ui'
 
 {/* Preset variants: square | video | portrait | photo | cinema | ultrawide */}
 <AspectRatio variant="video" className="rounded-md bg-muted">
@@ -74,7 +74,7 @@ export const componentExamples: Record<string, string> = {
   <img src="/photo.jpg" alt="Photo" className="h-full w-full object-cover" />
 </AspectRatio>`,
 
-  avatar: `import { Avatar, AvatarFallback, AvatarImage } from '@lattice-ui/ui'
+  avatar: `import { Avatar, AvatarFallback, AvatarImage } from '@punesh12/lattice-ui'
 
 <Avatar size="default">
   <AvatarImage src="https://github.com/shadcn.png" alt="User" />
@@ -85,7 +85,7 @@ export const componentExamples: Record<string, string> = {
   <AvatarFallback>PB</AvatarFallback>
 </Avatar>`,
 
-  badge: `import { Badge } from '@lattice-ui/ui'
+  badge: `import { Badge } from '@punesh12/lattice-ui'
 
 <div className="flex gap-2">
   <Badge>Default</Badge>
@@ -100,7 +100,7 @@ export const componentExamples: Record<string, string> = {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from '@lattice-ui/ui'
+} from '@punesh12/lattice-ui'
 
 <Breadcrumb>
   <BreadcrumbList>
@@ -114,7 +114,7 @@ export const componentExamples: Record<string, string> = {
   </BreadcrumbList>
 </Breadcrumb>`,
 
-  card: `import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@lattice-ui/ui'
+  card: `import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@punesh12/lattice-ui'
 
 <Card>
   <CardHeader>
@@ -126,14 +126,14 @@ export const componentExamples: Record<string, string> = {
   </CardContent>
 </Card>`,
 
-  checkbox: `import { Checkbox, Label } from '@lattice-ui/ui'
+  checkbox: `import { Checkbox, Label } from '@punesh12/lattice-ui'
 
 <div className="flex items-center gap-2">
   <Checkbox id="terms" />
   <Label htmlFor="terms">Accept terms</Label>
 </div>`,
 
-  combobox: `import { Combobox } from '@lattice-ui/ui'
+  combobox: `import { Combobox } from '@punesh12/lattice-ui'
 
 const options = [
   { value: 'react', label: 'React' },
@@ -154,7 +154,7 @@ const options = [
   CommandInput,
   CommandItem,
   CommandList,
-} from '@lattice-ui/ui'
+} from '@punesh12/lattice-ui'
 
 <Command className="rounded-lg border">
   <CommandInput placeholder="Type a command…" />
@@ -172,7 +172,7 @@ const options = [
   ContextMenuContent,
   ContextMenuItem,
   ContextMenuTrigger,
-} from '@lattice-ui/ui'
+} from '@punesh12/lattice-ui'
 
 <ContextMenu>
   <ContextMenuTrigger className="flex h-24 w-48 items-center justify-center rounded-md border border-dashed">
@@ -193,7 +193,7 @@ const options = [
   DialogTitle,
   DialogTrigger,
   Input,
-} from '@lattice-ui/ui'
+} from '@punesh12/lattice-ui'
 
 <Dialog>
   <DialogTrigger asChild>
@@ -217,7 +217,7 @@ const options = [
   ModalHeader,
   ModalTitle,
   ModalTrigger,
-} from '@lattice-ui/ui'
+} from '@punesh12/lattice-ui'
 
 <Modal>
   <ModalTrigger asChild>
@@ -232,7 +232,7 @@ const options = [
   </ModalContent>
 </Modal>`,
 
-  divider: `import { Divider } from '@lattice-ui/ui'
+  divider: `import { Divider } from '@punesh12/lattice-ui'
 
 <div className="space-y-2 text-center text-sm">
   <span>Above</span>
@@ -246,7 +246,7 @@ const options = [
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@lattice-ui/ui'
+} from '@punesh12/lattice-ui'
 
 <DropdownMenu>
   <DropdownMenuTrigger asChild>
@@ -258,7 +258,7 @@ const options = [
   </DropdownMenuContent>
 </DropdownMenu>`,
 
-  'empty-state': `import { Button, EmptyState } from '@lattice-ui/ui'
+  'empty-state': `import { Button, EmptyState } from '@punesh12/lattice-ui'
 import { Inbox } from 'lucide-react'
 
 <EmptyState
@@ -268,7 +268,7 @@ import { Inbox } from 'lucide-react'
   action={<Button size="sm">Compose</Button>}
 />`,
 
-  field: `import { Field, Input } from '@lattice-ui/ui'
+  field: `import { Field, Input } from '@punesh12/lattice-ui'
 
 <Field label="Email" htmlFor="email" description="We'll never share your email.">
   <Input id="email" type="email" placeholder="you@example.com" />
@@ -278,24 +278,24 @@ import { Inbox } from 'lucide-react'
   <Input id="email" type="email" placeholder="you@example.com" />
 </Field>`,
 
-  input: `import { Input } from '@lattice-ui/ui'
+  input: `import { Input } from '@punesh12/lattice-ui'
 
 <Input placeholder="Email address" type="email" />
 
 <Input error placeholder="Required field" />`,
 
-  'file-upload': `import { FileUpload } from '@lattice-ui/ui'
+  'file-upload': `import { FileUpload } from '@punesh12/lattice-ui'
 
 <FileUpload />`,
 
-  'filter-bar': `import { Badge, FilterBar } from '@lattice-ui/ui'
+  'filter-bar': `import { Badge, FilterBar } from '@punesh12/lattice-ui'
 
 <FilterBar onClear={() => setFilters([])}>
   <Badge variant="secondary">Status: Active</Badge>
   <Badge variant="secondary">Role: Admin</Badge>
 </FilterBar>`,
 
-  'hover-card': `import { Button, HoverCard, HoverCardContent, HoverCardTrigger } from '@lattice-ui/ui'
+  'hover-card': `import { Button, HoverCard, HoverCardContent, HoverCardTrigger } from '@punesh12/lattice-ui'
 
 <HoverCard>
   <HoverCardTrigger asChild>
@@ -306,22 +306,22 @@ import { Inbox } from 'lucide-react'
   </HoverCardContent>
 </HoverCard>`,
 
-  kbd: `import { Kbd } from '@lattice-ui/ui'
+  kbd: `import { Kbd } from '@punesh12/lattice-ui'
 
 <div className="flex gap-1">
   <Kbd>⌘</Kbd>
   <Kbd>K</Kbd>
 </div>`,
 
-  label: `import { Label } from '@lattice-ui/ui'
+  label: `import { Label } from '@punesh12/lattice-ui'
 
 <Label>Email address</Label>`,
 
-  link: `import { Link } from '@lattice-ui/ui'
+  link: `import { Link } from '@punesh12/lattice-ui'
 
 <Link href="#">Learn more</Link>`,
 
-  'notification-item': `import { NotificationItem } from '@lattice-ui/ui'
+  'notification-item': `import { NotificationItem } from '@punesh12/lattice-ui'
 
 <NotificationItem
   title="New comment"
@@ -329,7 +329,7 @@ import { Inbox } from 'lucide-react'
   time="2m ago"
 />`,
 
-  'otp-input': `import { OtpInput } from '@lattice-ui/ui'
+  'otp-input': `import { OtpInput } from '@punesh12/lattice-ui'
 
 const [value, setValue] = useState('')
 
@@ -343,7 +343,7 @@ const [value, setValue] = useState('')
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from '@lattice-ui/ui'
+} from '@punesh12/lattice-ui'
 
 <Pagination>
   <PaginationContent>
@@ -362,7 +362,7 @@ const [value, setValue] = useState('')
   </PaginationContent>
 </Pagination>`,
 
-  popover: `import { Button, Popover, PopoverContent, PopoverTrigger } from '@lattice-ui/ui'
+  popover: `import { Button, Popover, PopoverContent, PopoverTrigger } from '@punesh12/lattice-ui'
 
 <Popover>
   <PopoverTrigger asChild>
@@ -373,14 +373,14 @@ const [value, setValue] = useState('')
   </PopoverContent>
 </Popover>`,
 
-  progress: `import { Progress } from '@lattice-ui/ui'
+  progress: `import { Progress } from '@punesh12/lattice-ui'
 
 <div className="space-y-3">
   <Progress value={66} />
   <Progress indeterminate aria-label="Loading" />
 </div>`,
 
-  'radio-group': `import { Label, RadioGroup, RadioGroupItem } from '@lattice-ui/ui'
+  'radio-group': `import { Label, RadioGroup, RadioGroupItem } from '@punesh12/lattice-ui'
 
 <RadioGroup defaultValue="a" style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
   <div className="flex items-center gap-2">
@@ -393,7 +393,7 @@ const [value, setValue] = useState('')
   </div>
 </RadioGroup>`,
 
-  'scroll-area': `import { ScrollArea } from '@lattice-ui/ui'
+  'scroll-area': `import { ScrollArea } from '@punesh12/lattice-ui'
 
 <ScrollArea showScrollbar className="h-32 w-52 rounded-md border p-3">
   {/* scrollable content */}
@@ -403,7 +403,7 @@ const [value, setValue] = useState('')
   {/* scrollable, no visible scrollbar */}
 </ScrollArea>`,
 
-  select: `import { Select } from '@lattice-ui/ui'
+  select: `import { Select } from '@punesh12/lattice-ui'
 
 const options = [
   { value: 'light', label: 'Light' },
@@ -424,7 +424,7 @@ const options = [
   placeholder="Select themes"
 />`,
 
-  'selectable-row': `import { SelectableRow } from '@lattice-ui/ui'
+  'selectable-row': `import { SelectableRow } from '@punesh12/lattice-ui'
 
 <SelectableRow
   state={selected === 'a' ? 'selected' : 'default'}
@@ -434,7 +434,7 @@ const options = [
   <span className="block text-xs text-muted-foreground">First choice</span>
 </SelectableRow>`,
 
-  separator: `import { Separator } from '@lattice-ui/ui'
+  separator: `import { Separator } from '@punesh12/lattice-ui'
 
 <div className="space-y-6">
   <Separator />
@@ -445,7 +445,7 @@ const options = [
   </div>
 </div>`,
 
-  'settings-row': `import { SettingsRow, Switch } from '@lattice-ui/ui'
+  'settings-row': `import { SettingsRow, Switch } from '@punesh12/lattice-ui'
 
 <SettingsRow
   label="Notifications"
@@ -461,7 +461,7 @@ const options = [
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from '@lattice-ui/ui'
+} from '@punesh12/lattice-ui'
 
 <Sheet>
   <SheetTrigger asChild>
@@ -482,7 +482,7 @@ const options = [
   SidebarNav,
   SidebarNavItem,
   SidebarProvider,
-} from '@lattice-ui/ui'
+} from '@punesh12/lattice-ui'
 
 <SidebarProvider>
   <Sidebar>
@@ -496,7 +496,7 @@ const options = [
   </Sidebar>
 </SidebarProvider>`,
 
-  skeleton: `import { Skeleton } from '@lattice-ui/ui'
+  skeleton: `import { Skeleton } from '@punesh12/lattice-ui'
 
 <div className="flex items-center gap-3">
   <Skeleton className="h-10 w-10 rounded-full" />
@@ -506,13 +506,13 @@ const options = [
   </div>
 </div>`,
 
-  slider: `import { Slider } from '@lattice-ui/ui'
+  slider: `import { Slider } from '@punesh12/lattice-ui'
 
 const [value, setValue] = useState([50])
 
 <Slider value={value} onValueChange={setValue} className="w-52" />`,
 
-  spinner: `import { Spinner } from '@lattice-ui/ui'
+  spinner: `import { Spinner } from '@punesh12/lattice-ui'
 
 <div className="flex items-center gap-3">
   <Spinner size="sm" />
@@ -520,7 +520,7 @@ const [value, setValue] = useState([50])
   <Spinner size="lg" />
 </div>`,
 
-  switch: `import { Switch } from '@lattice-ui/ui'
+  switch: `import { Switch } from '@punesh12/lattice-ui'
 
 <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
   <Switch aria-label="Off" />
@@ -534,7 +534,7 @@ const [value, setValue] = useState([50])
   TableHead,
   TableHeader,
   TableRow,
-} from '@lattice-ui/ui'
+} from '@punesh12/lattice-ui'
 
 <Table>
   <TableHeader>
@@ -551,7 +551,7 @@ const [value, setValue] = useState([50])
   </TableBody>
 </Table>`,
 
-  tabs: `import { Tabs, TabsContent, TabsList, TabsTrigger } from '@lattice-ui/ui'
+  tabs: `import { Tabs, TabsContent, TabsList, TabsTrigger } from '@punesh12/lattice-ui'
 
 <Tabs defaultValue="account">
   <TabsList>
@@ -564,7 +564,7 @@ const [value, setValue] = useState([50])
   <TabsContent value="notifications">Manage how you receive notifications.</TabsContent>
 </Tabs>`,
 
-  tag: `import { Tag, TagGroup } from '@lattice-ui/ui'
+  tag: `import { Tag, TagGroup } from '@punesh12/lattice-ui'
 
 <TagGroup
   value={value}
@@ -575,11 +575,11 @@ const [value, setValue] = useState([50])
   ]}
 />`,
 
-  textarea: `import { Textarea } from '@lattice-ui/ui'
+  textarea: `import { Textarea } from '@punesh12/lattice-ui'
 
 <Textarea placeholder="Write a message…" />`,
 
-  toast: `import { Button, Toaster, toast } from '@lattice-ui/ui'
+  toast: `import { Button, Toaster, toast } from '@punesh12/lattice-ui'
 
 // Default placement for all toasts (mount once in your app root)
 <Toaster position="top-right" closeButton />
@@ -597,7 +597,7 @@ toast.info('New update', {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@lattice-ui/ui'
+} from '@punesh12/lattice-ui'
 
 <TooltipProvider>
   <Tooltip>
@@ -611,6 +611,6 @@ toast.info('New update', {
 
 export const getComponentExample = (slug: string): string =>
   componentExamples[slug] ??
-  `import { /* ${slug} */ } from '@lattice-ui/ui'
+  `import { /* ${slug} */ } from '@punesh12/lattice-ui'
 
 // Example coming soon`

@@ -20,7 +20,7 @@ import {
   InputSuffix,
   Label,
   Progress,
-} from '@lattice-ui/ui'
+} from '@punesh12/lattice-ui'
 import { cn } from '@/lib/utils'
 import { motion } from '@/lib/motion'
 

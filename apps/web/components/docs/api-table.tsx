@@ -1,4 +1,4 @@
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@lattice-ui/ui'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@punesh12/lattice-ui'
 
 export type ApiProp = {
   prop: string

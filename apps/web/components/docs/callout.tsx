@@ -1,4 +1,4 @@
-import { Alert, AlertDescription, AlertTitle } from '@lattice-ui/ui'
+import { Alert, AlertDescription, AlertTitle } from '@punesh12/lattice-ui'
 
 export function Callout({ title, children }: { title?: string; children: React.ReactNode }) {
   return (

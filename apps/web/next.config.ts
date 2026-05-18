@@ -1,7 +1,7 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  transpilePackages: ['@lattice-ui/ui', '@lattice-ui/tokens'],
+  transpilePackages: ['@punesh12/lattice-ui', '@punesh12/lattice-ui-tokens'],
   serverExternalPackages: ['react-day-picker'],
 }
 

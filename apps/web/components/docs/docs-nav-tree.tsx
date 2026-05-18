@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { cn } from '@lattice-ui/ui'
+import { cn } from '@punesh12/lattice-ui'
 import { docsConfig } from '@/lib/docs'
 import { isMarketingNavActive, isNavActive } from '@/lib/nav'
 import { siteNavLinks } from '@/lib/site-nav'

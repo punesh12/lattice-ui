@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { Monitor, Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
-import { Button, Card, CardContent, CardDescription, CardHeader, CardTitle } from '@lattice-ui/ui'
+import { Button, Card, CardContent, CardDescription, CardHeader, CardTitle } from '@punesh12/lattice-ui'
 import { cn } from '@/lib/utils'
 import { motion } from '@/lib/motion'
 import { setThemeWithTransition } from '@/lib/set-theme-with-transition'

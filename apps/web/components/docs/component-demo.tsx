@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Spinner } from '@lattice-ui/ui'
+import { Spinner } from '@punesh12/lattice-ui'
 
 type ComponentDemoProps = {
   slug: string

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
-import { Badge, Button } from '@lattice-ui/ui'
+import { Badge, Button } from '@punesh12/lattice-ui'
 import { cn } from '@/lib/utils'
 import { motion } from '@/lib/motion'
 

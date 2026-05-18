@@ -113,7 +113,7 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@lattice-ui/ui'
+} from '@punesh12/lattice-ui'
 import { Inbox } from 'lucide-react'
 import { EditProfileModalDemo, EditProfileSheetDemo } from '@/components/docs/demos/overlay-demos'
 

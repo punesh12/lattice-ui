@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { ArrowRight, Layers, Palette, Zap } from 'lucide-react'
-import { Button, Card, CardDescription, CardHeader, CardTitle } from '@lattice-ui/ui'
+import { Button, Card, CardDescription, CardHeader, CardTitle } from '@punesh12/lattice-ui'
 import { DocProse } from '@/components/docs/doc-prose'
 
 const features = [

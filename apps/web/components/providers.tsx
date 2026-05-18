@@ -1,7 +1,7 @@
 'use client'
 
 import { ThemeProvider } from 'next-themes'
-import { Toaster } from '@lattice-ui/ui/toast'
+import { Toaster } from '@punesh12/lattice-ui/toast'
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (

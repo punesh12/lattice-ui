@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import '@lattice-ui/tokens/globals.css';
+@import '@punesh12/lattice-ui-tokens/globals.css';
 
 @source '../../packages/ui/src/**/*.{ts,tsx}';
 @source '../**/*.{ts,tsx}';

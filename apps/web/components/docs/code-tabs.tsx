@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { cn } from '@lattice-ui/ui'
+import { cn } from '@punesh12/lattice-ui'
 import { CodeBlock } from './code-block'
 
 const managers = ['npm', 'pnpm', 'yarn', 'bun'] as const

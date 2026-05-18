@@ -13,7 +13,7 @@ export default function ThemingPage() {
 
       <h2>CSS variables</h2>
       <p>
-        Tokens are defined in <code>@lattice-ui/tokens/globals.css</code> and mapped in your
+        Tokens are defined in <code>@punesh12/lattice-ui-tokens/globals.css</code> and mapped in your
         Tailwind theme.
       </p>
       <div className="not-prose">
